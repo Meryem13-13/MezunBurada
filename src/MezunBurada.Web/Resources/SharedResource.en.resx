@@ -285,4 +285,76 @@
   <data name="LevelBeginner" xml:space="preserve">
     <value>Beginner</value>
   </data>
+  <data name="LoginIllustrationHeadline" xml:space="preserve">
+    <value>Continue your career journey right where you left off.</value>
+  </data>
+  <data name="LoginFormTitle" xml:space="preserve">
+    <value>Welcome back.</value>
+  </data>
+  <data name="RegisterHeadline" xml:space="preserve">
+    <value>Start your career journey.</value>
+  </data>
+  <data name="AuthSubtitle" xml:space="preserve">
+    <value>Save your roadmap, track your progress, and get closer to your goals step by step.</value>
+  </data>
+  <data name="EmailLabel" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmailPlaceholder" xml:space="preserve">
+    <value>you@email.com</value>
+  </data>
+  <data name="PasswordLabel" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PasswordMinHint" xml:space="preserve">
+    <value>At least 8 characters</value>
+  </data>
+  <data name="ForgotPasswordLabel" xml:space="preserve">
+    <value>Forgot password</value>
+  </data>
+  <data name="LoginButtonLabel" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="RegisterButtonLabel" xml:space="preserve">
+    <value>Create Free Account</value>
+  </data>
+  <data name="OrDividerLabel" xml:space="preserve">
+    <value>or</value>
+  </data>
+  <data name="GoogleContinueLabel" xml:space="preserve">
+    <value>Continue with Google</value>
+  </data>
+  <data name="NoAccountLabel" xml:space="preserve">
+    <value>Don't have an account?</value>
+  </data>
+  <data name="HaveAccountLabel" xml:space="preserve">
+    <value>Already have an account?</value>
+  </data>
+  <data name="SignUpLinkLabel" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="FullNameLabel" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="TermsAgreementText" xml:space="preserve">
+    <value>I agree to the Terms of Service and Privacy Policy.</value>
+  </data>
+  <data name="TrustText" xml:space="preserve">
+    <value>Your information is stored securely and never shared without permission.</value>
+  </data>
+  <data name="JourneyStepInterestShort" xml:space="preserve">
+    <value>Interest</value>
+  </data>
+  <data name="JourneyStepCareer" xml:space="preserve">
+    <value>Career</value>
+  </data>
+  <data name="WelcomeSuccessTitle" xml:space="preserve">
+    <value>Welcome! 🎉</value>
+  </data>
+  <data name="WelcomeSuccessText" xml:space="preserve">
+    <value>You can now start your career journey together with us.</value>
+  </data>
+  <data name="StartTestLabel" xml:space="preserve">
+    <value>Start the Test</value>
+  </data>
 </root>

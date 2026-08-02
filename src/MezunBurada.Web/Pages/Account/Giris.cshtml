@@ -1,0 +1,34 @@
+@page "/giris"
+@model MezunBurada.Web.Pages.Account.GirisModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "_AuthLayout";
+    ViewData["Title"] = Localizer["LoginFormTitle"];
+    ViewData["AuthHeadlineKey"] = "LoginIllustrationHeadline";
+}
+
+<div class="auth-form-card">
+    <h2>@Localizer["LoginFormTitle"]</h2>
+    <form method="post">
+        <div class="form-field">
+            <label for="email">@Localizer["EmailLabel"]</label>
+            <input type="email" id="email" name="email" placeholder="@Localizer["EmailPlaceholder"]" />
+        </div>
+        <div class="form-field">
+            <label for="password">@Localizer["PasswordLabel"]</label>
+            <input type="password" id="password" name="password" />
+        </div>
+        <a href="#" class="form-forgot-link">@Localizer["ForgotPasswordLabel"]</a>
+
+        <button type="submit" class="btn-brand full-width">@Localizer["LoginButtonLabel"] &rarr;</button>
+
+        <div class="auth-divider">@Localizer["OrDividerLabel"]</div>
+
+        <a href="#" class="btn-google"><span class="g-icon"></span> @Localizer["GoogleContinueLabel"]</a>
+
+        <p class="auth-switch-text">
+            @Localizer["NoAccountLabel"] <a href="/kayit">@Localizer["SignUpLinkLabel"]</a>
+        </p>
+    </form>
+</div>

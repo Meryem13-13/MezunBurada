@@ -285,4 +285,76 @@
   <data name="LevelBeginner" xml:space="preserve">
     <value>مبتدئ</value>
   </data>
+  <data name="LoginIllustrationHeadline" xml:space="preserve">
+    <value>تابع رحلتك المهنية من حيث توقفت.</value>
+  </data>
+  <data name="LoginFormTitle" xml:space="preserve">
+    <value>مرحباً بعودتك.</value>
+  </data>
+  <data name="RegisterHeadline" xml:space="preserve">
+    <value>ابدأ رحلتك المهنية.</value>
+  </data>
+  <data name="AuthSubtitle" xml:space="preserve">
+    <value>احفظ خارطة طريقك، وتابع تقدمك، واقترب من أهدافك خطوة بخطوة.</value>
+  </data>
+  <data name="EmailLabel" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="EmailPlaceholder" xml:space="preserve">
+    <value>example@email.com</value>
+  </data>
+  <data name="PasswordLabel" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+  <data name="PasswordMinHint" xml:space="preserve">
+    <value>8 أحرف على الأقل</value>
+  </data>
+  <data name="ForgotPasswordLabel" xml:space="preserve">
+    <value>نسيت كلمة المرور</value>
+  </data>
+  <data name="LoginButtonLabel" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="RegisterButtonLabel" xml:space="preserve">
+    <value>إنشاء حساب مجاني</value>
+  </data>
+  <data name="OrDividerLabel" xml:space="preserve">
+    <value>أو</value>
+  </data>
+  <data name="GoogleContinueLabel" xml:space="preserve">
+    <value>المتابعة باستخدام Google</value>
+  </data>
+  <data name="NoAccountLabel" xml:space="preserve">
+    <value>ليس لديك حساب؟</value>
+  </data>
+  <data name="HaveAccountLabel" xml:space="preserve">
+    <value>لديك حساب بالفعل؟</value>
+  </data>
+  <data name="SignUpLinkLabel" xml:space="preserve">
+    <value>إنشاء حساب</value>
+  </data>
+  <data name="FullNameLabel" xml:space="preserve">
+    <value>الاسم الكامل</value>
+  </data>
+  <data name="TermsAgreementText" xml:space="preserve">
+    <value>أوافق على شروط الاستخدام وسياسة الخصوصية.</value>
+  </data>
+  <data name="TrustText" xml:space="preserve">
+    <value>يتم حفظ بياناتك بأمان ولا تتم مشاركتها دون إذن.</value>
+  </data>
+  <data name="JourneyStepInterestShort" xml:space="preserve">
+    <value>الاهتمام</value>
+  </data>
+  <data name="JourneyStepCareer" xml:space="preserve">
+    <value>المسار المهني</value>
+  </data>
+  <data name="WelcomeSuccessTitle" xml:space="preserve">
+    <value>مرحباً بك! 🎉</value>
+  </data>
+  <data name="WelcomeSuccessText" xml:space="preserve">
+    <value>يمكنك الآن بدء رحلتك المهنية معنا.</value>
+  </data>
+  <data name="StartTestLabel" xml:space="preserve">
+    <value>ابدأ الاختبار</value>
+  </data>
 </root>

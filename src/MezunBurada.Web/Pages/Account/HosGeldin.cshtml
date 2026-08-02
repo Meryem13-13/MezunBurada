@@ -1,0 +1,16 @@
+@page "/kayit/hos-geldin"
+@model MezunBurada.Web.Pages.Account.HosGeldinModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "_AuthLayout";
+    ViewData["Title"] = Localizer["WelcomeSuccessTitle"];
+    ViewData["HideIllustration"] = true;
+}
+
+<div class="auth-form-card auth-welcome-card">
+    <div class="welcome-emoji">🎉</div>
+    <h2>@Localizer["WelcomeSuccessTitle"]</h2>
+    <p class="auth-subtitle">@Localizer["WelcomeSuccessText"]</p>
+    <a href="/test/bolum" class="btn-brand full-width">@Localizer["StartTestLabel"] &rarr;</a>
+</div>

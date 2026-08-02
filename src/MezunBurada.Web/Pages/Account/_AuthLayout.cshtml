@@ -1,0 +1,58 @@
+@using System.Globalization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    var currentCulture = CultureInfo.CurrentUICulture;
+    var isRtl = currentCulture.TextInfo.IsRightToLeft;
+    var headlineKey = ViewData["AuthHeadlineKey"] as string ?? "LoginIllustrationHeadline";
+    var showIllustration = !(ViewData["HideIllustration"] is true);
+}
+<!DOCTYPE html>
+<html lang="@currentCulture.TwoLetterISOLanguageName" dir="@(isRtl ? "rtl" : "ltr")">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - @Localizer["SiteTitle"]</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    @if (isRtl)
+    {
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />
+    }
+    else
+    {
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    }
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="auth-shell">
+        @if (showIllustration)
+        {
+            <div class="auth-illustration">
+                <div class="brand-mark-row">
+                    <span class="brand-mark">M</span>
+                    <span>@Localizer["SiteTitle"]</span>
+                </div>
+                <h1>@Localizer[headlineKey]</h1>
+                <p class="auth-subtitle">@Localizer["AuthSubtitle"]</p>
+                <div class="auth-journey-path">
+                    <span class="journey-step"><span class="journey-dot"></span>@Localizer["TestStepBolum"]</span>
+                    <span class="journey-arrow">&rarr;</span>
+                    <span class="journey-step"><span class="journey-dot"></span>@Localizer["JourneyStepInterestShort"]</span>
+                    <span class="journey-arrow">&rarr;</span>
+                    <span class="journey-step"><span class="journey-dot"></span>@Localizer["TestStepSeviye"]</span>
+                    <span class="journey-arrow">&rarr;</span>
+                    <span class="journey-step"><span class="journey-dot"></span>@Localizer["StatRoadmapLabel"]</span>
+                    <span class="journey-arrow">&rarr;</span>
+                    <span class="journey-step"><span class="journey-dot"></span>@Localizer["JourneyStepCareer"]</span>
+                </div>
+            </div>
+        }
+        <div class="auth-form-panel">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

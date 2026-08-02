@@ -1008,3 +1008,219 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.85rem;
   margin-bottom: 1.25rem;
 }
+
+/* ==========================================================================
+   Auth — split-screen login/register/welcome shell
+   ========================================================================== */
+.auth-shell {
+  display: flex;
+  min-height: 100vh;
+  flex-wrap: wrap;
+}
+
+.auth-illustration {
+  flex: 1 1 420px;
+  background-color: var(--color-blush-light);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-illustration .brand-mark-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+.auth-illustration h1 {
+  font-size: 2rem;
+  max-width: 420px;
+  margin-bottom: 1rem;
+}
+
+.auth-subtitle {
+  color: var(--color-text-muted);
+  max-width: 380px;
+  margin-bottom: 3.5rem;
+}
+
+.auth-welcome-card .auth-subtitle {
+  max-width: none;
+  margin-bottom: 1.5rem;
+}
+
+.auth-journey-path {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.auth-journey-path .journey-step {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.auth-journey-path .journey-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  display: inline-block;
+}
+
+.auth-journey-path .journey-arrow {
+  color: var(--color-border);
+}
+
+.auth-form-panel {
+  flex: 1 1 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: var(--color-bg);
+}
+
+.auth-form-card {
+  width: 100%;
+  max-width: 360px;
+}
+
+.auth-form-card h2 {
+  margin-bottom: 1.5rem;
+}
+
+.form-field {
+  margin-bottom: 1rem;
+}
+
+.form-field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  background-color: var(--color-surface);
+}
+
+.form-field input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.form-hint {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 0.3rem;
+}
+
+.form-forgot-link {
+  display: block;
+  text-align: end;
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  margin: -0.5rem 0 1.25rem;
+}
+
+.form-check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.form-check-row input {
+  margin-top: 0.2rem;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+.btn-google {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-pill);
+  padding: 0.65rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.btn-google .g-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  background: conic-gradient(#4285F4 0deg 90deg, #34A853 90deg 180deg, #FBBC05 180deg 270deg, #EA4335 270deg 360deg);
+  display: inline-block;
+}
+
+.auth-switch-text {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 1.5rem;
+  color: var(--color-text-muted);
+}
+
+.auth-switch-text a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-trust-text {
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  margin-top: 1.25rem;
+}
+
+.btn-brand.full-width {
+  width: 100%;
+  justify-content: center;
+}
+
+.auth-welcome-card {
+  text-align: center;
+}
+
+.auth-welcome-card .welcome-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}

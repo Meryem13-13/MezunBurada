@@ -285,4 +285,76 @@
   <data name="LevelBeginner" xml:space="preserve">
     <value>Başlangıç</value>
   </data>
+  <data name="LoginIllustrationHeadline" xml:space="preserve">
+    <value>Kariyer yolculuğuna kaldığın yerden devam et.</value>
+  </data>
+  <data name="LoginFormTitle" xml:space="preserve">
+    <value>Tekrar hoş geldin.</value>
+  </data>
+  <data name="RegisterHeadline" xml:space="preserve">
+    <value>Kariyer yolculuğuna başla.</value>
+  </data>
+  <data name="AuthSubtitle" xml:space="preserve">
+    <value>Yol haritanı kaydet, ilerlemeni takip et ve hedeflerine adım adım yaklaş.</value>
+  </data>
+  <data name="EmailLabel" xml:space="preserve">
+    <value>E-posta</value>
+  </data>
+  <data name="EmailPlaceholder" xml:space="preserve">
+    <value>ornek@email.com</value>
+  </data>
+  <data name="PasswordLabel" xml:space="preserve">
+    <value>Şifre</value>
+  </data>
+  <data name="PasswordMinHint" xml:space="preserve">
+    <value>En az 8 karakter</value>
+  </data>
+  <data name="ForgotPasswordLabel" xml:space="preserve">
+    <value>Şifremi unuttum</value>
+  </data>
+  <data name="LoginButtonLabel" xml:space="preserve">
+    <value>Giriş Yap</value>
+  </data>
+  <data name="RegisterButtonLabel" xml:space="preserve">
+    <value>Ücretsiz Hesap Oluştur</value>
+  </data>
+  <data name="OrDividerLabel" xml:space="preserve">
+    <value>veya</value>
+  </data>
+  <data name="GoogleContinueLabel" xml:space="preserve">
+    <value>Google ile devam et</value>
+  </data>
+  <data name="NoAccountLabel" xml:space="preserve">
+    <value>Hesabın yok mu?</value>
+  </data>
+  <data name="HaveAccountLabel" xml:space="preserve">
+    <value>Zaten hesabın var mı?</value>
+  </data>
+  <data name="SignUpLinkLabel" xml:space="preserve">
+    <value>Kayıt Ol</value>
+  </data>
+  <data name="FullNameLabel" xml:space="preserve">
+    <value>Ad Soyad</value>
+  </data>
+  <data name="TermsAgreementText" xml:space="preserve">
+    <value>Kullanım Şartları ve Gizlilik Politikası'nı kabul ediyorum.</value>
+  </data>
+  <data name="TrustText" xml:space="preserve">
+    <value>Bilgilerin güvenle saklanır ve izin olmadan paylaşılmaz.</value>
+  </data>
+  <data name="JourneyStepInterestShort" xml:space="preserve">
+    <value>İlgi</value>
+  </data>
+  <data name="JourneyStepCareer" xml:space="preserve">
+    <value>Kariyer</value>
+  </data>
+  <data name="WelcomeSuccessTitle" xml:space="preserve">
+    <value>Hoş geldin! 🎉</value>
+  </data>
+  <data name="WelcomeSuccessText" xml:space="preserve">
+    <value>Şimdi kariyer yolculuğunu birlikte başlatabilirsin.</value>
+  </data>
+  <data name="StartTestLabel" xml:space="preserve">
+    <value>Teste Başla</value>
+  </data>
 </root>

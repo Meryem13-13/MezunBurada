@@ -1,0 +1,43 @@
+@page "/kayit"
+@model MezunBurada.Web.Pages.Account.KayitModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "_AuthLayout";
+    ViewData["Title"] = Localizer["RegisterHeadline"];
+    ViewData["AuthHeadlineKey"] = "RegisterHeadline";
+}
+
+<div class="auth-form-card">
+    <h2>@Localizer["RegisterHeadline"]</h2>
+    <form method="post">
+        <div class="form-field">
+            <label for="fullName">@Localizer["FullNameLabel"]</label>
+            <input type="text" id="fullName" name="fullName" placeholder="@Localizer["FullNameLabel"]" />
+        </div>
+        <div class="form-field">
+            <label for="email">@Localizer["EmailLabel"]</label>
+            <input type="email" id="email" name="email" placeholder="@Localizer["EmailPlaceholder"]" />
+        </div>
+        <div class="form-field">
+            <label for="password">@Localizer["PasswordLabel"]</label>
+            <input type="password" id="password" name="password" />
+            <div class="form-hint">@Localizer["PasswordMinHint"]</div>
+        </div>
+        <label class="form-check-row">
+            <input type="checkbox" name="acceptTerms" />
+            <span>@Localizer["TermsAgreementText"]</span>
+        </label>
+
+        <button type="submit" class="btn-brand full-width">@Localizer["RegisterButtonLabel"] &rarr;</button>
+
+        <div class="auth-divider">@Localizer["OrDividerLabel"]</div>
+
+        <a href="#" class="btn-google"><span class="g-icon"></span> @Localizer["GoogleContinueLabel"]</a>
+
+        <p class="auth-switch-text">
+            @Localizer["HaveAccountLabel"] <a href="/giris">@Localizer["LoginButtonLabel"]</a>
+        </p>
+        <p class="auth-trust-text">@Localizer["TrustText"]</p>
+    </form>
+</div>
