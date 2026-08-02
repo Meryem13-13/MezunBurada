@@ -330,3 +330,186 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
   height: 0.3rem;
 }
+
+/* ==========================================================================
+   Seviye Testi — two-column header, context card, A/B/C/D answer grid,
+   difficulty dots
+   ========================================================================== */
+.level-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.level-heading {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.level-header-progress {
+  min-width: 220px;
+  flex: 1 1 260px;
+}
+
+.level-header-progress .stepper {
+  justify-content: flex-end;
+  margin-bottom: 0.35rem;
+}
+
+.level-header-progress .step-indicator-label {
+  text-align: end;
+}
+
+.progress-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.context-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.context-card .option-icon {
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.context-card .context-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.context-card .context-subtitle {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.context-card .context-badge {
+  margin-inline-start: auto;
+  background-color: var(--color-blush-light);
+  color: var(--color-primary);
+  border-radius: var(--radius-pill);
+  padding: 0.3rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.answer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 576px) {
+  .answer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.answer-option {
+  position: relative;
+  display: block;
+  width: 100%;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem 2.5rem 1rem 1rem;
+  cursor: pointer;
+  text-align: start;
+  transition: border-color 0.15s ease-in-out;
+}
+
+[dir="rtl"] .answer-option {
+  padding: 1rem 1rem 1rem 2.5rem;
+}
+
+.answer-option:hover {
+  border-color: var(--color-primary-light);
+}
+
+.answer-option.selected {
+  background-color: var(--color-blush-light);
+  border-color: var(--color-primary);
+}
+
+.answer-option .answer-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background-color: var(--color-blush-light);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.6rem;
+}
+
+.answer-option.selected .answer-letter {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.answer-option .answer-text {
+  font-weight: 500;
+}
+
+.answer-option .answer-radio {
+  position: absolute;
+  top: 1rem;
+  inset-inline-end: 1rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+}
+
+.answer-option.selected .answer-radio {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: #fff;
+}
+
+.difficulty-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+}
+
+.difficulty-dots .dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--color-border);
+  display: inline-block;
+}
+
+.difficulty-dots .dot.filled {
+  background-color: var(--color-primary);
+}

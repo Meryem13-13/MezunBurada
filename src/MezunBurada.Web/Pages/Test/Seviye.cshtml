@@ -1,0 +1,81 @@
+@page "/test/seviye"
+@model MezunBurada.Web.Pages.Test.SeviyeModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "_TestLayout";
+    ViewData["Title"] = Localizer["LevelTestTitle"];
+    ViewData["TestTitle"] = Localizer["CareerTestTitle"];
+    var questionProgress = (int)Math.Round(Model.CurrentQuestion / (double)Model.TotalQuestions * 100);
+}
+
+<div class="level-header">
+    <h1 class="level-heading">@Localizer["LevelTestTitle"]</h1>
+    <div class="level-header-progress">
+        <div class="step-indicator-label">@Localizer["StepIndicatorLabel"] <span class="ltr-nums">@Model.CurrentStep/@Model.TotalSteps</span></div>
+        <div class="stepper">
+            <span class="step-label done"><span class="step-dot"></span> @Localizer["TestStepBolum"]</span>
+            <span class="step-arrow">&rarr;</span>
+            <span class="step-label done"><span class="step-dot"></span> @Localizer["TestStepIlgiAlani"]</span>
+            <span class="step-arrow">&rarr;</span>
+            <span class="step-label active"><span class="step-dot"></span> @Localizer["TestStepSeviye"]</span>
+        </div>
+    </div>
+</div>
+
+<div class="progress-label-row">
+    <span>@Localizer["QuestionIndicatorLabel"] <span class="ltr-nums">@Model.CurrentQuestion / @Model.TotalQuestions</span></span>
+    <span class="ltr-nums">%@questionProgress</span>
+</div>
+<div class="progress-track">
+    <div class="progress-fill" style="width: @(questionProgress)%;"></div>
+</div>
+
+<div class="context-card">
+    <span class="option-icon">🧠</span>
+    <div>
+        <div class="context-title">@Localizer[Model.DepartmentKey] &middot; @Localizer[Model.SubFieldKey]</div>
+    </div>
+    <span class="context-badge">@Localizer["LevelTestTitle"]</span>
+</div>
+
+<h2 class="question-title">@Localizer["OverfittingQuestionText"]</h2>
+
+<form method="post">
+    <div class="answer-grid">
+        @foreach (var option in Model.Options)
+        {
+            <button type="submit" name="optionLetter" value="@option.Letter"
+                    class="answer-option @(option.IsSelected ? "selected" : "")">
+                <span class="answer-radio">@(option.IsSelected ? "✓" : "")</span>
+                <span class="answer-letter">@option.Letter</span>
+                <div class="answer-text">@Localizer[option.TextKey]</div>
+            </button>
+        }
+    </div>
+
+    <div class="difficulty-dots">
+        @Localizer["DifficultyLabel"]:
+        @for (var i = 1; i <= Model.MaxDifficulty; i++)
+        {
+            <span class="dot @(i <= Model.Difficulty ? "filled" : "")"></span>
+        }
+    </div>
+
+    <div class="test-footer">
+        <a class="btn-brand-outline" href="/test/ilgi-alani">&larr; @Localizer["BackLabel"]</a>
+        <div class="encouragement">
+            <p>@(Model.IsLastQuestion ? Localizer["LastQuestionEncouragementText"] : Localizer["LevelEncouragementText"])</p>
+            <div class="progress-track">
+                <div class="progress-fill" style="width: @(questionProgress)%;"></div>
+            </div>
+        </div>
+        <button type="submit" name="action" value="continue" class="btn-brand">
+            @(Model.IsLastQuestion ? Localizer["FinishTestLabel"] : Localizer["NextQuestionLabel"])
+            @if (!Model.IsLastQuestion)
+            {
+                <text>&rarr;</text>
+            }
+        </button>
+    </div>
+</form>

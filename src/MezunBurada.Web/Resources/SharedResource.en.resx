@@ -90,4 +90,43 @@
   <data name="OptionDataDesc" xml:space="preserve">
     <value>Turning raw data into meaningful insight excites you.</value>
   </data>
+  <data name="LevelTestTitle" xml:space="preserve">
+    <value>Level Assessment</value>
+  </data>
+  <data name="DifficultyLabel" xml:space="preserve">
+    <value>Difficulty</value>
+  </data>
+  <data name="QuestionIndicatorLabel" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="NextQuestionLabel" xml:space="preserve">
+    <value>Next Question</value>
+  </data>
+  <data name="FinishTestLabel" xml:space="preserve">
+    <value>Finish Test</value>
+  </data>
+  <data name="LevelEncouragementText" xml:space="preserve">
+    <value>We're gauging your level from your answers. We'll reflect the results in your roadmap.</value>
+  </data>
+  <data name="LastQuestionEncouragementText" xml:space="preserve">
+    <value>Last step! You're about to see your results.</value>
+  </data>
+  <data name="DeptComputerEngineering" xml:space="preserve">
+    <value>Computer Engineering</value>
+  </data>
+  <data name="OverfittingQuestionText" xml:space="preserve">
+    <value>“You suspect a machine learning model is overfitting. Which of the following methods can help reduce overfitting?”</value>
+  </data>
+  <data name="OverfittingOptionA" xml:space="preserve">
+    <value>Increase the model's complexity</value>
+  </data>
+  <data name="OverfittingOptionB" xml:space="preserve">
+    <value>Use dropout</value>
+  </data>
+  <data name="OverfittingOptionC" xml:space="preserve">
+    <value>Reduce the training data</value>
+  </data>
+  <data name="OverfittingOptionD" xml:space="preserve">
+    <value>Keep increasing the number of epochs</value>
+  </data>
 </root>

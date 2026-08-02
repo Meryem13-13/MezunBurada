@@ -19,7 +19,7 @@
     <span class="step-label"><span class="step-dot"></span> @Localizer["TestStepSeviye"]</span>
 </div>
 
-<div class="question-progress-label"><span class="ltr-nums">@Model.CurrentQuestion / @Model.TotalQuestions</span></div>
+<div class="question-progress-label">@Localizer["QuestionIndicatorLabel"] <span class="ltr-nums">@Model.CurrentQuestion / @Model.TotalQuestions</span></div>
 <div class="progress-track">
     <div class="progress-fill" style="width: @(questionProgress)%;"></div>
 </div>

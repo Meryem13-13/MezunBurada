@@ -90,4 +90,43 @@
   <data name="OptionDataDesc" xml:space="preserve">
     <value>Verilerden anlamlı sonuçlar çıkarmak seni heyecanlandırıyor.</value>
   </data>
+  <data name="LevelTestTitle" xml:space="preserve">
+    <value>Seviye Tespit Testi</value>
+  </data>
+  <data name="DifficultyLabel" xml:space="preserve">
+    <value>Zorluk</value>
+  </data>
+  <data name="QuestionIndicatorLabel" xml:space="preserve">
+    <value>Soru</value>
+  </data>
+  <data name="NextQuestionLabel" xml:space="preserve">
+    <value>Sonraki Soru</value>
+  </data>
+  <data name="FinishTestLabel" xml:space="preserve">
+    <value>Testi Tamamla</value>
+  </data>
+  <data name="LevelEncouragementText" xml:space="preserve">
+    <value>Cevaplarından seviyeni belirliyoruz. Sonuçlarını yol haritana yansıtacağız.</value>
+  </data>
+  <data name="LastQuestionEncouragementText" xml:space="preserve">
+    <value>Son adım! Sonuçlarını görmek üzeresin.</value>
+  </data>
+  <data name="DeptComputerEngineering" xml:space="preserve">
+    <value>Bilgisayar Mühendisliği</value>
+  </data>
+  <data name="OverfittingQuestionText" xml:space="preserve">
+    <value>“Bir makine öğrenmesi modelinde overfitting oluştuğunu düşünüyorsun. Aşağıdaki yöntemlerden hangisi overfitting'i azaltmaya yardımcı olabilir?”</value>
+  </data>
+  <data name="OverfittingOptionA" xml:space="preserve">
+    <value>Modelin karmaşıklığını artırmak</value>
+  </data>
+  <data name="OverfittingOptionB" xml:space="preserve">
+    <value>Dropout kullanmak</value>
+  </data>
+  <data name="OverfittingOptionC" xml:space="preserve">
+    <value>Eğitim verisini azaltmak</value>
+  </data>
+  <data name="OverfittingOptionD" xml:space="preserve">
+    <value>Epoch sayısını sürekli artırmak</value>
+  </data>
 </root>

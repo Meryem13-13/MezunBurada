@@ -90,4 +90,43 @@
   <data name="OptionDataDesc" xml:space="preserve">
     <value>تحويل البيانات الخام إلى رؤى ذات معنى يثير حماسك.</value>
   </data>
+  <data name="LevelTestTitle" xml:space="preserve">
+    <value>اختبار تحديد المستوى</value>
+  </data>
+  <data name="DifficultyLabel" xml:space="preserve">
+    <value>الصعوبة</value>
+  </data>
+  <data name="QuestionIndicatorLabel" xml:space="preserve">
+    <value>سؤال</value>
+  </data>
+  <data name="NextQuestionLabel" xml:space="preserve">
+    <value>السؤال التالي</value>
+  </data>
+  <data name="FinishTestLabel" xml:space="preserve">
+    <value>إنهاء الاختبار</value>
+  </data>
+  <data name="LevelEncouragementText" xml:space="preserve">
+    <value>نحدد مستواك بناءً على إجاباتك. سنعكس النتائج في خارطة طريقك.</value>
+  </data>
+  <data name="LastQuestionEncouragementText" xml:space="preserve">
+    <value>الخطوة الأخيرة! أنت على وشك رؤية نتائجك.</value>
+  </data>
+  <data name="DeptComputerEngineering" xml:space="preserve">
+    <value>هندسة الحاسوب</value>
+  </data>
+  <data name="OverfittingQuestionText" xml:space="preserve">
+    <value>«تعتقد أن نموذج تعلم آلي يعاني من الإفراط في التخصيص (overfitting). أي من الطرق التالية قد يساعد في تقليله؟»</value>
+  </data>
+  <data name="OverfittingOptionA" xml:space="preserve">
+    <value>زيادة تعقيد النموذج</value>
+  </data>
+  <data name="OverfittingOptionB" xml:space="preserve">
+    <value>استخدام Dropout</value>
+  </data>
+  <data name="OverfittingOptionC" xml:space="preserve">
+    <value>تقليل بيانات التدريب</value>
+  </data>
+  <data name="OverfittingOptionD" xml:space="preserve">
+    <value>الاستمرار في زيادة عدد الحقب (Epochs)</value>
+  </data>
 </root>
