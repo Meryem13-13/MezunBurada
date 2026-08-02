@@ -129,4 +129,160 @@
   <data name="OverfittingOptionD" xml:space="preserve">
     <value>Keep increasing the number of epochs</value>
   </data>
+  <data name="PanelNavDashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="PanelNavRoadmap" xml:space="preserve">
+    <value>My Roadmap</value>
+  </data>
+  <data name="PanelNavCompleted" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="PanelNavAchievements" xml:space="preserve">
+    <value>Achievements</value>
+  </data>
+  <data name="PanelNavProfile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="PanelNavSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="PanelLogout" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
+  <data name="WelcomeBackTitle" xml:space="preserve">
+    <value>Welcome back, {0} 👋</value>
+  </data>
+  <data name="WelcomeBackSubtitle" xml:space="preserve">
+    <value>How about taking one more small step in your career journey today?</value>
+  </data>
+  <data name="RoadmapSectionLabel" xml:space="preserve">
+    <value>Backend Developer Roadmap</value>
+  </data>
+  <data name="CareerPathTitle" xml:space="preserve">
+    <value>Backend Developer</value>
+  </data>
+  <data name="RoadmapCardSubtitle" xml:space="preserve">
+    <value>Your Career Roadmap</value>
+  </data>
+  <data name="StepsCompletedLabel" xml:space="preserve">
+    <value>steps completed</value>
+  </data>
+  <data name="ContinueFromWhereLeftOff" xml:space="preserve">
+    <value>Continue Where You Left Off</value>
+  </data>
+  <data name="NextStepLabel" xml:space="preserve">
+    <value>Next Step</value>
+  </data>
+  <data name="StartStepLabel" xml:space="preserve">
+    <value>Start Step</value>
+  </data>
+  <data name="YourRoadmapCardTitle" xml:space="preserve">
+    <value>Your Roadmap</value>
+  </data>
+  <data name="ViewFullRoadmap" xml:space="preserve">
+    <value>View Full Roadmap</value>
+  </data>
+  <data name="StatRoadmapLabel" xml:space="preserve">
+    <value>Roadmap</value>
+  </data>
+  <data name="StatCompletedSteps" xml:space="preserve">
+    <value>Completed Steps</value>
+  </data>
+  <data name="StatLearningHours" xml:space="preserve">
+    <value>Learning Hours</value>
+  </data>
+  <data name="StatProjects" xml:space="preserve">
+    <value>Projects</value>
+  </data>
+  <data name="TestResultsCardTitle" xml:space="preserve">
+    <value>Your Test Results</value>
+  </data>
+  <data name="TestResultCareerMatch" xml:space="preserve">
+    <value>Career Match</value>
+  </data>
+  <data name="RecentActivityCardTitle" xml:space="preserve">
+    <value>Recent Activity</value>
+  </data>
+  <data name="ViewResults" xml:space="preserve">
+    <value>View Results</value>
+  </data>
+  <data name="AchievementsCardTitle" xml:space="preserve">
+    <value>Your Achievements</value>
+  </data>
+  <data name="ViewAllAchievements" xml:space="preserve">
+    <value>View All Achievements</value>
+  </data>
+  <data name="AchievementFirstStep" xml:space="preserve">
+    <value>First Step</value>
+  </data>
+  <data name="AchievementTestCompleted" xml:space="preserve">
+    <value>Test Completed</value>
+  </data>
+  <data name="AchievementStreak" xml:space="preserve">
+    <value>3-Day Streak</value>
+  </data>
+  <data name="TodaySuggestionCardTitle" xml:space="preserve">
+    <value>Today's Suggestion</value>
+  </data>
+  <data name="TodaySuggestionText" xml:space="preserve">
+    <value>Do 30 minutes of GitHub practice.</value>
+  </data>
+  <data name="StepTemelProgramlama" xml:space="preserve">
+    <value>Programming Basics</value>
+  </data>
+  <data name="StepGitGithub" xml:space="preserve">
+    <value>Git &amp; GitHub</value>
+  </data>
+  <data name="StepCSharpDotnet" xml:space="preserve">
+    <value>C# / .NET</value>
+  </data>
+  <data name="StepCSharpDotnetTemelleri" xml:space="preserve">
+    <value>C# / .NET Basics</value>
+  </data>
+  <data name="StepSql" xml:space="preserve">
+    <value>SQL</value>
+  </data>
+  <data name="StepRestApi" xml:space="preserve">
+    <value>REST API</value>
+  </data>
+  <data name="StepGercekProje" xml:space="preserve">
+    <value>Real Project</value>
+  </data>
+  <data name="StepDurationEstimate" xml:space="preserve">
+    <value>4-6 weeks</value>
+  </data>
+  <data name="StepLevelBadgeText" xml:space="preserve">
+    <value>Beginner · Intermediate</value>
+  </data>
+  <data name="ActivityGitHubDone" xml:space="preserve">
+    <value>Git &amp; GitHub completed</value>
+  </data>
+  <data name="ActivityTemelProgramlamaDone" xml:space="preserve">
+    <value>Programming Basics completed</value>
+  </data>
+  <data name="ActivityCSharpStarted" xml:space="preserve">
+    <value>Started C# / .NET</value>
+  </data>
+  <data name="TimeAgo2Days" xml:space="preserve">
+    <value>2 days ago</value>
+  </data>
+  <data name="TimeAgo5Days" xml:space="preserve">
+    <value>5 days ago</value>
+  </data>
+  <data name="TimeAgoToday" xml:space="preserve">
+    <value>today</value>
+  </data>
+  <data name="EmptyStateTitle" xml:space="preserve">
+    <value>Let's start your career journey.</value>
+  </data>
+  <data name="EmptyStateText" xml:space="preserve">
+    <value>You don't have a career roadmap yet. Take a short test and discover your own path.</value>
+  </data>
+  <data name="StartFreeTestLabel" xml:space="preserve">
+    <value>Start Free Test</value>
+  </data>
+  <data name="LevelBeginner" xml:space="preserve">
+    <value>Beginner</value>
+  </data>
 </root>

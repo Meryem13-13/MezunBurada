@@ -1,0 +1,82 @@
+@using System.Globalization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    var currentCulture = CultureInfo.CurrentUICulture;
+    var isRtl = currentCulture.TextInfo.IsRightToLeft;
+    var returnUrl = Context.Request.Path + Context.Request.QueryString;
+    var activeTab = ViewData["ActiveTab"] as string ?? "dashboard";
+}
+<!DOCTYPE html>
+<html lang="@currentCulture.TwoLetterISOLanguageName" dir="@(isRtl ? "rtl" : "ltr")">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - @Localizer["SiteTitle"]</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    @if (isRtl)
+    {
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />
+    }
+    else
+    {
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    }
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="panel-shell">
+        <aside class="panel-sidebar">
+            <div class="brand-mark-row">
+                <span class="brand-mark">M</span>
+                <span>@Localizer["SiteTitle"]</span>
+            </div>
+            <ul class="panel-nav">
+                <li><a href="/panel" class="@(activeTab == "dashboard" ? "active" : "")">🏠 @Localizer["PanelNavDashboard"]</a></li>
+                <li><a href="#" class="@(activeTab == "roadmap" ? "active" : "")">🗺️ @Localizer["PanelNavRoadmap"]</a></li>
+                <li><a href="#" class="@(activeTab == "completed" ? "active" : "")">✅ @Localizer["PanelNavCompleted"]</a></li>
+                <li><a href="#" class="@(activeTab == "achievements" ? "active" : "")">🏆 @Localizer["PanelNavAchievements"]</a></li>
+                <li><a href="#" class="@(activeTab == "profile" ? "active" : "")">👤 @Localizer["PanelNavProfile"]</a></li>
+                <li><a href="#" class="@(activeTab == "settings" ? "active" : "")">⚙️ @Localizer["PanelNavSettings"]</a></li>
+            </ul>
+            <a href="/" class="panel-logout">↩ @Localizer["PanelLogout"]</a>
+        </aside>
+        <div class="panel-main">
+            <div class="panel-topbar">
+                <nav class="panel-tabs">
+                    <a href="/panel" class="@(activeTab == "dashboard" ? "active" : "")">@Localizer["PanelNavDashboard"]</a>
+                    <a href="#" class="@(activeTab == "roadmap" ? "active" : "")">@Localizer["PanelNavRoadmap"]</a>
+                    <a href="#" class="@(activeTab == "achievements" ? "active" : "")">@Localizer["PanelNavAchievements"]</a>
+                    <a href="#" class="@(activeTab == "profile" ? "active" : "")">@Localizer["PanelNavProfile"]</a>
+                </nav>
+                <div class="panel-topbar-actions">
+                    <div class="dropdown">
+                        <a class="btn-brand-outline dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            @currentCulture.TwoLetterISOLanguageName.ToUpperInvariant()
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/set-language?culture=tr&returnUrl=@Uri.EscapeDataString(returnUrl)">Türkçe</a></li>
+                            <li><a class="dropdown-item" href="/set-language?culture=en&returnUrl=@Uri.EscapeDataString(returnUrl)">English</a></li>
+                            <li><a class="dropdown-item" href="/set-language?culture=ar&returnUrl=@Uri.EscapeDataString(returnUrl)">العربية</a></li>
+                        </ul>
+                    </div>
+                    <span class="panel-bell">🔔<span class="dot"></span></span>
+                    <span class="panel-user">
+                        <span class="panel-avatar">M</span>
+                        Meryem ⌄
+                    </span>
+                </div>
+            </div>
+            <div class="panel-content">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

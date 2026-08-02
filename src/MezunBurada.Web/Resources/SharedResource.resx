@@ -129,4 +129,160 @@
   <data name="OverfittingOptionD" xml:space="preserve">
     <value>Epoch sayısını sürekli artırmak</value>
   </data>
+  <data name="PanelNavDashboard" xml:space="preserve">
+    <value>Panelim</value>
+  </data>
+  <data name="PanelNavRoadmap" xml:space="preserve">
+    <value>Yol Haritam</value>
+  </data>
+  <data name="PanelNavCompleted" xml:space="preserve">
+    <value>Tamamlananlar</value>
+  </data>
+  <data name="PanelNavAchievements" xml:space="preserve">
+    <value>Başarılarım</value>
+  </data>
+  <data name="PanelNavProfile" xml:space="preserve">
+    <value>Profilim</value>
+  </data>
+  <data name="PanelNavSettings" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="PanelLogout" xml:space="preserve">
+    <value>Çıkış Yap</value>
+  </data>
+  <data name="WelcomeBackTitle" xml:space="preserve">
+    <value>Tekrar hoş geldin, {0} 👋</value>
+  </data>
+  <data name="WelcomeBackSubtitle" xml:space="preserve">
+    <value>Kariyer yolculuğunda bugün küçük bir adım daha atmaya ne dersin?</value>
+  </data>
+  <data name="RoadmapSectionLabel" xml:space="preserve">
+    <value>Backend Developer Yol Haritası</value>
+  </data>
+  <data name="CareerPathTitle" xml:space="preserve">
+    <value>Backend Developer</value>
+  </data>
+  <data name="RoadmapCardSubtitle" xml:space="preserve">
+    <value>Kariyer Yol Haritan</value>
+  </data>
+  <data name="StepsCompletedLabel" xml:space="preserve">
+    <value>adım tamamlandı</value>
+  </data>
+  <data name="ContinueFromWhereLeftOff" xml:space="preserve">
+    <value>Kaldığın Yerden Devam Et</value>
+  </data>
+  <data name="NextStepLabel" xml:space="preserve">
+    <value>Sıradaki Adım</value>
+  </data>
+  <data name="StartStepLabel" xml:space="preserve">
+    <value>Adıma Başla</value>
+  </data>
+  <data name="YourRoadmapCardTitle" xml:space="preserve">
+    <value>Yol Haritan</value>
+  </data>
+  <data name="ViewFullRoadmap" xml:space="preserve">
+    <value>Tüm Yol Haritasını Gör</value>
+  </data>
+  <data name="StatRoadmapLabel" xml:space="preserve">
+    <value>Yol Haritası</value>
+  </data>
+  <data name="StatCompletedSteps" xml:space="preserve">
+    <value>Tamamlanan Adım</value>
+  </data>
+  <data name="StatLearningHours" xml:space="preserve">
+    <value>Öğrenme Saati</value>
+  </data>
+  <data name="StatProjects" xml:space="preserve">
+    <value>Proje</value>
+  </data>
+  <data name="TestResultsCardTitle" xml:space="preserve">
+    <value>Test Sonuçların</value>
+  </data>
+  <data name="TestResultCareerMatch" xml:space="preserve">
+    <value>Kariyer Eşleşmesi</value>
+  </data>
+  <data name="RecentActivityCardTitle" xml:space="preserve">
+    <value>Son Aktiviteler</value>
+  </data>
+  <data name="ViewResults" xml:space="preserve">
+    <value>Sonuçlarını Gör</value>
+  </data>
+  <data name="AchievementsCardTitle" xml:space="preserve">
+    <value>Başarıların</value>
+  </data>
+  <data name="ViewAllAchievements" xml:space="preserve">
+    <value>Tüm Başarıları Gör</value>
+  </data>
+  <data name="AchievementFirstStep" xml:space="preserve">
+    <value>İlk Adım</value>
+  </data>
+  <data name="AchievementTestCompleted" xml:space="preserve">
+    <value>Testi Tamamladın</value>
+  </data>
+  <data name="AchievementStreak" xml:space="preserve">
+    <value>3 Günlük Seri</value>
+  </data>
+  <data name="TodaySuggestionCardTitle" xml:space="preserve">
+    <value>Bugün İçin Önerimiz</value>
+  </data>
+  <data name="TodaySuggestionText" xml:space="preserve">
+    <value>30 dakika GitHub pratiği yap.</value>
+  </data>
+  <data name="StepTemelProgramlama" xml:space="preserve">
+    <value>Temel Programlama</value>
+  </data>
+  <data name="StepGitGithub" xml:space="preserve">
+    <value>Git &amp; GitHub</value>
+  </data>
+  <data name="StepCSharpDotnet" xml:space="preserve">
+    <value>C# / .NET</value>
+  </data>
+  <data name="StepCSharpDotnetTemelleri" xml:space="preserve">
+    <value>C# / .NET Temelleri</value>
+  </data>
+  <data name="StepSql" xml:space="preserve">
+    <value>SQL</value>
+  </data>
+  <data name="StepRestApi" xml:space="preserve">
+    <value>REST API</value>
+  </data>
+  <data name="StepGercekProje" xml:space="preserve">
+    <value>Gerçek Proje</value>
+  </data>
+  <data name="StepDurationEstimate" xml:space="preserve">
+    <value>4-6 hafta</value>
+  </data>
+  <data name="StepLevelBadgeText" xml:space="preserve">
+    <value>Başlangıç · Orta</value>
+  </data>
+  <data name="ActivityGitHubDone" xml:space="preserve">
+    <value>Git &amp; GitHub tamamlandı</value>
+  </data>
+  <data name="ActivityTemelProgramlamaDone" xml:space="preserve">
+    <value>Temel Programlama tamamlandı</value>
+  </data>
+  <data name="ActivityCSharpStarted" xml:space="preserve">
+    <value>C# / .NET'e başlandı</value>
+  </data>
+  <data name="TimeAgo2Days" xml:space="preserve">
+    <value>2 gün önce</value>
+  </data>
+  <data name="TimeAgo5Days" xml:space="preserve">
+    <value>5 gün önce</value>
+  </data>
+  <data name="TimeAgoToday" xml:space="preserve">
+    <value>bugün</value>
+  </data>
+  <data name="EmptyStateTitle" xml:space="preserve">
+    <value>Kariyer yolculuğuna başlayalım.</value>
+  </data>
+  <data name="EmptyStateText" xml:space="preserve">
+    <value>Henüz bir kariyer yol haritan yok. Kısa bir testi tamamla ve sana özel yolunu keşfet.</value>
+  </data>
+  <data name="StartFreeTestLabel" xml:space="preserve">
+    <value>Ücretsiz Teste Başla</value>
+  </data>
+  <data name="LevelBeginner" xml:space="preserve">
+    <value>Başlangıç</value>
+  </data>
 </root>

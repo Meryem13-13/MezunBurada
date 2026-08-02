@@ -1,0 +1,126 @@
+@page "/panel"
+@model MezunBurada.Web.Pages.Panel.IndexModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "_PanelLayout";
+    ViewData["Title"] = Localizer["PanelNavDashboard"];
+    ViewData["ActiveTab"] = "dashboard";
+}
+
+<h1 class="panel-welcome-title">@Localizer["WelcomeBackTitle", Model.UserName]</h1>
+<p class="panel-welcome-subtitle">@Localizer["WelcomeBackSubtitle"]</p>
+
+<div class="panel-section-label">@Localizer["RoadmapSectionLabel"]</div>
+
+<div class="panel-grid">
+    <div>
+        <div class="panel-card">
+            <div class="roadmap-summary-header">
+                <div class="progress-ring" style="--pct: @Model.RoadmapPercent;">
+                    <div class="progress-ring-inner">%@Model.RoadmapPercent</div>
+                </div>
+                <div>
+                    <div class="roadmap-title">@Localizer["CareerPathTitle"]</div>
+                    <div class="roadmap-subtitle">@Localizer["RoadmapCardSubtitle"]</div>
+                </div>
+            </div>
+            <a href="#" class="roadmap-continue-link">@Localizer["ContinueFromWhereLeftOff"] &rarr;</a>
+
+            <div class="next-step-box">
+                <div>
+                    <div class="next-step-label">@Localizer["NextStepLabel"]</div>
+                    <div class="next-step-title">@Localizer["StepCSharpDotnetTemelleri"]</div>
+                    <div class="next-step-meta">@Localizer["StepDurationEstimate"] &middot; @Localizer["StepLevelBadgeText"]</div>
+                </div>
+                <a href="#" class="btn-brand">@Localizer["StartStepLabel"] &rarr;</a>
+            </div>
+        </div>
+
+        <div class="panel-card">
+            <div class="panel-card-title">@Localizer["YourRoadmapCardTitle"]</div>
+            <ul class="roadmap-checklist">
+                @foreach (var step in Model.Steps)
+                {
+                    var stateClass = step.State switch
+                    {
+                        MezunBurada.Web.Pages.Panel.IndexModel.StepState.Done => "done",
+                        MezunBurada.Web.Pages.Panel.IndexModel.StepState.Active => "active",
+                        _ => "upcoming",
+                    };
+                    <li class="@stateClass">
+                        <span class="check-icon">@(step.State == MezunBurada.Web.Pages.Panel.IndexModel.StepState.Done ? "✓" : "")</span>
+                        @Localizer[step.TitleKey]
+                    </li>
+                }
+            </ul>
+            <a href="#" class="link-arrow">@Localizer["ViewFullRoadmap"] &rarr;</a>
+        </div>
+
+        <div class="stat-tile-grid">
+            <div class="stat-tile">
+                <div class="stat-value">%@Model.RoadmapPercent</div>
+                <div class="stat-label">@Localizer["StatRoadmapLabel"]</div>
+            </div>
+            <div class="stat-tile">
+                <div class="stat-value ltr-nums">@Model.StepsCompleted</div>
+                <div class="stat-label">@Localizer["StatCompletedSteps"]</div>
+            </div>
+            <div class="stat-tile">
+                <div class="stat-value ltr-nums">@Model.LearningHours</div>
+                <div class="stat-label">@Localizer["StatLearningHours"]</div>
+            </div>
+            <div class="stat-tile">
+                <div class="stat-value ltr-nums">@Model.Projects</div>
+                <div class="stat-label">@Localizer["StatProjects"]</div>
+            </div>
+        </div>
+
+        <div class="panel-card">
+            <div class="panel-card-title">@Localizer["TestResultsCardTitle"]</div>
+            <ul class="kv-list">
+                <li><span class="kv-key">@Localizer["TestStepBolum"]</span><span class="kv-value">@Localizer["DeptComputerEngineering"]</span></li>
+                <li><span class="kv-key">@Localizer["TestStepIlgiAlani"]</span><span class="kv-value">@Localizer["OptionWebBackendTitle"]</span></li>
+                <li><span class="kv-key">@Localizer["TestStepSeviye"]</span><span class="kv-value">@Localizer["LevelBeginner"]</span></li>
+                <li><span class="kv-key">@Localizer["TestResultCareerMatch"]</span><span class="kv-value ltr-nums">%@Model.CareerMatchPercent</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div>
+        <div class="panel-card">
+            <div class="panel-card-title">@Localizer["RecentActivityCardTitle"]</div>
+            <ul class="activity-list">
+                @foreach (var activity in Model.Activities)
+                {
+                    <li>
+                        <span class="activity-dot"></span>
+                        @Localizer[activity.TextKey]
+                        <span class="activity-time">@Localizer[activity.TimeKey]</span>
+                    </li>
+                }
+            </ul>
+            <a href="#" class="link-arrow">@Localizer["ViewResults"] &rarr;</a>
+        </div>
+
+        <div class="panel-card">
+            <div class="panel-card-title">@Localizer["AchievementsCardTitle"]</div>
+            <div class="badge-row">
+                @foreach (var achievement in Model.Achievements)
+                {
+                    <div class="badge-item">
+                        <div class="badge-icon">@achievement.Icon</div>
+                        <div class="badge-label">@Localizer[achievement.LabelKey]</div>
+                    </div>
+                }
+            </div>
+            <a href="#" class="link-arrow">@Localizer["ViewAllAchievements"] &rarr;</a>
+        </div>
+
+        <div class="panel-card">
+            <div class="panel-card-title">@Localizer["TodaySuggestionCardTitle"]</div>
+            <p class="suggestion-text">@Localizer["TodaySuggestionText"]</p>
+            <a href="#" class="btn-brand">@Localizer["ContinueLabel"] &rarr;</a>
+        </div>
+    </div>
+</div>
