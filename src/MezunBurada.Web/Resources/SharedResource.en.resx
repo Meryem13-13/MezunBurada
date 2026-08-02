@@ -357,4 +357,40 @@
   <data name="StartTestLabel" xml:space="preserve">
     <value>Start the Test</value>
   </data>
+  <data name="DeptSoftwareEngineering" xml:space="preserve">
+    <value>Software Engineering</value>
+  </data>
+  <data name="DeptElectricalEngineering" xml:space="preserve">
+    <value>Electrical-Electronics Engineering</value>
+  </data>
+  <data name="DeptIndustrialEngineering" xml:space="preserve">
+    <value>Industrial Engineering</value>
+  </data>
+  <data name="DeptMechanicalEngineering" xml:space="preserve">
+    <value>Mechanical Engineering</value>
+  </data>
+  <data name="DeptArchitecture" xml:space="preserve">
+    <value>Architecture</value>
+  </data>
+  <data name="DeptBusiness" xml:space="preserve">
+    <value>Business Administration</value>
+  </data>
+  <data name="DeptEconomics" xml:space="preserve">
+    <value>Economics</value>
+  </data>
+  <data name="BolumSecimiQuestion" xml:space="preserve">
+    <value>Which department did you graduate from?</value>
+  </data>
+  <data name="SearchDepartmentPlaceholder" xml:space="preserve">
+    <value>Search your department...</value>
+  </data>
+  <data name="StepSonuc" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="DeptNotFoundText" xml:space="preserve">
+    <value>Don't see your department?</value>
+  </data>
+  <data name="ContactUsLink" xml:space="preserve">
+    <value>write to us</value>
+  </data>
 </root>

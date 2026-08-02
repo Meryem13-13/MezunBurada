@@ -357,4 +357,40 @@
   <data name="StartTestLabel" xml:space="preserve">
     <value>Teste Başla</value>
   </data>
+  <data name="DeptSoftwareEngineering" xml:space="preserve">
+    <value>Yazılım Mühendisliği</value>
+  </data>
+  <data name="DeptElectricalEngineering" xml:space="preserve">
+    <value>Elektrik-Elektronik Mühendisliği</value>
+  </data>
+  <data name="DeptIndustrialEngineering" xml:space="preserve">
+    <value>Endüstri Mühendisliği</value>
+  </data>
+  <data name="DeptMechanicalEngineering" xml:space="preserve">
+    <value>Makine Mühendisliği</value>
+  </data>
+  <data name="DeptArchitecture" xml:space="preserve">
+    <value>Mimarlık</value>
+  </data>
+  <data name="DeptBusiness" xml:space="preserve">
+    <value>İşletme</value>
+  </data>
+  <data name="DeptEconomics" xml:space="preserve">
+    <value>İktisat</value>
+  </data>
+  <data name="BolumSecimiQuestion" xml:space="preserve">
+    <value>Hangi bölümden mezunsun?</value>
+  </data>
+  <data name="SearchDepartmentPlaceholder" xml:space="preserve">
+    <value>Bölümünü ara...</value>
+  </data>
+  <data name="StepSonuc" xml:space="preserve">
+    <value>Sonuç</value>
+  </data>
+  <data name="DeptNotFoundText" xml:space="preserve">
+    <value>Bölümün burada yoksa</value>
+  </data>
+  <data name="ContactUsLink" xml:space="preserve">
+    <value>bize yaz</value>
+  </data>
 </root>
