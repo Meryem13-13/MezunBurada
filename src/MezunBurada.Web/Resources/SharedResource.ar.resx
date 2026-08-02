@@ -27,4 +27,67 @@
   <data name="LanguageLabel" xml:space="preserve">
     <value>اللغة</value>
   </data>
+  <data name="ExitLabel" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="CareerTestTitle" xml:space="preserve">
+    <value>اختبار المسار المهني</value>
+  </data>
+  <data name="TestStepBolum" xml:space="preserve">
+    <value>القسم</value>
+  </data>
+  <data name="TestStepIlgiAlani" xml:space="preserve">
+    <value>مجال الاهتمام</value>
+  </data>
+  <data name="TestStepSeviye" xml:space="preserve">
+    <value>المستوى</value>
+  </data>
+  <data name="StepIndicatorLabel" xml:space="preserve">
+    <value>خطوة</value>
+  </data>
+  <data name="BackLabel" xml:space="preserve">
+    <value>رجوع</value>
+  </data>
+  <data name="ContinueLabel" xml:space="preserve">
+    <value>متابعة</value>
+  </data>
+  <data name="EncouragementText" xml:space="preserve">
+    <value>أنت تقوم بعمل رائع. اقتربت خطوة أخرى من خارطة طريقك.</value>
+  </data>
+  <data name="IlgiAlaniQuestionTitle" xml:space="preserve">
+    <value>أي مجال يثير حماسك أكثر؟</value>
+  </data>
+  <data name="IlgiAlaniQuestionSubtitle" xml:space="preserve">
+    <value>لا توجد إجابة صحيحة أو خاطئة. اختر الأقرب إليك.</value>
+  </data>
+  <data name="OptionAiTitle" xml:space="preserve">
+    <value>الذكاء الاصطناعي وتعلم الآلة</value>
+  </data>
+  <data name="OptionAiDesc" xml:space="preserve">
+    <value>بناء أنظمة ذكية تتعلم من البيانات يثير حماسك.</value>
+  </data>
+  <data name="OptionWebBackendTitle" xml:space="preserve">
+    <value>الويب والخلفية البرمجية</value>
+  </data>
+  <data name="OptionWebBackendDesc" xml:space="preserve">
+    <value>تنجذب إلى بناء الأنظمة خلف المواقع والتطبيقات.</value>
+  </data>
+  <data name="OptionMobileTitle" xml:space="preserve">
+    <value>تطوير تطبيقات الجوال</value>
+  </data>
+  <data name="OptionMobileDesc" xml:space="preserve">
+    <value>إنشاء التطبيقات التي يستخدمها الناس على هواتفهم يثير حماسك.</value>
+  </data>
+  <data name="OptionSecurityTitle" xml:space="preserve">
+    <value>الأمن السيبراني</value>
+  </data>
+  <data name="OptionSecurityDesc" xml:space="preserve">
+    <value>حماية الأنظمة والبيانات واكتشاف الثغرات يثير اهتمامك.</value>
+  </data>
+  <data name="OptionDataTitle" xml:space="preserve">
+    <value>علم البيانات</value>
+  </data>
+  <data name="OptionDataDesc" xml:space="preserve">
+    <value>تحويل البيانات الخام إلى رؤى ذات معنى يثير حماسك.</value>
+  </data>
 </root>

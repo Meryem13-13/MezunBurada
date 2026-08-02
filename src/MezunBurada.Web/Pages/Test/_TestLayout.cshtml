@@ -1,0 +1,59 @@
+@using System.Globalization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    var currentCulture = CultureInfo.CurrentUICulture;
+    var isRtl = currentCulture.TextInfo.IsRightToLeft;
+    var returnUrl = Context.Request.Path + Context.Request.QueryString;
+}
+<!DOCTYPE html>
+<html lang="@currentCulture.TwoLetterISOLanguageName" dir="@(isRtl ? "rtl" : "ltr")">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - @Localizer["SiteTitle"]</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    @if (isRtl)
+    {
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />
+    }
+    else
+    {
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    }
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container">
+        <div class="test-shell">
+            <div class="test-header">
+                <a class="navbar-brand d-flex align-items-center gap-2" asp-area="" asp-page="/Index">
+                    <span class="brand-mark">M</span>
+                    <span>@Localizer["SiteTitle"]</span>
+                </a>
+                <span class="test-title">@ViewData["TestTitle"]</span>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="dropdown">
+                        <a class="btn-brand-outline dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            @currentCulture.TwoLetterISOLanguageName.ToUpperInvariant()
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="/set-language?culture=tr&returnUrl=@Uri.EscapeDataString(returnUrl)">Türkçe</a></li>
+                            <li><a class="dropdown-item" href="/set-language?culture=en&returnUrl=@Uri.EscapeDataString(returnUrl)">English</a></li>
+                            <li><a class="dropdown-item" href="/set-language?culture=ar&returnUrl=@Uri.EscapeDataString(returnUrl)">العربية</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn-brand-outline" asp-area="" asp-page="/Index">@Localizer["ExitLabel"]</a>
+                </div>
+            </div>
+            @RenderBody()
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

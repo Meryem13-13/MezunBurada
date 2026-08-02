@@ -27,4 +27,67 @@
   <data name="LanguageLabel" xml:space="preserve">
     <value>Dil</value>
   </data>
+  <data name="ExitLabel" xml:space="preserve">
+    <value>Çıkış</value>
+  </data>
+  <data name="CareerTestTitle" xml:space="preserve">
+    <value>Kariyer Testi</value>
+  </data>
+  <data name="TestStepBolum" xml:space="preserve">
+    <value>Bölüm</value>
+  </data>
+  <data name="TestStepIlgiAlani" xml:space="preserve">
+    <value>İlgi Alanı</value>
+  </data>
+  <data name="TestStepSeviye" xml:space="preserve">
+    <value>Seviye</value>
+  </data>
+  <data name="StepIndicatorLabel" xml:space="preserve">
+    <value>ADIM</value>
+  </data>
+  <data name="BackLabel" xml:space="preserve">
+    <value>Geri</value>
+  </data>
+  <data name="ContinueLabel" xml:space="preserve">
+    <value>Devam Et</value>
+  </data>
+  <data name="EncouragementText" xml:space="preserve">
+    <value>Harika gidiyorsun. Yol haritana bir adım daha yaklaştın.</value>
+  </data>
+  <data name="IlgiAlaniQuestionTitle" xml:space="preserve">
+    <value>Seni en çok hangi alan heyecanlandırıyor?</value>
+  </data>
+  <data name="IlgiAlaniQuestionSubtitle" xml:space="preserve">
+    <value>Doğru veya yanlış cevap yok. Sana en yakın seçeneği seç.</value>
+  </data>
+  <data name="OptionAiTitle" xml:space="preserve">
+    <value>Yapay Zeka &amp; Makine Öğrenmesi</value>
+  </data>
+  <data name="OptionAiDesc" xml:space="preserve">
+    <value>Veriden öğrenen akıllı sistemler kurmak seni heyecanlandırıyor.</value>
+  </data>
+  <data name="OptionWebBackendTitle" xml:space="preserve">
+    <value>Web &amp; Backend</value>
+  </data>
+  <data name="OptionWebBackendDesc" xml:space="preserve">
+    <value>Web siteleri ve uygulamaların arkasındaki sistemleri kurmak ilgini çekiyor.</value>
+  </data>
+  <data name="OptionMobileTitle" xml:space="preserve">
+    <value>Mobil Geliştirme</value>
+  </data>
+  <data name="OptionMobileDesc" xml:space="preserve">
+    <value>Telefonlarda kullanılan uygulamalar geliştirmek seni cezbediyor.</value>
+  </data>
+  <data name="OptionSecurityTitle" xml:space="preserve">
+    <value>Siber Güvenlik</value>
+  </data>
+  <data name="OptionSecurityDesc" xml:space="preserve">
+    <value>Sistemleri ve verileri korumak, açıkları bulmak ilgini çekiyor.</value>
+  </data>
+  <data name="OptionDataTitle" xml:space="preserve">
+    <value>Veri Bilimi</value>
+  </data>
+  <data name="OptionDataDesc" xml:space="preserve">
+    <value>Verilerden anlamlı sonuçlar çıkarmak seni heyecanlandırıyor.</value>
+  </data>
 </root>

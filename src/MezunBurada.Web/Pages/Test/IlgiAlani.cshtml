@@ -1,0 +1,57 @@
+@page "/test/ilgi-alani"
+@model MezunBurada.Web.Pages.Test.IlgiAlaniModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "_TestLayout";
+    ViewData["Title"] = Localizer["TestStepIlgiAlani"];
+    ViewData["TestTitle"] = Localizer["CareerTestTitle"];
+    var questionProgress = (int)Math.Round(Model.CurrentQuestion / (double)Model.TotalQuestions * 100);
+}
+
+<div class="step-indicator-label">@Localizer["StepIndicatorLabel"] <span class="ltr-nums">@Model.CurrentStep/@Model.TotalSteps</span></div>
+
+<div class="stepper">
+    <span class="step-label done"><span class="step-dot"></span> @Localizer["TestStepBolum"]</span>
+    <span class="step-arrow">&rarr;</span>
+    <span class="step-label active"><span class="step-dot"></span> @Localizer["TestStepIlgiAlani"]</span>
+    <span class="step-arrow">&rarr;</span>
+    <span class="step-label"><span class="step-dot"></span> @Localizer["TestStepSeviye"]</span>
+</div>
+
+<div class="question-progress-label"><span class="ltr-nums">@Model.CurrentQuestion / @Model.TotalQuestions</span></div>
+<div class="progress-track">
+    <div class="progress-fill" style="width: @(questionProgress)%;"></div>
+</div>
+
+<h1 class="question-title">@Localizer["IlgiAlaniQuestionTitle"]</h1>
+<p class="question-subtitle">@Localizer["IlgiAlaniQuestionSubtitle"]</p>
+
+<form method="post">
+    <div class="option-grid">
+        @foreach (var option in Model.Options)
+        {
+            var isSelected = option.Id == Model.SelectedOptionId;
+            <button type="submit" name="optionId" value="@option.Id"
+                    class="option-card @(isSelected ? "selected" : "")">
+                <span class="option-check">✓</span>
+                <span class="option-icon">@option.Icon</span>
+                <div class="option-title">@Localizer[option.TitleKey]</div>
+                <div class="option-description">@Localizer[option.DescriptionKey]</div>
+            </button>
+        }
+    </div>
+
+    <div class="test-footer">
+        <a class="btn-brand-outline" href="/test/bolum">&larr; @Localizer["BackLabel"]</a>
+        <div class="encouragement">
+            <p>@Localizer["EncouragementText"]</p>
+            <div class="progress-track">
+                <div class="progress-fill" style="width: @(questionProgress)%;"></div>
+            </div>
+        </div>
+        <button type="submit" name="action" value="continue" class="btn-brand">
+            @Localizer["ContinueLabel"] &rarr;
+        </button>
+    </div>
+</form>
