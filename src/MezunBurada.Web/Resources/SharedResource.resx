@@ -393,4 +393,121 @@
   <data name="ContactUsLink" xml:space="preserve">
     <value>bize yaz</value>
   </data>
+  <data name="ResultReadyLabel" xml:space="preserve">
+    <value>Sonucun Hazır 🎉</value>
+  </data>
+  <data name="CareerMatchDescription" xml:space="preserve">
+    <value>{0} geçmişin ve teknik yatkınlığın, problem çözme ve sistem mimarisi odaklı bu kariyer yoluyla %{1} oranında örtüşüyor.</value>
+  </data>
+  <data name="StartRoadmapLabel" xml:space="preserve">
+    <value>Yol Haritasına Başla</value>
+  </data>
+  <data name="ShareLabel" xml:space="preserve">
+    <value>Paylaş</value>
+  </data>
+  <data name="CareerMatchTitle" xml:space="preserve">
+    <value>Kariyer Uyumu</value>
+  </data>
+  <data name="CareerMatchSubtext" xml:space="preserve">
+    <value>Analiz sonuçlarına göre en güçlü eşleşmen.</value>
+  </data>
+  <data name="RoadmapStep1Title" xml:space="preserve">
+    <value>01. HTTP &amp; REST API Temelleri</value>
+  </data>
+  <data name="RoadmapStep1Desc" xml:space="preserve">
+    <value>Web servislerinin çalışma mantığını ve iletişim protokollerini kavra.</value>
+  </data>
+  <data name="RoadmapStep1Tag" xml:space="preserve">
+    <value>BTK Akademi · 1 Hafta</value>
+  </data>
+  <data name="RoadmapStep2Title" xml:space="preserve">
+    <value>02. ASP.NET Core Öğren</value>
+  </data>
+  <data name="RoadmapStep2Desc" xml:space="preserve">
+    <value>Modern, hızlı ve güvenli backend uygulamaları geliştirmenin temelleri.</value>
+  </data>
+  <data name="RoadmapStep2Tag" xml:space="preserve">
+    <value>Udemy · 3 Hafta</value>
+  </data>
+  <data name="RoadmapStep3Title" xml:space="preserve">
+    <value>03. SQL &amp; Veritabanı</value>
+  </data>
+  <data name="RoadmapStep3Desc" xml:space="preserve">
+    <value>Veriyi yönetmeyi, sorgulamayı ve ilişkisel modeller kurmayı öğren.</value>
+  </data>
+  <data name="RoadmapStep3Tag" xml:space="preserve">
+    <value>Ücretsiz Kaynak · 2 Hafta</value>
+  </data>
+  <data name="CurrentStepLabel" xml:space="preserve">
+    <value>Şu Anki Adımın</value>
+  </data>
+  <data name="CurrentStepDesc" xml:space="preserve">
+    <value>Kariyer yolculuğuna ilk adımı atarak temellerini sağlamlaştırır.</value>
+  </data>
+  <data name="TrainingSummaryTitle" xml:space="preserve">
+    <value>Eğitim Özeti</value>
+  </data>
+  <data name="TotalDurationLabel" xml:space="preserve">
+    <value>Toplam Süre</value>
+  </data>
+  <data name="TotalDurationValue" xml:space="preserve">
+    <value>4-6 Ay</value>
+  </data>
+  <data name="StepCountLabel" xml:space="preserve">
+    <value>Adım Sayısı</value>
+  </data>
+  <data name="StepCountValue" xml:space="preserve">
+    <value>12 Adım</value>
+  </data>
+  <data name="PracticeProofTitle" xml:space="preserve">
+    <value>Uygulama ve İspat</value>
+  </data>
+  <data name="PortfolioSuggestionLabel" xml:space="preserve">
+    <value>Portföy Önerisi</value>
+  </data>
+  <data name="PortfolioProjectTitle" xml:space="preserve">
+    <value>Basit bir Görev Takip API'si</value>
+  </data>
+  <data name="PortfolioProjectDesc" xml:space="preserve">
+    <value>Kullanıcı kayıt, giriş, görev oluşturma ve güncelleme özelliklerine sahip bir REST API geliştirerek backend yeteneklerini kanıtla.</value>
+  </data>
+  <data name="TechToUseLabel" xml:space="preserve">
+    <value>Kullanılacak Teknolojiler:</value>
+  </data>
+  <data name="ViewProjectDetailsLabel" xml:space="preserve">
+    <value>Proje Detaylarını Gör</value>
+  </data>
+  <data name="CvSkillsTitle" xml:space="preserve">
+    <value>CV'ne Ekleyebileceğin Yetkinlikler</value>
+  </data>
+  <data name="CvSkillsDesc" xml:space="preserve">
+    <value>Yol haritasını tamamladığında aşağıdaki yetkinlikleri profesyonel olarak profilinde sergileyebilirsin.</value>
+  </data>
+  <data name="CvSkillsQuote" xml:space="preserve">
+    <value>Bu yetkinlikleri gerçekten öğrendikten ve projede uyguladıktan sonra CV'ne eklemeni öneriyoruz.</value>
+  </data>
+  <data name="SkillRestApiArchitecture" xml:space="preserve">
+    <value>REST API Mimarisi</value>
+  </data>
+  <data name="SkillSqlManagement" xml:space="preserve">
+    <value>SQL Yönetimi</value>
+  </data>
+  <data name="SkillGitCicd" xml:space="preserve">
+    <value>Git &amp; CI/CD</value>
+  </data>
+  <data name="SkillUnitTesting" xml:space="preserve">
+    <value>Birim Testi</value>
+  </data>
+  <data name="SkillAuthJwt" xml:space="preserve">
+    <value>Kimlik Doğrulama &amp; JWT</value>
+  </data>
+  <data name="SkillDockerBasics" xml:space="preserve">
+    <value>Docker Temelleri</value>
+  </data>
+  <data name="RoadmapCtaTitle" xml:space="preserve">
+    <value>Yol haritanı kaybetme.</value>
+  </data>
+  <data name="RoadmapCtaDesc" xml:space="preserve">
+    <value>İlerlemeni takip etmek, tamamladığın adımları işaretlemek ve dilediğin zaman kaldığın yerden devam etmek için ücretsiz hesabını oluştur.</value>
+  </data>
 </root>

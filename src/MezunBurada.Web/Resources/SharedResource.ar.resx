@@ -393,4 +393,121 @@
   <data name="ContactUsLink" xml:space="preserve">
     <value>راسلنا</value>
   </data>
+  <data name="ResultReadyLabel" xml:space="preserve">
+    <value>نتيجتك جاهزة 🎉</value>
+  </data>
+  <data name="CareerMatchDescription" xml:space="preserve">
+    <value>خلفيتك في {0} وقدرتك التقنية تتوافق بنسبة {1}% مع هذا المسار المهني الذي يركز على حل المشكلات وهندسة الأنظمة.</value>
+  </data>
+  <data name="StartRoadmapLabel" xml:space="preserve">
+    <value>ابدأ خارطة طريقك</value>
+  </data>
+  <data name="ShareLabel" xml:space="preserve">
+    <value>مشاركة</value>
+  </data>
+  <data name="CareerMatchTitle" xml:space="preserve">
+    <value>التوافق المهني</value>
+  </data>
+  <data name="CareerMatchSubtext" xml:space="preserve">
+    <value>أقوى نتيجة توافق بناءً على تحليل إجاباتك.</value>
+  </data>
+  <data name="RoadmapStep1Title" xml:space="preserve">
+    <value>01. أساسيات HTTP وREST API</value>
+  </data>
+  <data name="RoadmapStep1Desc" xml:space="preserve">
+    <value>افهم كيفية عمل خدمات الويب وبروتوكولات الاتصال.</value>
+  </data>
+  <data name="RoadmapStep1Tag" xml:space="preserve">
+    <value>BTK Akademi · أسبوع واحد</value>
+  </data>
+  <data name="RoadmapStep2Title" xml:space="preserve">
+    <value>02. تعلم ASP.NET Core</value>
+  </data>
+  <data name="RoadmapStep2Desc" xml:space="preserve">
+    <value>أساسيات بناء تطبيقات backend حديثة وسريعة وآمنة.</value>
+  </data>
+  <data name="RoadmapStep2Tag" xml:space="preserve">
+    <value>Udemy · 3 أسابيع</value>
+  </data>
+  <data name="RoadmapStep3Title" xml:space="preserve">
+    <value>03. SQL وقواعد البيانات</value>
+  </data>
+  <data name="RoadmapStep3Desc" xml:space="preserve">
+    <value>تعلم إدارة البيانات والاستعلام عنها وبناء نماذج علائقية.</value>
+  </data>
+  <data name="RoadmapStep3Tag" xml:space="preserve">
+    <value>مصدر مجاني · أسبوعان</value>
+  </data>
+  <data name="CurrentStepLabel" xml:space="preserve">
+    <value>خطوتك الحالية</value>
+  </data>
+  <data name="CurrentStepDesc" xml:space="preserve">
+    <value>خطوتك الأولى في مسارك المهني ترسّخ أساسياتك.</value>
+  </data>
+  <data name="TrainingSummaryTitle" xml:space="preserve">
+    <value>ملخص التدريب</value>
+  </data>
+  <data name="TotalDurationLabel" xml:space="preserve">
+    <value>المدة الإجمالية</value>
+  </data>
+  <data name="TotalDurationValue" xml:space="preserve">
+    <value>4-6 أشهر</value>
+  </data>
+  <data name="StepCountLabel" xml:space="preserve">
+    <value>عدد الخطوات</value>
+  </data>
+  <data name="StepCountValue" xml:space="preserve">
+    <value>12 خطوة</value>
+  </data>
+  <data name="PracticeProofTitle" xml:space="preserve">
+    <value>التطبيق والإثبات</value>
+  </data>
+  <data name="PortfolioSuggestionLabel" xml:space="preserve">
+    <value>اقتراح ملف الأعمال</value>
+  </data>
+  <data name="PortfolioProjectTitle" xml:space="preserve">
+    <value>واجهة برمجية بسيطة لتتبع المهام</value>
+  </data>
+  <data name="PortfolioProjectDesc" xml:space="preserve">
+    <value>أثبت مهاراتك في الـ backend ببناء REST API يتضمن تسجيل المستخدمين والدخول وإنشاء/تحديث المهام.</value>
+  </data>
+  <data name="TechToUseLabel" xml:space="preserve">
+    <value>التقنيات المستخدمة:</value>
+  </data>
+  <data name="ViewProjectDetailsLabel" xml:space="preserve">
+    <value>عرض تفاصيل المشروع</value>
+  </data>
+  <data name="CvSkillsTitle" xml:space="preserve">
+    <value>المهارات التي يمكنك إضافتها إلى سيرتك الذاتية</value>
+  </data>
+  <data name="CvSkillsDesc" xml:space="preserve">
+    <value>عند إكمال خارطة الطريق، يمكنك عرض هذه المهارات باحترافية في ملفك الشخصي.</value>
+  </data>
+  <data name="CvSkillsQuote" xml:space="preserve">
+    <value>ننصح بإضافة هذه المهارات إلى سيرتك الذاتية فقط بعد تعلمها فعلياً وتطبيقها في المشروع.</value>
+  </data>
+  <data name="SkillRestApiArchitecture" xml:space="preserve">
+    <value>معمارية REST API</value>
+  </data>
+  <data name="SkillSqlManagement" xml:space="preserve">
+    <value>إدارة SQL</value>
+  </data>
+  <data name="SkillGitCicd" xml:space="preserve">
+    <value>Git وCI/CD</value>
+  </data>
+  <data name="SkillUnitTesting" xml:space="preserve">
+    <value>اختبار الوحدة</value>
+  </data>
+  <data name="SkillAuthJwt" xml:space="preserve">
+    <value>المصادقة وJWT</value>
+  </data>
+  <data name="SkillDockerBasics" xml:space="preserve">
+    <value>أساسيات Docker</value>
+  </data>
+  <data name="RoadmapCtaTitle" xml:space="preserve">
+    <value>لا تفقد خارطة طريقك.</value>
+  </data>
+  <data name="RoadmapCtaDesc" xml:space="preserve">
+    <value>أنشئ حسابك المجاني لتتابع تقدمك، وتؤشر الخطوات المكتملة، وتكمل في أي وقت من حيث توقفت.</value>
+  </data>
 </root>

@@ -393,4 +393,121 @@
   <data name="ContactUsLink" xml:space="preserve">
     <value>write to us</value>
   </data>
+  <data name="ResultReadyLabel" xml:space="preserve">
+    <value>Your Result Is Ready 🎉</value>
+  </data>
+  <data name="CareerMatchDescription" xml:space="preserve">
+    <value>Your {0} background and technical aptitude overlap {1}% with this problem-solving and system-architecture focused career path.</value>
+  </data>
+  <data name="StartRoadmapLabel" xml:space="preserve">
+    <value>Start Your Roadmap</value>
+  </data>
+  <data name="ShareLabel" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="CareerMatchTitle" xml:space="preserve">
+    <value>Career Match</value>
+  </data>
+  <data name="CareerMatchSubtext" xml:space="preserve">
+    <value>Your strongest match based on your analysis results.</value>
+  </data>
+  <data name="RoadmapStep1Title" xml:space="preserve">
+    <value>01. HTTP &amp; REST API Basics</value>
+  </data>
+  <data name="RoadmapStep1Desc" xml:space="preserve">
+    <value>Grasp how web services work and how they communicate.</value>
+  </data>
+  <data name="RoadmapStep1Tag" xml:space="preserve">
+    <value>BTK Akademi · 1 Week</value>
+  </data>
+  <data name="RoadmapStep2Title" xml:space="preserve">
+    <value>02. Learn ASP.NET Core</value>
+  </data>
+  <data name="RoadmapStep2Desc" xml:space="preserve">
+    <value>The fundamentals of building modern, fast, and secure backend applications.</value>
+  </data>
+  <data name="RoadmapStep2Tag" xml:space="preserve">
+    <value>Udemy · 3 Weeks</value>
+  </data>
+  <data name="RoadmapStep3Title" xml:space="preserve">
+    <value>03. SQL &amp; Databases</value>
+  </data>
+  <data name="RoadmapStep3Desc" xml:space="preserve">
+    <value>Learn to manage data, write queries, and build relational models.</value>
+  </data>
+  <data name="RoadmapStep3Tag" xml:space="preserve">
+    <value>Free Resource · 2 Weeks</value>
+  </data>
+  <data name="CurrentStepLabel" xml:space="preserve">
+    <value>Your Current Step</value>
+  </data>
+  <data name="CurrentStepDesc" xml:space="preserve">
+    <value>Taking the first step in your career journey strengthens your foundations.</value>
+  </data>
+  <data name="TrainingSummaryTitle" xml:space="preserve">
+    <value>Training Summary</value>
+  </data>
+  <data name="TotalDurationLabel" xml:space="preserve">
+    <value>Total Duration</value>
+  </data>
+  <data name="TotalDurationValue" xml:space="preserve">
+    <value>4-6 Months</value>
+  </data>
+  <data name="StepCountLabel" xml:space="preserve">
+    <value>Number of Steps</value>
+  </data>
+  <data name="StepCountValue" xml:space="preserve">
+    <value>12 Steps</value>
+  </data>
+  <data name="PracticeProofTitle" xml:space="preserve">
+    <value>Practice &amp; Proof</value>
+  </data>
+  <data name="PortfolioSuggestionLabel" xml:space="preserve">
+    <value>Portfolio Suggestion</value>
+  </data>
+  <data name="PortfolioProjectTitle" xml:space="preserve">
+    <value>A Simple Task Tracker API</value>
+  </data>
+  <data name="PortfolioProjectDesc" xml:space="preserve">
+    <value>Prove your backend skills by building a REST API with user registration, login, and task creation/update features.</value>
+  </data>
+  <data name="TechToUseLabel" xml:space="preserve">
+    <value>Technologies to Use:</value>
+  </data>
+  <data name="ViewProjectDetailsLabel" xml:space="preserve">
+    <value>View Project Details</value>
+  </data>
+  <data name="CvSkillsTitle" xml:space="preserve">
+    <value>Skills You Can Add to Your CV</value>
+  </data>
+  <data name="CvSkillsDesc" xml:space="preserve">
+    <value>Once you complete the roadmap, you can showcase these skills professionally on your profile.</value>
+  </data>
+  <data name="CvSkillsQuote" xml:space="preserve">
+    <value>We recommend adding these to your CV only after you've genuinely learned them and applied them in the project.</value>
+  </data>
+  <data name="SkillRestApiArchitecture" xml:space="preserve">
+    <value>REST API Architecture</value>
+  </data>
+  <data name="SkillSqlManagement" xml:space="preserve">
+    <value>SQL Management</value>
+  </data>
+  <data name="SkillGitCicd" xml:space="preserve">
+    <value>Git &amp; CI/CD</value>
+  </data>
+  <data name="SkillUnitTesting" xml:space="preserve">
+    <value>Unit Testing</value>
+  </data>
+  <data name="SkillAuthJwt" xml:space="preserve">
+    <value>Authentication &amp; JWT</value>
+  </data>
+  <data name="SkillDockerBasics" xml:space="preserve">
+    <value>Docker Basics</value>
+  </data>
+  <data name="RoadmapCtaTitle" xml:space="preserve">
+    <value>Don't lose your roadmap.</value>
+  </data>
+  <data name="RoadmapCtaDesc" xml:space="preserve">
+    <value>Create your free account to track your progress, check off completed steps, and continue anytime from where you left off.</value>
+  </data>
 </root>

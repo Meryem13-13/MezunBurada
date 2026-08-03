@@ -1,0 +1,106 @@
+@page "/yol-haritasi"
+@model MezunBurada.Web.Pages.Roadmap.IndexModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "_RoadmapLayout";
+    ViewData["Title"] = Localizer["CareerPathTitle"];
+    ViewData["PageHeaderTitle"] = Localizer["RoadmapCardSubtitle"];
+}
+
+<div class="roadmap-page">
+
+    @* Section 1: Hero + career match *@
+    <div class="result-hero">
+        <div class="hero-main">
+            <div class="result-ready-label">@Localizer["ResultReadyLabel"]</div>
+            <h1>@Localizer["CareerPathTitle"]</h1>
+            <p>@Localizer["CareerMatchDescription", Localizer[Model.DepartmentKey].Value, Model.CareerMatchPercent]</p>
+            <div class="hero-actions">
+                <a href="#roadmap-timeline" class="btn-brand">@Localizer["StartRoadmapLabel"] &rarr;</a>
+                <a href="#" class="btn-outline-bordered">@Localizer["ShareLabel"]</a>
+            </div>
+        </div>
+        <div class="match-card">
+            <div class="progress-ring" style="--pct: @Model.CareerMatchPercent;">
+                <div class="progress-ring-inner">@Model.CareerMatchPercent%</div>
+            </div>
+            <div class="match-title">@Localizer["CareerMatchTitle"]</div>
+            <div class="match-subtitle">@Localizer["CareerMatchSubtext"]</div>
+        </div>
+    </div>
+
+    @* Section 2: Timeline + current step + training summary *@
+    <div class="roadmap-section" id="roadmap-timeline">
+        <h2 class="accent-heading">@Localizer["RoadmapCardSubtitle"]</h2>
+        <div class="panel-grid">
+            <ul class="roadmap-timeline">
+                @foreach (var step in Model.Steps)
+                {
+                    <li class="timeline-step @(step.IsActive ? "active" : "")">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-step-title">@Localizer[step.TitleKey]</div>
+                        <p>@Localizer[step.DescKey]</p>
+                        <span class="pill-tag">@Localizer[step.TagKey]</span>
+                    </li>
+                }
+            </ul>
+            <div>
+                <div class="current-step-card">
+                    <div class="current-step-label">@Localizer["CurrentStepLabel"]</div>
+                    <p>@Localizer["CurrentStepDesc"]</p>
+                    <a href="#" class="btn-brand full-width">@Localizer["StartStepLabel"] &rarr;</a>
+                </div>
+                <div class="panel-card">
+                    <div class="panel-card-title">@Localizer["TrainingSummaryTitle"]</div>
+                    <ul class="kv-list">
+                        <li><span class="kv-key">@Localizer["TotalDurationLabel"]</span><span class="kv-value">@Localizer["TotalDurationValue"]</span></li>
+                        <li><span class="kv-key">@Localizer["StepCountLabel"]</span><span class="kv-value">@Localizer["StepCountValue"]</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* Section 3: Portfolio project + CV skills *@
+    <div class="roadmap-section">
+        <h2 class="accent-heading">@Localizer["PracticeProofTitle"]</h2>
+        <div class="panel-grid">
+            <div class="panel-card">
+                <div class="portfolio-label">@Localizer["PortfolioSuggestionLabel"]</div>
+                <div class="portfolio-title">@Localizer["PortfolioProjectTitle"]</div>
+                <p>@Localizer["PortfolioProjectDesc"]</p>
+                <div class="tech-label">@Localizer["TechToUseLabel"]</div>
+                <div class="tag-row">
+                    @foreach (var tech in Model.TechTags)
+                    {
+                        <span class="pill-tag">@tech</span>
+                    }
+                </div>
+                <a href="#" class="btn-outline-bordered">@Localizer["ViewProjectDetailsLabel"]</a>
+            </div>
+            <div>
+                <div class="panel-card-title">@Localizer["CvSkillsTitle"]</div>
+                <p>@Localizer["CvSkillsDesc"]</p>
+                <div class="tag-row">
+                    @foreach (var skillKey in Model.CvSkillKeys)
+                    {
+                        <span class="pill-tag">@Localizer[skillKey]</span>
+                    }
+                </div>
+                <blockquote class="quote-box">@Localizer["CvSkillsQuote"]</blockquote>
+            </div>
+        </div>
+    </div>
+
+    @* Section 4: Bottom signup CTA *@
+    <div class="roadmap-section">
+        <div class="roadmap-cta-card">
+            <h2>@Localizer["RoadmapCtaTitle"]</h2>
+            <p>@Localizer["RoadmapCtaDesc"]</p>
+            <a href="/kayit" class="btn-brand full-width">@Localizer["RegisterButtonLabel"] &rarr;</a>
+            <p class="auth-switch-text">@Localizer["HaveAccountLabel"] <a href="/giris">@Localizer["LoginButtonLabel"]</a></p>
+        </div>
+    </div>
+
+</div>

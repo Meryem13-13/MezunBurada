@@ -1323,3 +1323,251 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   text-decoration: underline;
 }
+
+/* ==========================================================================
+   Yol Haritası (Roadmap result) — hero, match ring, timeline, current-step,
+   portfolio/CV section, bottom CTA
+   ========================================================================== */
+.roadmap-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.result-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.result-hero .hero-main {
+  flex: 1 1 420px;
+}
+
+.result-ready-label {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.result-hero h1 {
+  margin-bottom: 0.75rem;
+}
+
+.result-hero p {
+  color: var(--color-text-muted);
+  max-width: 480px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn-outline-bordered {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0.65rem 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-outline-bordered:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.match-card {
+  flex: 0 0 220px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.match-card .progress-ring {
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto 1rem;
+}
+
+.match-card .progress-ring-inner {
+  width: 4.6rem;
+  height: 4.6rem;
+  font-size: 1.1rem;
+}
+
+.match-card .match-title {
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.match-card .match-subtitle {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.roadmap-section {
+  margin-bottom: 3rem;
+}
+
+.roadmap-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline-step {
+  position: relative;
+  padding-inline-start: 2rem;
+  padding-bottom: 1.75rem;
+}
+
+.timeline-step:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-step::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0.3rem;
+  top: 1.4rem;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--color-border);
+}
+
+.timeline-step:last-child::after {
+  display: none;
+}
+
+.timeline-dot {
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.3rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  border: 3px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.timeline-step.active .timeline-dot {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+}
+
+.timeline-step-title {
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.timeline-step p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.pill-tag {
+  display: inline-block;
+  background-color: var(--color-blush-light);
+  color: var(--color-primary);
+  border-radius: var(--radius-pill);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.current-step-card {
+  border: 2px dashed var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.current-step-label {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.current-step-card p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.portfolio-label {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.panel-card p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.tech-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.quote-box {
+  background-color: var(--color-blush-light);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  margin: 1rem 0 0;
+}
+
+.roadmap-cta-card {
+  max-width: 480px;
+  margin: 0 auto;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.roadmap-cta-card p {
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
