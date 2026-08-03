@@ -1,0 +1,36 @@
+@page "/admin/piyasa-talebi/ekle"
+@model MezunBurada.Web.Pages.Admin.MarketDemandSkills.CreateModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Yeni Piyasa Talebi Becerisi";
+}
+
+<h1 class="h3 mb-4">Yeni Piyasa Talebi Becerisi Ekle</h1>
+
+<form method="post" class="bg-white border rounded p-4" style="max-width: 480px;">
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="mb-3">
+        <label asp-for="Input.CareerPathId" class="form-label">Kariyer Yolu</label>
+        <select asp-for="Input.CareerPathId" asp-items="Model.CareerPathOptions" class="form-select">
+            <option value="">-- Seç --</option>
+        </select>
+        <span asp-validation-for="Input.CareerPathId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.SkillName" class="form-label">Beceri Adı</label>
+        <input asp-for="Input.SkillName" class="form-control" placeholder="örn. Kubernetes" />
+        <span asp-validation-for="Input.SkillName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.DemandNote" class="form-label">Açıklama</label>
+        <input asp-for="Input.DemandNote" class="form-control" placeholder="örn. İlanların %40'ında geçiyor" />
+        <span asp-validation-for="Input.DemandNote" class="text-danger"></span>
+        <div class="form-text">Güncellenme tarihi kaydedince otomatik olarak bugüne ayarlanır.</div>
+    </div>
+
+    <button type="submit" class="btn-brand">Kaydet</button>
+    <a href="/admin/piyasa-talebi" class="btn btn-outline-secondary">Vazgeç</a>
+</form>

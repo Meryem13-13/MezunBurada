@@ -301,6 +301,7 @@ public static class DbSeeder
             Title = "Bir Backend Framework Öğren",
             Description = "ASP.NET Core veya Node.js ile ilk API'ni yaz.",
             EstimatedDuration = "3 hafta",
+            HowToApproach = "Önce dokümantasyonu oku (30 dk), sonra kursun ilk 3 bölümünü izle, ardından kendi başına aynısını tekrar yaz (kopyalamadan). Kendi başına basit bir CRUD API'si yazabildiğinde sıradaki adıma geç.",
             Skill = skProgramlama,
             Resource = resUdemyAspNet,
             SuggestedProject = projGorevTakipApi,
@@ -363,6 +364,17 @@ public static class DbSeeder
                 Level = "Orta seviye",
                 CareerPath = backendDeveloper,
             }
+        );
+
+        // ---- Piyasada Şu An Aranan (manually curated — placeholder note text/dates until
+        // the admin panel CRUD is used to keep these current) ----
+        var marketDemandNow = DateTime.UtcNow;
+        db.MarketDemandSkills.AddRange(
+            new MarketDemandSkill { SkillName = "ASP.NET Core", DemandNote = "İlanların %70'inde geçiyor", UpdatedAt = marketDemandNow, CareerPath = backendDeveloper },
+            new MarketDemandSkill { SkillName = "SQL", DemandNote = "Neredeyse tüm backend ilanlarında aranıyor", UpdatedAt = marketDemandNow, CareerPath = backendDeveloper },
+            new MarketDemandSkill { SkillName = "Docker", DemandNote = "Orta-üstü seviye ilanların %55'inde isteniyor", UpdatedAt = marketDemandNow, CareerPath = backendDeveloper },
+            new MarketDemandSkill { SkillName = "REST API Tasarımı", DemandNote = "Junior ilanlarının çoğunda temel beklenti", UpdatedAt = marketDemandNow, CareerPath = backendDeveloper },
+            new MarketDemandSkill { SkillName = "Git", DemandNote = "Pratik olarak tüm ilanlarda gerekli görülüyor", UpdatedAt = marketDemandNow, CareerPath = backendDeveloper }
         );
 
         // ---- 14. Sık Sorulan Sorular ----

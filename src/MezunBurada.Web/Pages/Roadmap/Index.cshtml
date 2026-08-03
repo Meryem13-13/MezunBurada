@@ -33,15 +33,39 @@
     @* Section 2: Timeline + current step + training summary *@
     <div class="roadmap-section" id="roadmap-timeline">
         <h2 class="accent-heading">@Localizer["RoadmapCardSubtitle"]</h2>
+
+        <div class="market-demand-box">
+            <div class="market-demand-title">🔥 @Localizer["MarketDemandBoxTitle"]</div>
+            <div class="market-demand-list">
+                @foreach (var item in Model.MarketDemandSkills)
+                {
+                    <span class="market-demand-item">
+                        <span class="skill-name">@item.SkillName</span>
+                        <span class="demand-note">@Localizer[item.NoteKey]</span>
+                    </span>
+                }
+            </div>
+        </div>
+
         <div class="panel-grid">
             <ul class="roadmap-timeline">
-                @foreach (var step in Model.Steps)
+                @for (var i = 0; i < Model.Steps.Count; i++)
                 {
+                    var step = Model.Steps[i];
                     <li class="timeline-step @(step.IsActive ? "active" : "")">
                         <span class="timeline-dot"></span>
                         <div class="timeline-step-title">@Localizer[step.TitleKey]</div>
                         <p>@Localizer[step.DescKey]</p>
                         <span class="pill-tag">@Localizer[step.TagKey]</span>
+                        @if (step.HowToApproachKey is not null)
+                        {
+                            <button type="button" class="accordion-toggle" data-bs-toggle="collapse" data-bs-target="#howto-@i" aria-expanded="false" aria-controls="howto-@i">
+                                @Localizer["HowToApproachLabel"] <span class="accordion-caret">&#9662;</span>
+                            </button>
+                            <div class="collapse accordion-panel" id="howto-@i">
+                                <p>@Localizer[step.HowToApproachKey]</p>
+                            </div>
+                        }
                     </li>
                 }
             </ul>

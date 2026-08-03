@@ -336,6 +336,99 @@ namespace MezunBurada.Web.Data.Migrations
                     b.ToTable("LevelQuestionOptions");
                 });
 
+            modelBuilder.Entity("MezunBurada.Web.Models.MarketDemandSkill", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CareerPathId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("DemandNote")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("SkillName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CareerPathId");
+
+                    b.ToTable("MarketDemandSkills");
+                });
+
+            modelBuilder.Entity("MezunBurada.Web.Models.Mentor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Bio")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("ExpertiseAreaId")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ExpertiseAreaId");
+
+                    b.ToTable("Mentors");
+                });
+
+            modelBuilder.Entity("MezunBurada.Web.Models.MentorSession", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("MentorId")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("numeric");
+
+                    b.Property<DateTime?>("ScheduledAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MentorId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("MentorSessions");
+                });
+
             modelBuilder.Entity("MezunBurada.Web.Models.Project", b =>
                 {
                     b.Property<int>("Id")
@@ -441,6 +534,9 @@ namespace MezunBurada.Web.Data.Migrations
 
                     b.Property<string>("EstimatedDuration")
                         .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("HowToApproach")
                         .HasColumnType("text");
 
                     b.Property<int>("Order")
@@ -721,6 +817,47 @@ namespace MezunBurada.Web.Data.Migrations
                     b.Navigation("LevelQuestion");
                 });
 
+            modelBuilder.Entity("MezunBurada.Web.Models.MarketDemandSkill", b =>
+                {
+                    b.HasOne("MezunBurada.Web.Models.CareerPath", "CareerPath")
+                        .WithMany("MarketDemandSkills")
+                        .HasForeignKey("CareerPathId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CareerPath");
+                });
+
+            modelBuilder.Entity("MezunBurada.Web.Models.Mentor", b =>
+                {
+                    b.HasOne("MezunBurada.Web.Models.CareerPath", "ExpertiseArea")
+                        .WithMany("Mentors")
+                        .HasForeignKey("ExpertiseAreaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("ExpertiseArea");
+                });
+
+            modelBuilder.Entity("MezunBurada.Web.Models.MentorSession", b =>
+                {
+                    b.HasOne("MezunBurada.Web.Models.Mentor", "Mentor")
+                        .WithMany("Sessions")
+                        .HasForeignKey("MentorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("MezunBurada.Web.Models.User", "User")
+                        .WithMany("MentorSessions")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Mentor");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("MezunBurada.Web.Models.Project", b =>
                 {
                     b.HasOne("MezunBurada.Web.Models.CareerPath", "CareerPath")
@@ -799,6 +936,10 @@ namespace MezunBurada.Web.Data.Migrations
 
                     b.Navigation("JobRoles");
 
+                    b.Navigation("MarketDemandSkills");
+
+                    b.Navigation("Mentors");
+
                     b.Navigation("Projects");
 
                     b.Navigation("Roadmaps");
@@ -830,6 +971,11 @@ namespace MezunBurada.Web.Data.Migrations
                     b.Navigation("Options");
                 });
 
+            modelBuilder.Entity("MezunBurada.Web.Models.Mentor", b =>
+                {
+                    b.Navigation("Sessions");
+                });
+
             modelBuilder.Entity("MezunBurada.Web.Models.Project", b =>
                 {
                     b.Navigation("SuggestedForSteps");
@@ -859,6 +1005,11 @@ namespace MezunBurada.Web.Data.Migrations
                     b.Navigation("InterestQuestionOptions");
 
                     b.Navigation("LevelQuestions");
+                });
+
+            modelBuilder.Entity("MezunBurada.Web.Models.User", b =>
+                {
+                    b.Navigation("MentorSessions");
                 });
 #pragma warning restore 612, 618
         }

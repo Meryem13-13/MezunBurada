@@ -11,6 +11,10 @@ public class RoadmapStep
     // normalizing to a single numeric unit for MVP.
     public string EstimatedDuration { get; set; } = string.Empty;
 
+    // How to actually work through the step (reading order, pacing, when to move on) —
+    // distinct from Description (what the step covers) and Resource (where to learn it).
+    public string? HowToApproach { get; set; }
+
     public int RoadmapId { get; set; }
     public Roadmap? Roadmap { get; set; }
 

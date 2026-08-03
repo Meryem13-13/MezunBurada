@@ -319,6 +319,50 @@ namespace MezunBurada.Web.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "MarketDemandSkills",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    SkillName = table.Column<string>(type: "text", nullable: false),
+                    DemandNote = table.Column<string>(type: "text", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CareerPathId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MarketDemandSkills", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_MarketDemandSkills_CareerPaths_CareerPathId",
+                        column: x => x.CareerPathId,
+                        principalTable: "CareerPaths",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Mentors",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Bio = table.Column<string>(type: "text", nullable: false),
+                    IsActive = table.Column<bool>(type: "boolean", nullable: false),
+                    ExpertiseAreaId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Mentors", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Mentors_CareerPaths_ExpertiseAreaId",
+                        column: x => x.ExpertiseAreaId,
+                        principalTable: "CareerPaths",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Projects",
                 columns: table => new
                 {
@@ -386,6 +430,36 @@ namespace MezunBurada.Web.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "MentorSessions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Status = table.Column<int>(type: "integer", nullable: false),
+                    ScheduledAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    Price = table.Column<decimal>(type: "numeric", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UserId = table.Column<int>(type: "integer", nullable: false),
+                    MentorId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MentorSessions", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_MentorSessions_Mentors_MentorId",
+                        column: x => x.MentorId,
+                        principalTable: "Mentors",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_MentorSessions_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "RoadmapSteps",
                 columns: table => new
                 {
@@ -395,6 +469,7 @@ namespace MezunBurada.Web.Data.Migrations
                     Title = table.Column<string>(type: "text", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: false),
                     EstimatedDuration = table.Column<string>(type: "text", nullable: false),
+                    HowToApproach = table.Column<string>(type: "text", nullable: true),
                     RoadmapId = table.Column<int>(type: "integer", nullable: false),
                     PrerequisiteStepId = table.Column<int>(type: "integer", nullable: true),
                     SkillId = table.Column<int>(type: "integer", nullable: true),
@@ -509,6 +584,26 @@ namespace MezunBurada.Web.Data.Migrations
                 column: "SubFieldId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_MarketDemandSkills_CareerPathId",
+                table: "MarketDemandSkills",
+                column: "CareerPathId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Mentors_ExpertiseAreaId",
+                table: "Mentors",
+                column: "ExpertiseAreaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MentorSessions_MentorId",
+                table: "MentorSessions",
+                column: "MentorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MentorSessions_UserId",
+                table: "MentorSessions",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Projects_CareerPathId",
                 table: "Projects",
                 column: "CareerPathId");
@@ -583,16 +678,25 @@ namespace MezunBurada.Web.Data.Migrations
                 name: "LevelQuestionOptions");
 
             migrationBuilder.DropTable(
-                name: "RoadmapSteps");
+                name: "MarketDemandSkills");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "MentorSessions");
+
+            migrationBuilder.DropTable(
+                name: "RoadmapSteps");
 
             migrationBuilder.DropTable(
                 name: "InterestQuestions");
 
             migrationBuilder.DropTable(
                 name: "LevelQuestions");
+
+            migrationBuilder.DropTable(
+                name: "Mentors");
+
+            migrationBuilder.DropTable(
+                name: "Users");
 
             migrationBuilder.DropTable(
                 name: "Projects");

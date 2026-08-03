@@ -429,6 +429,30 @@
   <data name="RoadmapStep2Tag" xml:space="preserve">
     <value>Udemy · 3 أسابيع</value>
   </data>
+  <data name="RoadmapStep2HowToApproach" xml:space="preserve">
+    <value>اقرأ التوثيق أولاً (30 دقيقة)، ثم شاهد الأقسام الثلاثة الأولى من الدورة، ثم اكتب نفس الشيء بنفسك من الصفر (دون نسخ). عندما تستطيع كتابة REST API بسيط بمفردك، انتقل إلى الخطوة التالية.</value>
+  </data>
+  <data name="HowToApproachLabel" xml:space="preserve">
+    <value>كيف يجب أن تتقدم؟</value>
+  </data>
+  <data name="MarketDemandBoxTitle" xml:space="preserve">
+    <value>الأكثر طلباً في السوق الآن</value>
+  </data>
+  <data name="MarketSkillAspNetNote" xml:space="preserve">
+    <value>يظهر في 70% من إعلانات الوظائف</value>
+  </data>
+  <data name="MarketSkillSqlNote" xml:space="preserve">
+    <value>مطلوب في معظم إعلانات وظائف Backend</value>
+  </data>
+  <data name="MarketSkillDockerNote" xml:space="preserve">
+    <value>مطلوب في 55% من الإعلانات للمستويات المتوسطة والعليا</value>
+  </data>
+  <data name="MarketSkillRestApiNote" xml:space="preserve">
+    <value>توقع أساسي في معظم إعلانات المستوى المبتدئ</value>
+  </data>
+  <data name="MarketSkillGitNote" xml:space="preserve">
+    <value>مطلوب عملياً في كل الإعلانات</value>
+  </data>
   <data name="RoadmapStep3Title" xml:space="preserve">
     <value>03. SQL وقواعد البيانات</value>
   </data>

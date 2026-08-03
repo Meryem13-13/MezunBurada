@@ -429,6 +429,30 @@
   <data name="RoadmapStep2Tag" xml:space="preserve">
     <value>Udemy · 3 Hafta</value>
   </data>
+  <data name="RoadmapStep2HowToApproach" xml:space="preserve">
+    <value>Önce dokümantasyonu oku (30 dk), sonra kursun ilk 3 bölümünü izle, ardından kendi başına aynısını tekrar yaz (kopyalamadan). Kendi başına basit bir CRUD API'si yazabildiğinde sıradaki adıma geç.</value>
+  </data>
+  <data name="HowToApproachLabel" xml:space="preserve">
+    <value>Nasıl ilerlemelisin?</value>
+  </data>
+  <data name="MarketDemandBoxTitle" xml:space="preserve">
+    <value>Piyasada Şu An Aranan</value>
+  </data>
+  <data name="MarketSkillAspNetNote" xml:space="preserve">
+    <value>İlanların %70'inde geçiyor</value>
+  </data>
+  <data name="MarketSkillSqlNote" xml:space="preserve">
+    <value>Neredeyse tüm backend ilanlarında aranıyor</value>
+  </data>
+  <data name="MarketSkillDockerNote" xml:space="preserve">
+    <value>Orta-üstü seviye ilanların %55'inde isteniyor</value>
+  </data>
+  <data name="MarketSkillRestApiNote" xml:space="preserve">
+    <value>Junior ilanlarının çoğunda temel beklenti</value>
+  </data>
+  <data name="MarketSkillGitNote" xml:space="preserve">
+    <value>Pratik olarak tüm ilanlarda gerekli görülüyor</value>
+  </data>
   <data name="RoadmapStep3Title" xml:space="preserve">
     <value>03. SQL &amp; Veritabanı</value>
   </data>

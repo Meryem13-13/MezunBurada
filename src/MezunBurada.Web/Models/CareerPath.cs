@@ -15,4 +15,6 @@ public class CareerPath
     public ICollection<Roadmap> Roadmaps { get; set; } = new List<Roadmap>();
     public ICollection<Project> Projects { get; set; } = new List<Project>();
     public ICollection<JobRole> JobRoles { get; set; } = new List<JobRole>();
+    public ICollection<MarketDemandSkill> MarketDemandSkills { get; set; } = new List<MarketDemandSkill>();
+    public ICollection<Mentor> Mentors { get; set; } = new List<Mentor>();
 }

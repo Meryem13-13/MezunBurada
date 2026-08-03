@@ -429,6 +429,30 @@
   <data name="RoadmapStep2Tag" xml:space="preserve">
     <value>Udemy · 3 Weeks</value>
   </data>
+  <data name="RoadmapStep2HowToApproach" xml:space="preserve">
+    <value>First read the documentation (30 min), then watch the first 3 sections of the course, then write the same thing yourself from scratch (no copying). Once you can write a simple CRUD API on your own, move to the next step.</value>
+  </data>
+  <data name="HowToApproachLabel" xml:space="preserve">
+    <value>How should you approach this?</value>
+  </data>
+  <data name="MarketDemandBoxTitle" xml:space="preserve">
+    <value>In Demand Right Now</value>
+  </data>
+  <data name="MarketSkillAspNetNote" xml:space="preserve">
+    <value>Appears in 70% of job listings</value>
+  </data>
+  <data name="MarketSkillSqlNote" xml:space="preserve">
+    <value>Required in nearly all backend listings</value>
+  </data>
+  <data name="MarketSkillDockerNote" xml:space="preserve">
+    <value>Requested in 55% of mid-to-senior listings</value>
+  </data>
+  <data name="MarketSkillRestApiNote" xml:space="preserve">
+    <value>A baseline expectation in most junior listings</value>
+  </data>
+  <data name="MarketSkillGitNote" xml:space="preserve">
+    <value>Practically required in every listing</value>
+  </data>
   <data name="RoadmapStep3Title" xml:space="preserve">
     <value>03. SQL &amp; Databases</value>
   </data>

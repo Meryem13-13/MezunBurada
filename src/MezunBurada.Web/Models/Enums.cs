@@ -40,3 +40,10 @@ public enum ResourceType
     Free,
     Affiliate,
 }
+
+public enum MentorSessionStatus
+{
+    Planned,
+    Scheduled,
+    Completed,
+}

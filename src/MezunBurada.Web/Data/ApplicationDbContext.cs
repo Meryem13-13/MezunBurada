@@ -28,6 +28,9 @@ public class ApplicationDbContext : DbContext
     public DbSet<Project> Projects => Set<Project>();
     public DbSet<Faq> Faqs => Set<Faq>();
     public DbSet<JobRole> JobRoles => Set<JobRole>();
+    public DbSet<MarketDemandSkill> MarketDemandSkills => Set<MarketDemandSkill>();
+    public DbSet<Mentor> Mentors => Set<Mentor>();
+    public DbSet<MentorSession> MentorSessions => Set<MentorSession>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -191,5 +194,31 @@ public class ApplicationDbContext : DbContext
             .WithMany(d => d.Faqs)
             .HasForeignKey(f => f.DepartmentId)
             .OnDelete(DeleteBehavior.Cascade);
+
+        // Market demand — manually curated, belongs to a CareerPath
+        modelBuilder.Entity<MarketDemandSkill>()
+            .HasOne(m => m.CareerPath)
+            .WithMany(cp => cp.MarketDemandSkills)
+            .HasForeignKey(m => m.CareerPathId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        // Mentorship — schema only, not wired to any page/payment flow yet
+        modelBuilder.Entity<Mentor>()
+            .HasOne(m => m.ExpertiseArea)
+            .WithMany(cp => cp.Mentors)
+            .HasForeignKey(m => m.ExpertiseAreaId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        modelBuilder.Entity<MentorSession>()
+            .HasOne(s => s.User)
+            .WithMany(u => u.MentorSessions)
+            .HasForeignKey(s => s.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<MentorSession>()
+            .HasOne(s => s.Mentor)
+            .WithMany(m => m.Sessions)
+            .HasForeignKey(s => s.MentorId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }
