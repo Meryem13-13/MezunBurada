@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using MezunBurada.Web.Data;
@@ -33,11 +34,32 @@ public class IndexModel : PageModel
     public Project? SuggestedProject { get; private set; }
     public string TotalDurationText { get; private set; } = "-";
 
+    private int? _persistedMatchPercent;
+
     public async Task OnGetAsync()
     {
         var subFieldId = HttpContext.Session.GetInt32(SubFieldSessionKey);
+        ProficiencyLevel? persistedLevel = null;
 
-        // No test taken this session (direct link) — fall back to demoing the one fully
+        // No test taken this browser session — if the visitor is logged in, use their most
+        // recent saved result instead of losing it just because the session is fresh.
+        if (subFieldId is null && User.Identity?.IsAuthenticated == true)
+        {
+            var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+            var latestResult = await _db.TestResults
+                .Where(t => t.UserId == userId)
+                .OrderByDescending(t => t.CompletedAt)
+                .FirstOrDefaultAsync();
+
+            if (latestResult is not null)
+            {
+                subFieldId = latestResult.SubFieldId;
+                persistedLevel = latestResult.Level;
+                _persistedMatchPercent = latestResult.CareerMatchPercent;
+            }
+        }
+
+        // Still nothing (anonymous, no test taken) — fall back to demoing the one fully
         // seeded example (Backend Developer) so the page still shows something real.
         if (subFieldId is null)
         {
@@ -72,7 +94,7 @@ public class IndexModel : PageModel
         }
 
         var levelRaw = HttpContext.Session.GetInt32(LevelSessionKey);
-        var level = levelRaw.HasValue ? (ProficiencyLevel)levelRaw.Value : ProficiencyLevel.Beginner;
+        var level = persistedLevel ?? (levelRaw.HasValue ? (ProficiencyLevel)levelRaw.Value : ProficiencyLevel.Beginner);
         var roadmap = careerPath.Roadmaps.FirstOrDefault(r => r.Level == level) ?? careerPath.Roadmaps.First();
 
         HasContent = true;
@@ -83,7 +105,7 @@ public class IndexModel : PageModel
         CvSkills = careerPath.CareerPathSkills.ToList();
         SuggestedProject = Steps.Select(s => s.SuggestedProject).FirstOrDefault(p => p is not null);
         TotalDurationText = EstimateTotalDuration(Steps);
-        CareerMatchPercent = ComputeMatchPercent(subFieldId.Value);
+        CareerMatchPercent = _persistedMatchPercent ?? ComputeMatchPercent(subFieldId.Value);
     }
 
     // Step durations are free text ("1 hafta", "3 gün", ...) — best-effort sum of the leading

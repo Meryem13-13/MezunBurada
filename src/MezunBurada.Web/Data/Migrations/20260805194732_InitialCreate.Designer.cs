@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MezunBurada.Web.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260803153508_InitialCreate")]
+    [Migration("20260805194732_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -652,6 +652,43 @@ namespace MezunBurada.Web.Data.Migrations
                     b.ToTable("SubFields");
                 });
 
+            modelBuilder.Entity("MezunBurada.Web.Models.TestResult", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CareerMatchPercent")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("CareerPathId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("CompletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Level")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("SubFieldId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CareerPathId");
+
+                    b.HasIndex("SubFieldId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("TestResults");
+                });
+
             modelBuilder.Entity("MezunBurada.Web.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -664,6 +701,10 @@ namespace MezunBurada.Web.Data.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("FullName")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -933,6 +974,32 @@ namespace MezunBurada.Web.Data.Migrations
                     b.Navigation("Department");
                 });
 
+            modelBuilder.Entity("MezunBurada.Web.Models.TestResult", b =>
+                {
+                    b.HasOne("MezunBurada.Web.Models.CareerPath", "CareerPath")
+                        .WithMany()
+                        .HasForeignKey("CareerPathId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("MezunBurada.Web.Models.SubField", "SubField")
+                        .WithMany()
+                        .HasForeignKey("SubFieldId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("MezunBurada.Web.Models.User", "User")
+                        .WithMany("TestResults")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CareerPath");
+
+                    b.Navigation("SubField");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("MezunBurada.Web.Models.CareerPath", b =>
                 {
                     b.Navigation("CareerPathSkills");
@@ -1013,6 +1080,8 @@ namespace MezunBurada.Web.Data.Migrations
             modelBuilder.Entity("MezunBurada.Web.Models.User", b =>
                 {
                     b.Navigation("MentorSessions");
+
+                    b.Navigation("TestResults");
                 });
 #pragma warning restore 612, 618
         }

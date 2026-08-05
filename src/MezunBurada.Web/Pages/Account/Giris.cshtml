@@ -11,13 +11,19 @@
 <div class="auth-form-card">
     <h2>@Localizer["LoginFormTitle"]</h2>
     <form method="post">
+        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+        @if (Model.ErrorMessage is not null)
+        {
+            <div class="text-danger mb-3">@Model.ErrorMessage</div>
+        }
+
         <div class="form-field">
-            <label for="email">@Localizer["EmailLabel"]</label>
-            <input type="email" id="email" name="email" placeholder="@Localizer["EmailPlaceholder"]" />
+            <label asp-for="Input.Email">@Localizer["EmailLabel"]</label>
+            <input asp-for="Input.Email" type="email" placeholder="@Localizer["EmailPlaceholder"]" />
         </div>
         <div class="form-field">
-            <label for="password">@Localizer["PasswordLabel"]</label>
-            <input type="password" id="password" name="password" />
+            <label asp-for="Input.Password">@Localizer["PasswordLabel"]</label>
+            <input asp-for="Input.Password" type="password" />
         </div>
         <a href="#" class="form-forgot-link">@Localizer["ForgotPasswordLabel"]</a>
 

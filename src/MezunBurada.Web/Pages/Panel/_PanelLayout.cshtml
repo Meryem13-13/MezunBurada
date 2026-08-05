@@ -6,6 +6,8 @@
     var isRtl = currentCulture.TextInfo.IsRightToLeft;
     var returnUrl = Context.Request.Path + Context.Request.QueryString;
     var activeTab = ViewData["ActiveTab"] as string ?? "dashboard";
+    var displayName = User.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value ?? "";
+    var initial = displayName.Length > 0 ? displayName[..1].ToUpperInvariant() : "?";
 }
 <!DOCTYPE html>
 <html lang="@currentCulture.TwoLetterISOLanguageName" dir="@(isRtl ? "rtl" : "ltr")">
@@ -41,7 +43,9 @@
                 <li><a href="#" class="@(activeTab == "profile" ? "active" : "")">👤 @Localizer["PanelNavProfile"]</a></li>
                 <li><a href="#" class="@(activeTab == "settings" ? "active" : "")">⚙️ @Localizer["PanelNavSettings"]</a></li>
             </ul>
-            <a href="/" class="panel-logout">↩ @Localizer["PanelLogout"]</a>
+            <form method="post" action="/cikis-yap">
+                <button type="submit" class="panel-logout w-100">↩ @Localizer["PanelLogout"]</button>
+            </form>
         </aside>
         <div class="panel-main">
             <div class="panel-topbar">
@@ -64,8 +68,8 @@
                     </div>
                     <span class="panel-bell">🔔<span class="dot"></span></span>
                     <span class="panel-user">
-                        <span class="panel-avatar">M</span>
-                        Meryem ⌄
+                        <span class="panel-avatar">@initial</span>
+                        @displayName ⌄
                     </span>
                 </div>
             </div>

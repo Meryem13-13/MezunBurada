@@ -62,6 +62,7 @@ namespace MezunBurada.Web.Data.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    FullName = table.Column<string>(type: "text", nullable: false),
                     Email = table.Column<string>(type: "text", nullable: false),
                     PasswordHash = table.Column<string>(type: "text", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
@@ -409,6 +410,42 @@ namespace MezunBurada.Web.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "TestResults",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Level = table.Column<int>(type: "integer", nullable: false),
+                    CareerMatchPercent = table.Column<int>(type: "integer", nullable: false),
+                    CompletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UserId = table.Column<int>(type: "integer", nullable: false),
+                    SubFieldId = table.Column<int>(type: "integer", nullable: false),
+                    CareerPathId = table.Column<int>(type: "integer", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TestResults", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_TestResults_CareerPaths_CareerPathId",
+                        column: x => x.CareerPathId,
+                        principalTable: "CareerPaths",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_TestResults_SubFields_SubFieldId",
+                        column: x => x.SubFieldId,
+                        principalTable: "SubFields",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_TestResults_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "LevelQuestionOptions",
                 columns: table => new
                 {
@@ -650,6 +687,21 @@ namespace MezunBurada.Web.Data.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_TestResults_CareerPathId",
+                table: "TestResults",
+                column: "CareerPathId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TestResults_SubFieldId",
+                table: "TestResults",
+                column: "SubFieldId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TestResults_UserId",
+                table: "TestResults",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Users_Email",
                 table: "Users",
                 column: "Email",
@@ -687,6 +739,9 @@ namespace MezunBurada.Web.Data.Migrations
                 name: "RoadmapSteps");
 
             migrationBuilder.DropTable(
+                name: "TestResults");
+
+            migrationBuilder.DropTable(
                 name: "InterestQuestions");
 
             migrationBuilder.DropTable(
@@ -696,9 +751,6 @@ namespace MezunBurada.Web.Data.Migrations
                 name: "Mentors");
 
             migrationBuilder.DropTable(
-                name: "Users");
-
-            migrationBuilder.DropTable(
                 name: "Projects");
 
             migrationBuilder.DropTable(
@@ -706,6 +758,9 @@ namespace MezunBurada.Web.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Roadmaps");
+
+            migrationBuilder.DropTable(
+                name: "Users");
 
             migrationBuilder.DropTable(
                 name: "Skills");

@@ -285,6 +285,18 @@
   <data name="LevelBeginner" xml:space="preserve">
     <value>Beginner</value>
   </data>
+  <data name="LevelIntermediate" xml:space="preserve">
+    <value>Intermediate</value>
+  </data>
+  <data name="LevelAdvanced" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="NoActivityYetText" xml:space="preserve">
+    <value>No activity yet. It'll show up here once you start on the steps.</value>
+  </data>
+  <data name="NoAchievementsYetText" xml:space="preserve">
+    <value>No badges yet. They'll show up here once you finish your first step.</value>
+  </data>
   <data name="LoginIllustrationHeadline" xml:space="preserve">
     <value>Continue your career journey right where you left off.</value>
   </data>

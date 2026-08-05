@@ -1,48 +1,90 @@
+using System.Security.Claims;
+using MezunBurada.Web.Data;
+using MezunBurada.Web.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace MezunBurada.Web.Pages.Panel;
 
+[Authorize]
 public class IndexModel : PageModel
 {
     public enum StepState { Done, Active, Upcoming }
 
-    public record RoadmapStep(string TitleKey, StepState State);
-    public record ActivityItem(string TextKey, string TimeKey);
-    public record AchievementItem(string Icon, string LabelKey);
+    public record RoadmapStepView(string Title, StepState State);
 
-    public string UserName { get; } = "Meryem";
-    public int RoadmapPercent { get; } = 32;
-    public int StepsCompleted { get; } = 3;
-    public int TotalSteps { get; } = 10;
-    public int LearningHours { get; } = 12;
-    public int Projects { get; } = 1;
-    public int CareerMatchPercent { get; } = 87;
+    private readonly ApplicationDbContext _db;
 
-    public IReadOnlyList<RoadmapStep> Steps { get; } = new List<RoadmapStep>
+    public IndexModel(ApplicationDbContext db)
     {
-        new("StepTemelProgramlama", StepState.Done),
-        new("StepGitGithub", StepState.Done),
-        new("StepCSharpDotnet", StepState.Active),
-        new("StepSql", StepState.Upcoming),
-        new("StepRestApi", StepState.Upcoming),
-        new("StepGercekProje", StepState.Upcoming),
-    };
+        _db = db;
+    }
 
-    public IReadOnlyList<ActivityItem> Activities { get; } = new List<ActivityItem>
-    {
-        new("ActivityGitHubDone", "TimeAgo2Days"),
-        new("ActivityTemelProgramlamaDone", "TimeAgo5Days"),
-        new("ActivityCSharpStarted", "TimeAgoToday"),
-    };
+    public string UserName { get; private set; } = string.Empty;
+    public bool HasTestResult { get; private set; }
+    public bool HasRoadmapContent { get; private set; }
 
-    public IReadOnlyList<AchievementItem> Achievements { get; } = new List<AchievementItem>
-    {
-        new("🥇", "AchievementFirstStep"),
-        new("🎯", "AchievementTestCompleted"),
-        new("🔥", "AchievementStreak"),
-    };
+    public string DepartmentName { get; private set; } = string.Empty;
+    public string SubFieldName { get; private set; } = string.Empty;
+    public string LevelResourceKey { get; private set; } = "LevelBeginner";
+    public int CareerMatchPercent { get; private set; }
+    public string CareerPathName { get; private set; } = string.Empty;
 
-    public void OnGet()
+    public IReadOnlyList<RoadmapStepView> Steps { get; private set; } = new List<RoadmapStepView>();
+
+    public async Task<IActionResult> OnGetAsync()
     {
+        var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+        var user = await _db.Users.FindAsync(userId);
+        if (user is null)
+        {
+            return RedirectToPage("/Giris");
+        }
+
+        UserName = user.FullName;
+
+        var latestResult = await _db.TestResults
+            .Where(t => t.UserId == userId)
+            .Include(t => t.SubField).ThenInclude(sf => sf!.Department)
+            .Include(t => t.CareerPath).ThenInclude(cp => cp!.Roadmaps).ThenInclude(r => r.Steps)
+            .OrderByDescending(t => t.CompletedAt)
+            .FirstOrDefaultAsync();
+
+        if (latestResult is null)
+        {
+            HasTestResult = false;
+            return Page();
+        }
+
+        HasTestResult = true;
+        DepartmentName = latestResult.SubField?.Department?.Name ?? string.Empty;
+        SubFieldName = latestResult.SubField?.Name ?? string.Empty;
+        CareerMatchPercent = latestResult.CareerMatchPercent;
+        LevelResourceKey = latestResult.Level switch
+        {
+            ProficiencyLevel.Intermediate => "LevelIntermediate",
+            ProficiencyLevel.Advanced => "LevelAdvanced",
+            _ => "LevelBeginner",
+        };
+
+        var roadmap = latestResult.CareerPath?.Roadmaps.FirstOrDefault(r => r.Level == latestResult.Level)
+            ?? latestResult.CareerPath?.Roadmaps.FirstOrDefault();
+
+        if (latestResult.CareerPath is null || roadmap is null)
+        {
+            HasRoadmapContent = false;
+            return Page();
+        }
+
+        HasRoadmapContent = true;
+        CareerPathName = latestResult.CareerPath.Name;
+        Steps = roadmap.Steps
+            .OrderBy(s => s.Order)
+            .Select((s, i) => new RoadmapStepView(s.Title, i == 0 ? StepState.Active : StepState.Upcoming))
+            .ToList();
+
+        return Page();
     }
 }

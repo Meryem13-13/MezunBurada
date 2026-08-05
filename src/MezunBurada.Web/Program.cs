@@ -1,7 +1,11 @@
 using System.Globalization;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using MezunBurada.Web.Data;
+using MezunBurada.Web.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,6 +47,19 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
+// Cookie auth (not JWT) — this is a server-rendered Razor Pages app, not an API consumed by a
+// separate client, so a login cookie is the simpler, idiomatic fit.
+builder.Services.AddSingleton<IPasswordHasher<User>, PasswordHasher<User>>();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/giris";
+        options.AccessDeniedPath = "/giris";
+        options.ExpireTimeSpan = TimeSpan.FromDays(30);
+        options.SlidingExpiration = true;
+    });
+builder.Services.AddAuthorization();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -70,6 +87,7 @@ app.UseRouting();
 
 app.UseSession();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
@@ -84,6 +102,14 @@ app.MapGet("/set-language", (string culture, string returnUrl, HttpContext conte
         new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1), IsEssential = true });
 
     return Results.LocalRedirect(returnUrl);
+});
+
+// Signs the user out and sends them back to the home page. Used by the "Çıkış Yap" link in
+// _PanelLayout.cshtml (a POST form, not a plain link, since this changes server-side state).
+app.MapPost("/cikis-yap", async (HttpContext context) =>
+{
+    await context.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+    return Results.LocalRedirect("/");
 });
 
 app.Run();

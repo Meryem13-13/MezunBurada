@@ -31,6 +31,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<MarketDemandSkill> MarketDemandSkills => Set<MarketDemandSkill>();
     public DbSet<Mentor> Mentors => Set<Mentor>();
     public DbSet<MentorSession> MentorSessions => Set<MentorSession>();
+    public DbSet<TestResult> TestResults => Set<TestResult>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -219,6 +220,25 @@ public class ApplicationDbContext : DbContext
             .HasOne(s => s.Mentor)
             .WithMany(m => m.Sessions)
             .HasForeignKey(s => s.MentorId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        // Test results — persisted once tied to a real account
+        modelBuilder.Entity<TestResult>()
+            .HasOne(t => t.User)
+            .WithMany(u => u.TestResults)
+            .HasForeignKey(t => t.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<TestResult>()
+            .HasOne(t => t.SubField)
+            .WithMany()
+            .HasForeignKey(t => t.SubFieldId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        modelBuilder.Entity<TestResult>()
+            .HasOne(t => t.CareerPath)
+            .WithMany()
+            .HasForeignKey(t => t.CareerPathId)
             .OnDelete(DeleteBehavior.Restrict);
     }
 }
