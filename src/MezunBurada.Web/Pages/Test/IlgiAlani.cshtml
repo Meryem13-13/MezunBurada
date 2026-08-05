@@ -24,20 +24,16 @@
     <div class="progress-fill" style="width: @(questionProgress)%;"></div>
 </div>
 
-<h1 class="question-title">@Localizer["IlgiAlaniQuestionTitle"]</h1>
+<h1 class="question-title">@Model.Question.Text</h1>
 <p class="question-subtitle">@Localizer["IlgiAlaniQuestionSubtitle"]</p>
 
 <form method="post">
     <div class="option-grid">
-        @foreach (var option in Model.Options)
+        @foreach (var option in Model.Question.Options)
         {
-            var isSelected = option.Id == Model.SelectedOptionId;
-            <button type="submit" name="optionId" value="@option.Id"
-                    class="option-card @(isSelected ? "selected" : "")">
-                <span class="option-check">✓</span>
-                <span class="option-icon">@option.Icon</span>
-                <div class="option-title">@Localizer[option.TitleKey]</div>
-                <div class="option-description">@Localizer[option.DescriptionKey]</div>
+            <button type="submit" name="optionId" value="@option.Id" class="option-card">
+                <span class="option-icon">🎯</span>
+                <div class="option-title">@option.Text</div>
             </button>
         }
     </div>
@@ -50,8 +46,5 @@
                 <div class="progress-fill" style="width: @(questionProgress)%;"></div>
             </div>
         </div>
-        <button type="submit" name="action" value="continue" class="btn-brand">
-            @Localizer["ContinueLabel"] &rarr;
-        </button>
     </div>
 </form>

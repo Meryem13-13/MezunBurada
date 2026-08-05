@@ -453,6 +453,12 @@
   <data name="MarketSkillGitNote" xml:space="preserve">
     <value>Pratik olarak tüm ilanlarda gerekli görülüyor</value>
   </data>
+  <data name="NoRoadmapYetTitle" xml:space="preserve">
+    <value>İçerik Hazırlanıyor</value>
+  </data>
+  <data name="NoRoadmapYetText" xml:space="preserve">
+    <value>Bu kariyer alanı için yol haritası içeriği henüz hazırlanmadı. Şu anda yalnızca Bilgisayar Mühendisliği &gt; Backend Developer için tam içerik mevcut — diğer alanlar yakında eklenecek.</value>
+  </data>
   <data name="RoadmapStep3Title" xml:space="preserve">
     <value>03. SQL &amp; Veritabanı</value>
   </data>

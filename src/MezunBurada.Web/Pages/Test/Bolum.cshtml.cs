@@ -1,24 +1,26 @@
+using MezunBurada.Web.Data;
+using MezunBurada.Web.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace MezunBurada.Web.Pages.Test;
 
 public class BolumModel : PageModel
 {
-    public string SelectedDeptKey { get; } = "DeptComputerEngineering";
+    private readonly ApplicationDbContext _db;
 
-    public IReadOnlyList<string> DepartmentKeys { get; } = new List<string>
+    public BolumModel(ApplicationDbContext db)
     {
-        "DeptComputerEngineering",
-        "DeptSoftwareEngineering",
-        "DeptElectricalEngineering",
-        "DeptIndustrialEngineering",
-        "DeptMechanicalEngineering",
-        "DeptArchitecture",
-        "DeptBusiness",
-        "DeptEconomics",
-    };
+        _db = db;
+    }
 
-    public void OnGet()
+    public IList<Department> Departments { get; private set; } = new List<Department>();
+
+    public async Task OnGetAsync()
     {
+        Departments = await _db.Departments
+            .Where(d => d.IsActive)
+            .OrderBy(d => d.Name)
+            .ToListAsync();
     }
 }

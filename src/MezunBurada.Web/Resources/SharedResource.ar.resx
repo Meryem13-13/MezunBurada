@@ -453,6 +453,12 @@
   <data name="MarketSkillGitNote" xml:space="preserve">
     <value>مطلوب عملياً في كل الإعلانات</value>
   </data>
+  <data name="NoRoadmapYetTitle" xml:space="preserve">
+    <value>المحتوى قيد الإعداد</value>
+  </data>
+  <data name="NoRoadmapYetText" xml:space="preserve">
+    <value>لم يتم إعداد محتوى خارطة الطريق لهذا المجال المهني بعد. حالياً المحتوى الكامل متوفر فقط لهندسة الحاسوب &gt; Backend Developer — بقية المجالات قادمة قريباً.</value>
+  </data>
   <data name="RoadmapStep3Title" xml:space="preserve">
     <value>03. SQL وقواعد البيانات</value>
   </data>

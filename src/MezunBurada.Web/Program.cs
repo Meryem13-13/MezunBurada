@@ -34,6 +34,15 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Anonymous test-flow progress (selected department, answers-so-far, computed result) lives in
+// session until real auth exists — see Pages/Test/*.cshtml.cs and Pages/Roadmap/Index.cshtml.cs.
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromHours(2);
+    options.Cookie.IsEssential = true;
+});
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -58,6 +67,8 @@ app.UseStaticFiles();
 app.UseRequestLocalization(app.Services.GetRequiredService<Microsoft.Extensions.Options.IOptions<RequestLocalizationOptions>>().Value);
 
 app.UseRouting();
+
+app.UseSession();
 
 app.UseAuthorization();
 

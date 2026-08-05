@@ -1,29 +1,102 @@
+using System.Text.Json;
+using MezunBurada.Web.Data;
+using MezunBurada.Web.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace MezunBurada.Web.Pages.Test;
 
 public class IlgiAlaniModel : PageModel
 {
-    public record InterestOption(string Id, string Icon, string TitleKey, string DescriptionKey);
+    private const string DeptSessionKey = "TestDepartmentId";
+    private const string AnsweredCountSessionKey = "InterestAnsweredCount";
+    private const string TallySessionKey = "InterestTally";
+    private const string ResultSubFieldSessionKey = "ResultSubFieldId";
+
+    private readonly ApplicationDbContext _db;
+
+    public IlgiAlaniModel(ApplicationDbContext db)
+    {
+        _db = db;
+    }
 
     public int CurrentStep { get; } = 2;
     public int TotalSteps { get; } = 3;
-    public int CurrentQuestion { get; } = 2;
-    public int TotalQuestions { get; } = 6;
-    public string? SelectedOptionId { get; private set; }
+    public int CurrentQuestion { get; private set; }
+    public int TotalQuestions { get; private set; }
+    public InterestQuestion Question { get; private set; } = null!;
 
-    public IReadOnlyList<InterestOption> Options { get; } = new List<InterestOption>
+    public async Task<IActionResult> OnGetAsync(int? departmentId)
     {
-        new("ai-ml", "🧠", "OptionAiTitle", "OptionAiDesc"),
-        new("web-backend", "💻", "OptionWebBackendTitle", "OptionWebBackendDesc"),
-        new("mobile", "📱", "OptionMobileTitle", "OptionMobileDesc"),
-        new("security", "🛡️", "OptionSecurityTitle", "OptionSecurityDesc"),
-        new("data", "📊", "OptionDataTitle", "OptionDataDesc"),
-    };
+        if (departmentId.HasValue)
+        {
+            // Starting fresh for this department — reset any earlier progress.
+            HttpContext.Session.SetInt32(DeptSessionKey, departmentId.Value);
+            HttpContext.Session.SetInt32(AnsweredCountSessionKey, 0);
+            HttpContext.Session.SetString(TallySessionKey, "{}");
+        }
 
-    public void OnGet()
+        var deptId = HttpContext.Session.GetInt32(DeptSessionKey);
+        if (deptId is null)
+        {
+            return RedirectToPage("/Test/Bolum");
+        }
+
+        var questions = await _db.InterestQuestions
+            .Where(q => q.DepartmentId == deptId)
+            .Include(q => q.Options)
+            .OrderBy(q => q.Id)
+            .ToListAsync();
+
+        if (questions.Count == 0)
+        {
+            return RedirectToPage("/Test/Bolum");
+        }
+
+        TotalQuestions = questions.Count;
+        var answered = HttpContext.Session.GetInt32(AnsweredCountSessionKey) ?? 0;
+
+        if (answered >= questions.Count)
+        {
+            var winningSubFieldId = GetTally().OrderByDescending(kv => kv.Value).First().Key;
+            HttpContext.Session.SetInt32(ResultSubFieldSessionKey, winningSubFieldId);
+            return RedirectToPage("/Test/Seviye");
+        }
+
+        CurrentQuestion = answered + 1;
+        Question = questions[answered];
+        return Page();
+    }
+
+    public async Task<IActionResult> OnPostAsync(int optionId)
     {
-        // Placeholder selection until real answer state (session/DB) is wired up.
-        SelectedOptionId = Options[0].Id;
+        var option = await _db.InterestQuestionOptions.FindAsync(optionId);
+        if (option is null)
+        {
+            return RedirectToPage();
+        }
+
+        var tally = GetTally();
+        tally[option.MapsToSubFieldId] = tally.GetValueOrDefault(option.MapsToSubFieldId) + 1;
+        SetTally(tally);
+
+        var answered = (HttpContext.Session.GetInt32(AnsweredCountSessionKey) ?? 0) + 1;
+        HttpContext.Session.SetInt32(AnsweredCountSessionKey, answered);
+
+        return RedirectToPage();
+    }
+
+    private Dictionary<int, int> GetTally()
+    {
+        var json = HttpContext.Session.GetString(TallySessionKey);
+        return string.IsNullOrEmpty(json)
+            ? new Dictionary<int, int>()
+            : JsonSerializer.Deserialize<Dictionary<int, int>>(json) ?? new Dictionary<int, int>();
+    }
+
+    private void SetTally(Dictionary<int, int> tally)
+    {
+        HttpContext.Session.SetString(TallySessionKey, JsonSerializer.Serialize(tally));
     }
 }

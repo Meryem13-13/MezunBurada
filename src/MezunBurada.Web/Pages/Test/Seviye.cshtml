@@ -34,22 +34,23 @@
 <div class="context-card">
     <span class="option-icon">🧠</span>
     <div>
-        <div class="context-title">@Localizer[Model.DepartmentKey] &middot; @Localizer[Model.SubFieldKey]</div>
+        <div class="context-title">@Model.DepartmentName &middot; @Model.SubFieldName</div>
     </div>
     <span class="context-badge">@Localizer["LevelTestTitle"]</span>
 </div>
 
-<h2 class="question-title">@Localizer["OverfittingQuestionText"]</h2>
+<h2 class="question-title">@Model.Question.Text</h2>
 
 <form method="post">
     <div class="answer-grid">
-        @foreach (var option in Model.Options)
+        @{ var letters = new[] { "A", "B", "C", "D", "E", "F" }; }
+        @for (var i = 0; i < Model.Question.Options.Count; i++)
         {
-            <button type="submit" name="optionLetter" value="@option.Letter"
-                    class="answer-option @(option.IsSelected ? "selected" : "")">
-                <span class="answer-radio">@(option.IsSelected ? "✓" : "")</span>
-                <span class="answer-letter">@option.Letter</span>
-                <div class="answer-text">@Localizer[option.TextKey]</div>
+            var option = Model.Question.Options.ElementAt(i);
+            <button type="submit" name="optionId" value="@option.Id" class="answer-option">
+                <span class="answer-radio"></span>
+                <span class="answer-letter">@letters[i]</span>
+                <div class="answer-text">@option.Text</div>
             </button>
         }
     </div>
@@ -70,12 +71,5 @@
                 <div class="progress-fill" style="width: @(questionProgress)%;"></div>
             </div>
         </div>
-        <button type="submit" name="action" value="continue" class="btn-brand">
-            @(Model.IsLastQuestion ? Localizer["FinishTestLabel"] : Localizer["NextQuestionLabel"])
-            @if (!Model.IsLastQuestion)
-            {
-                <text>&rarr;</text>
-            }
-        </button>
     </div>
 </form>

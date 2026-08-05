@@ -453,6 +453,12 @@
   <data name="MarketSkillGitNote" xml:space="preserve">
     <value>Practically required in every listing</value>
   </data>
+  <data name="NoRoadmapYetTitle" xml:space="preserve">
+    <value>Content Coming Soon</value>
+  </data>
+  <data name="NoRoadmapYetText" xml:space="preserve">
+    <value>Roadmap content for this career area hasn't been prepared yet. Right now, full content only exists for Computer Engineering &gt; Backend Developer — other areas are on their way.</value>
+  </data>
   <data name="RoadmapStep3Title" xml:space="preserve">
     <value>03. SQL &amp; Databases</value>
   </data>

@@ -23,10 +23,9 @@
 <input type="text" class="search-input" placeholder="@Localizer["SearchDepartmentPlaceholder"]" />
 
 <div class="dept-grid">
-    @foreach (var deptKey in Model.DepartmentKeys)
+    @foreach (var dept in Model.Departments)
     {
-        var isSelected = deptKey == Model.SelectedDeptKey;
-        <a href="/test/ilgi-alani" class="dept-card @(isSelected ? "selected" : "")">@Localizer[deptKey]</a>
+        <a href="/test/ilgi-alani?departmentId=@dept.Id" class="dept-card">@dept.Name</a>
     }
 </div>
 
