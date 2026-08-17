@@ -32,6 +32,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<Mentor> Mentors => Set<Mentor>();
     public DbSet<MentorSession> MentorSessions => Set<MentorSession>();
     public DbSet<TestResult> TestResults => Set<TestResult>();
+    public DbSet<Review> Reviews => Set<Review>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -240,5 +241,18 @@ public class ApplicationDbContext : DbContext
             .WithMany()
             .HasForeignKey(t => t.CareerPathId)
             .OnDelete(DeleteBehavior.Restrict);
+
+        // Reviews — shared experiences shown on /deneyimler once approved
+        modelBuilder.Entity<Review>()
+            .HasOne(r => r.Department)
+            .WithMany()
+            .HasForeignKey(r => r.DepartmentId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<Review>()
+            .HasOne(r => r.SubField)
+            .WithMany()
+            .HasForeignKey(r => r.SubFieldId)
+            .OnDelete(DeleteBehavior.SetNull);
     }
 }

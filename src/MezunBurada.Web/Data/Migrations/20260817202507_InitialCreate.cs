@@ -273,6 +273,37 @@ namespace MezunBurada.Web.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Reviews",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Text = table.Column<string>(type: "text", nullable: false),
+                    Level = table.Column<string>(type: "text", nullable: true),
+                    Status = table.Column<int>(type: "integer", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    DepartmentId = table.Column<int>(type: "integer", nullable: false),
+                    SubFieldId = table.Column<int>(type: "integer", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Reviews", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Reviews_Departments_DepartmentId",
+                        column: x => x.DepartmentId,
+                        principalTable: "Departments",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Reviews_SubFields_SubFieldId",
+                        column: x => x.SubFieldId,
+                        principalTable: "SubFields",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "CareerPathSkills",
                 columns: table => new
                 {
@@ -646,6 +677,16 @@ namespace MezunBurada.Web.Data.Migrations
                 column: "CareerPathId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Reviews_DepartmentId",
+                table: "Reviews",
+                column: "DepartmentId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Reviews_SubFieldId",
+                table: "Reviews",
+                column: "SubFieldId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Roadmaps_CareerPathId",
                 table: "Roadmaps",
                 column: "CareerPathId");
@@ -734,6 +775,9 @@ namespace MezunBurada.Web.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "MentorSessions");
+
+            migrationBuilder.DropTable(
+                name: "Reviews");
 
             migrationBuilder.DropTable(
                 name: "RoadmapSteps");

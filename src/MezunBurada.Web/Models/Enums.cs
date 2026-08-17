@@ -47,3 +47,9 @@ public enum MentorSessionStatus
     Scheduled,
     Completed,
 }
+
+public enum ReviewStatus
+{
+    Pending,
+    Approved,
+}

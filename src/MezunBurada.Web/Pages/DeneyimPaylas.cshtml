@@ -1,0 +1,75 @@
+@page "/deneyim-paylas"
+@model MezunBurada.Web.Pages.DeneyimPaylasModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "/Pages/Shared/_PublicLayout.cshtml";
+    ViewData["Title"] = Localizer["ShareExperienceFormTitle"];
+    ViewData["ActiveNav"] = "experiences";
+}
+
+@if (Model.Submitted)
+{
+    <div class="thank-you-card">
+        <div class="thank-you-icon">🎉</div>
+        <h1>@Localizer["ThankYouForSharingTitle"]</h1>
+        <p>@Localizer["ThankYouForSharingText"]</p>
+        <a href="/deneyimler" class="btn-brand">@Localizer["BackToExperiencesLabel"]</a>
+    </div>
+}
+else
+{
+    <div class="simple-form-card">
+        <h1>@Localizer["ShareExperienceFormTitle"]</h1>
+        <p class="form-subtitle">@Localizer["ShareExperienceFormSubtitle"]</p>
+
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+            <div class="form-field">
+                <label asp-for="Input.Name">@Localizer["YourNameLabel"]</label>
+                <input asp-for="Input.Name" placeholder="@Localizer["YourNameLabel"]" />
+            </div>
+
+            <div class="form-field">
+                <label asp-for="Input.DepartmentId">@Localizer["DepartmentFieldLabel"]</label>
+                <select asp-for="Input.DepartmentId">
+                    <option value="">@Localizer["ChooseDepartmentPlaceholder"]</option>
+                    @foreach (var dept in Model.Departments)
+                    {
+                        <option value="@dept.Id">@dept.Name</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label asp-for="Input.SubFieldId">@Localizer["SubFieldFieldOptionalLabel"]</label>
+                <select asp-for="Input.SubFieldId">
+                    <option value="">@Localizer["NotSpecifiedOption"]</option>
+                    @foreach (var sf in Model.SubFields)
+                    {
+                        <option value="@sf.Id">@sf.Department?.Name &middot; @sf.Name</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label asp-for="Input.Text">@Localizer["ExperienceTextLabel"]</label>
+                <textarea asp-for="Input.Text" placeholder="@Localizer["ExperienceTextLabel"]"></textarea>
+            </div>
+
+            <div class="form-field">
+                <label asp-for="Input.Level">@Localizer["YourLevelLabel"]</label>
+                <select asp-for="Input.Level">
+                    <option value="">@Localizer["NotSpecifiedOption"]</option>
+                    <option value="@Localizer["LevelBeginner"]">@Localizer["LevelBeginner"]</option>
+                    <option value="@Localizer["LevelIntermediate"]">@Localizer["LevelIntermediate"]</option>
+                    <option value="@Localizer["LevelAdvanced"]">@Localizer["LevelAdvanced"]</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-brand full-width">@Localizer["SubmitReviewLabel"]</button>
+            <p class="form-hint text-center mt-2">@Localizer["ReviewModerationNoticeText"]</p>
+        </form>
+    </div>
+}

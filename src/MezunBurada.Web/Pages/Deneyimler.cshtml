@@ -1,0 +1,96 @@
+@page "/deneyimler"
+@model MezunBurada.Web.Pages.DeneyimlerModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "/Pages/Shared/_PublicLayout.cshtml";
+    ViewData["Title"] = Localizer["PublicNavExperiences"];
+    ViewData["ActiveNav"] = "experiences";
+}
+
+<div class="experience-hero">
+    <h1>@Localizer["ExperiencesHeroTitle"]</h1>
+    <p>@Localizer["ExperiencesHeroSubtitle"]</p>
+    <a href="/deneyim-paylas" class="btn-brand">@Localizer["ShareExperienceLabel"] &rarr;</a>
+</div>
+
+<div class="experience-stat-row">
+    <div class="stat-tile">
+        <div class="stat-value ltr-nums">@Model.DepartmentCount</div>
+        <div class="stat-label">@Localizer["StatDepartmentsLabel"]</div>
+    </div>
+    <div class="stat-tile">
+        <div class="stat-value ltr-nums">@Model.CareerPathCount</div>
+        <div class="stat-label">@Localizer["StatCareerPathsLabel"]</div>
+    </div>
+    <div class="stat-tile">
+        <div class="stat-value ltr-nums">@Model.ExperienceCount</div>
+        <div class="stat-label">@Localizer["StatExperiencesLabel"]</div>
+    </div>
+    <div class="stat-tile">
+        <div class="stat-value">%100</div>
+        <div class="stat-label">@Localizer["StatFreeLabel"]</div>
+    </div>
+</div>
+
+<h2 class="accent-heading">@Localizer["DiscoverExperiencesTitle"]</h2>
+
+<form method="get" class="experience-filters">
+    <input type="text" name="q" value="@Model.SearchTerm" class="search-input" style="max-width: none; margin-bottom: 0;" placeholder="@Localizer["SearchExperiencesPlaceholder"]" />
+    <select name="departmentId" class="form-select" onchange="this.form.submit()">
+        <option value="">@Localizer["AllDepartmentsOption"]</option>
+        @foreach (var dept in Model.Departments)
+        {
+            <option value="@dept.Id" selected="@(Model.SelectedDepartmentId == dept.Id)">@dept.Name</option>
+        }
+    </select>
+    <select name="subFieldId" class="form-select" onchange="this.form.submit()">
+        <option value="">@Localizer["AllCareerAreasOption"]</option>
+        @foreach (var sf in Model.SubFields)
+        {
+            <option value="@sf.Id" selected="@(Model.SelectedSubFieldId == sf.Id)">@sf.Department?.Name &middot; @sf.Name</option>
+        }
+    </select>
+    <noscript><button type="submit" class="btn-brand">OK</button></noscript>
+</form>
+
+@if (!Model.Reviews.Any())
+{
+    <div class="empty-state-card" style="max-width: 480px; margin: 0 auto 3rem;">
+        <div class="empty-illustration">🗂️</div>
+        <h3>@Localizer["NoExperiencesFoundTitle"]</h3>
+        <p>@Localizer["NoExperiencesFoundText"]</p>
+        <a href="/deneyimler" class="btn-brand-outline">@Localizer["ClearFiltersLabel"]</a>
+    </div>
+}
+else
+{
+    <div class="review-grid">
+        @foreach (var review in Model.Reviews)
+        {
+            <div class="review-card">
+                <div class="review-card-header">
+                    <span class="review-avatar">@review.Name.Substring(0, 1).ToUpperInvariant()</span>
+                    <div>
+                        <div class="review-name">@review.Name</div>
+                        <div class="review-meta">@review.Department?.Name @(review.SubField is not null ? $"· {review.SubField.Name}" : "")</div>
+                    </div>
+                </div>
+                <p class="review-text">"@review.Text"</p>
+                <div class="review-footer">
+                    <span class="ltr-nums">@review.CreatedAt.ToString("dd.MM.yyyy")</span>
+                    @if (!string.IsNullOrEmpty(review.Level))
+                    {
+                        <span class="pill-tag">@review.Level</span>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}
+
+<div class="roadmap-cta-card text-center mb-5">
+    <h2>@Localizer["ShareYourExperienceCtaTitle"]</h2>
+    <p>@Localizer["ShareYourExperienceCtaText"]</p>
+    <a href="/deneyim-paylas" class="btn-brand">@Localizer["ShareExperienceLabel"] &rarr;</a>
+</div>

@@ -411,6 +411,37 @@ public static class DbSeeder
             }
         );
 
+        // ---- Sample approved reviews so /deneyimler isn't empty on day one ----
+        db.Reviews.AddRange(
+            new Review
+            {
+                Name = "Ece",
+                Text = "Mezun olduktan sonra hangi alana yönelmem gerektiğini bilmiyordum. Test sonucunda backend tarafına daha yatkın olduğumu gördüm ve öğrenmem gereken adımlar gerçekten netleşti.",
+                Level = "Başlangıç",
+                Department = department,
+                SubField = backend,
+                Status = ReviewStatus.Approved,
+            },
+            new Review
+            {
+                Name = "Ahmet",
+                Text = "En faydalı kısmı sadece bir alan önermesi değil, o alana ulaşmak için hangi becerileri geliştirmem gerektiğini göstermesiydi.",
+                Level = "Orta",
+                Department = department,
+                SubField = backend,
+                Status = ReviewStatus.Approved,
+            },
+            new Review
+            {
+                Name = "Zeynep",
+                Text = "Kariyer seçeneklerini tek tek araştırmak yerine bana özel yolun düzenli şekilde gösterilmesi çok işime yaradı.",
+                Level = "Başlangıç",
+                Department = department,
+                SubField = frontend,
+                Status = ReviewStatus.Approved,
+            }
+        );
+
         await db.SaveChangesAsync();
     }
 }

@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MezunBurada.Web.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260805194732_InitialCreate")]
+    [Migration("20260817202507_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -498,6 +498,46 @@ namespace MezunBurada.Web.Data.Migrations
                     b.ToTable("Resources");
                 });
 
+            modelBuilder.Entity("MezunBurada.Web.Models.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("DepartmentId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Level")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("SubFieldId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DepartmentId");
+
+                    b.HasIndex("SubFieldId");
+
+                    b.ToTable("Reviews");
+                });
+
             modelBuilder.Entity("MezunBurada.Web.Models.Roadmap", b =>
                 {
                     b.Property<int>("Id")
@@ -911,6 +951,24 @@ namespace MezunBurada.Web.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("CareerPath");
+                });
+
+            modelBuilder.Entity("MezunBurada.Web.Models.Review", b =>
+                {
+                    b.HasOne("MezunBurada.Web.Models.Department", "Department")
+                        .WithMany()
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MezunBurada.Web.Models.SubField", "SubField")
+                        .WithMany()
+                        .HasForeignKey("SubFieldId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Department");
+
+                    b.Navigation("SubField");
                 });
 
             modelBuilder.Entity("MezunBurada.Web.Models.Roadmap", b =>

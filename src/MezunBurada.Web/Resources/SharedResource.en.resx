@@ -471,6 +471,126 @@
   <data name="NoRoadmapYetText" xml:space="preserve">
     <value>Roadmap content for this career area hasn't been prepared yet. Right now, full content only exists for Computer Engineering &gt; Backend Developer — other areas are on their way.</value>
   </data>
+  <data name="PublicNavHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="PublicNavDepartments" xml:space="preserve">
+    <value>Departments</value>
+  </data>
+  <data name="PublicNavExperiences" xml:space="preserve">
+    <value>Experiences</value>
+  </data>
+  <data name="FooterTagline" xml:space="preserve">
+    <value>A free, social-good career guide for new graduates.</value>
+  </data>
+  <data name="FooterPlatformHeading" xml:space="preserve">
+    <value>Platform</value>
+  </data>
+  <data name="FooterLegalHeading" xml:space="preserve">
+    <value>Legal</value>
+  </data>
+  <data name="FooterPrivacyLink" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="FooterTermsLink" xml:space="preserve">
+    <value>Terms of Service</value>
+  </data>
+  <data name="ExperiencesHeroTitle" xml:space="preserve">
+    <value>"They were just like you."</value>
+  </data>
+  <data name="ExperiencesHeroSubtitle" xml:space="preserve">
+    <value>You're not alone while figuring out which path to take after graduation. See what other MezunBurada users experienced.</value>
+  </data>
+  <data name="ShareExperienceLabel" xml:space="preserve">
+    <value>Share Your Experience</value>
+  </data>
+  <data name="DiscoverExperiencesTitle" xml:space="preserve">
+    <value>Discover experiences</value>
+  </data>
+  <data name="SearchExperiencesPlaceholder" xml:space="preserve">
+    <value>Search experiences...</value>
+  </data>
+  <data name="FilterByDepartmentLabel" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="FilterByCareerAreaLabel" xml:space="preserve">
+    <value>Career area (optional)</value>
+  </data>
+  <data name="AllDepartmentsOption" xml:space="preserve">
+    <value>All Departments</value>
+  </data>
+  <data name="AllCareerAreasOption" xml:space="preserve">
+    <value>All Career Areas</value>
+  </data>
+  <data name="NoExperiencesFoundTitle" xml:space="preserve">
+    <value>No experiences match this filter yet.</value>
+  </data>
+  <data name="NoExperiencesFoundText" xml:space="preserve">
+    <value>Try a different department or career area.</value>
+  </data>
+  <data name="ClearFiltersLabel" xml:space="preserve">
+    <value>Clear Filters</value>
+  </data>
+  <data name="ShareYourExperienceCtaTitle" xml:space="preserve">
+    <value>Your experience could guide someone else too.</value>
+  </data>
+  <data name="ShareYourExperienceCtaText" xml:space="preserve">
+    <value>Share what you went through after graduation and help the next graduate after you.</value>
+  </data>
+  <data name="StatDepartmentsLabel" xml:space="preserve">
+    <value>Departments</value>
+  </data>
+  <data name="StatCareerPathsLabel" xml:space="preserve">
+    <value>Career Paths</value>
+  </data>
+  <data name="StatExperiencesLabel" xml:space="preserve">
+    <value>Shared Experiences</value>
+  </data>
+  <data name="StatFreeLabel" xml:space="preserve">
+    <value>Free</value>
+  </data>
+  <data name="ShareExperienceFormTitle" xml:space="preserve">
+    <value>Share Your Experience</value>
+  </data>
+  <data name="ShareExperienceFormSubtitle" xml:space="preserve">
+    <value>What you went through after graduation could guide the next graduate.</value>
+  </data>
+  <data name="YourNameLabel" xml:space="preserve">
+    <value>Your Name</value>
+  </data>
+  <data name="ExperienceTextLabel" xml:space="preserve">
+    <value>Your Experience</value>
+  </data>
+  <data name="YourLevelLabel" xml:space="preserve">
+    <value>Your Level (optional)</value>
+  </data>
+  <data name="SubmitReviewLabel" xml:space="preserve">
+    <value>Submit Experience</value>
+  </data>
+  <data name="ReviewModerationNoticeText" xml:space="preserve">
+    <value>Your experience will be published after review.</value>
+  </data>
+  <data name="ThankYouForSharingTitle" xml:space="preserve">
+    <value>Thank you! 🎉</value>
+  </data>
+  <data name="ThankYouForSharingText" xml:space="preserve">
+    <value>Your experience is now under review — it'll appear on the Experiences page once approved.</value>
+  </data>
+  <data name="BackToExperiencesLabel" xml:space="preserve">
+    <value>Back to Experiences</value>
+  </data>
+  <data name="DepartmentFieldLabel" xml:space="preserve">
+    <value>Your Department</value>
+  </data>
+  <data name="SubFieldFieldOptionalLabel" xml:space="preserve">
+    <value>Your career area (optional)</value>
+  </data>
+  <data name="NotSpecifiedOption" xml:space="preserve">
+    <value>Prefer not to say</value>
+  </data>
+  <data name="ChooseDepartmentPlaceholder" xml:space="preserve">
+    <value>Choose your department</value>
+  </data>
   <data name="RoadmapStep3Title" xml:space="preserve">
     <value>03. SQL &amp; Databases</value>
   </data>

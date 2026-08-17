@@ -471,6 +471,126 @@
   <data name="NoRoadmapYetText" xml:space="preserve">
     <value>لم يتم إعداد محتوى خارطة الطريق لهذا المجال المهني بعد. حالياً المحتوى الكامل متوفر فقط لهندسة الحاسوب &gt; Backend Developer — بقية المجالات قادمة قريباً.</value>
   </data>
+  <data name="PublicNavHome" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="PublicNavDepartments" xml:space="preserve">
+    <value>الأقسام</value>
+  </data>
+  <data name="PublicNavExperiences" xml:space="preserve">
+    <value>التجارب</value>
+  </data>
+  <data name="FooterTagline" xml:space="preserve">
+    <value>دليل مهني مجاني للخريجين الجدد، يهدف إلى الفائدة الاجتماعية.</value>
+  </data>
+  <data name="FooterPlatformHeading" xml:space="preserve">
+    <value>المنصة</value>
+  </data>
+  <data name="FooterLegalHeading" xml:space="preserve">
+    <value>قانوني</value>
+  </data>
+  <data name="FooterPrivacyLink" xml:space="preserve">
+    <value>سياسة الخصوصية</value>
+  </data>
+  <data name="FooterTermsLink" xml:space="preserve">
+    <value>شروط الاستخدام</value>
+  </data>
+  <data name="ExperiencesHeroTitle" xml:space="preserve">
+    <value>«لقد كانوا مثلك تماماً.»</value>
+  </data>
+  <data name="ExperiencesHeroSubtitle" xml:space="preserve">
+    <value>لست وحدك وأنت تفكر في المسار الذي ستختاره بعد التخرج. اطّلع على تجارب مستخدمي MezunBurada.</value>
+  </data>
+  <data name="ShareExperienceLabel" xml:space="preserve">
+    <value>شارك تجربتك</value>
+  </data>
+  <data name="DiscoverExperiencesTitle" xml:space="preserve">
+    <value>اكتشف التجارب</value>
+  </data>
+  <data name="SearchExperiencesPlaceholder" xml:space="preserve">
+    <value>ابحث في التجارب...</value>
+  </data>
+  <data name="FilterByDepartmentLabel" xml:space="preserve">
+    <value>اختر القسم</value>
+  </data>
+  <data name="FilterByCareerAreaLabel" xml:space="preserve">
+    <value>المجال المهني (اختياري)</value>
+  </data>
+  <data name="AllDepartmentsOption" xml:space="preserve">
+    <value>كل الأقسام</value>
+  </data>
+  <data name="AllCareerAreasOption" xml:space="preserve">
+    <value>كل المجالات المهنية</value>
+  </data>
+  <data name="NoExperiencesFoundTitle" xml:space="preserve">
+    <value>لم نجد أي تجربة بهذا الفلتر بعد.</value>
+  </data>
+  <data name="NoExperiencesFoundText" xml:space="preserve">
+    <value>جرّب قسماً أو مجالاً مهنياً مختلفاً.</value>
+  </data>
+  <data name="ClearFiltersLabel" xml:space="preserve">
+    <value>مسح الفلاتر</value>
+  </data>
+  <data name="ShareYourExperienceCtaTitle" xml:space="preserve">
+    <value>تجربتك قد ترشد شخصاً آخر أيضاً.</value>
+  </data>
+  <data name="ShareYourExperienceCtaText" xml:space="preserve">
+    <value>شارك ما مررت به بعد التخرج وساعد خريجاً قادماً بعدك.</value>
+  </data>
+  <data name="StatDepartmentsLabel" xml:space="preserve">
+    <value>قسم</value>
+  </data>
+  <data name="StatCareerPathsLabel" xml:space="preserve">
+    <value>مسار مهني</value>
+  </data>
+  <data name="StatExperiencesLabel" xml:space="preserve">
+    <value>تجربة مشاركة</value>
+  </data>
+  <data name="StatFreeLabel" xml:space="preserve">
+    <value>مجاني</value>
+  </data>
+  <data name="ShareExperienceFormTitle" xml:space="preserve">
+    <value>شارك تجربتك</value>
+  </data>
+  <data name="ShareExperienceFormSubtitle" xml:space="preserve">
+    <value>ما مررت به بعد التخرج قد يرشد الخريج القادم.</value>
+  </data>
+  <data name="YourNameLabel" xml:space="preserve">
+    <value>اسمك</value>
+  </data>
+  <data name="ExperienceTextLabel" xml:space="preserve">
+    <value>تجربتك</value>
+  </data>
+  <data name="YourLevelLabel" xml:space="preserve">
+    <value>مستواك (اختياري)</value>
+  </data>
+  <data name="SubmitReviewLabel" xml:space="preserve">
+    <value>إرسال التجربة</value>
+  </data>
+  <data name="ReviewModerationNoticeText" xml:space="preserve">
+    <value>سيتم نشر تجربتك بعد المراجعة.</value>
+  </data>
+  <data name="ThankYouForSharingTitle" xml:space="preserve">
+    <value>شكراً لك! 🎉</value>
+  </data>
+  <data name="ThankYouForSharingText" xml:space="preserve">
+    <value>تجربتك الآن قيد المراجعة — ستظهر في صفحة التجارب بعد الموافقة عليها.</value>
+  </data>
+  <data name="BackToExperiencesLabel" xml:space="preserve">
+    <value>العودة إلى التجارب</value>
+  </data>
+  <data name="DepartmentFieldLabel" xml:space="preserve">
+    <value>قسمك</value>
+  </data>
+  <data name="SubFieldFieldOptionalLabel" xml:space="preserve">
+    <value>مجال المسار المهني (اختياري)</value>
+  </data>
+  <data name="NotSpecifiedOption" xml:space="preserve">
+    <value>أفضل عدم التحديد</value>
+  </data>
+  <data name="ChooseDepartmentPlaceholder" xml:space="preserve">
+    <value>اختر قسمك</value>
+  </data>
   <data name="RoadmapStep3Title" xml:space="preserve">
     <value>03. SQL وقواعد البيانات</value>
   </data>

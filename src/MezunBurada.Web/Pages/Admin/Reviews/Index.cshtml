@@ -1,0 +1,93 @@
+@page "/admin/deneyimler"
+@model MezunBurada.Web.Pages.Admin.Reviews.IndexModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Deneyim Moderasyonu";
+}
+
+<h1 class="h3 mb-3">Deneyim Moderasyonu</h1>
+
+<h2 class="h5">Onay Bekleyenler (@Model.PendingReviews.Count)</h2>
+@if (!Model.PendingReviews.Any())
+{
+    <div class="alert alert-light border mb-4">Onay bekleyen deneyim yok.</div>
+}
+else
+{
+    <table class="table table-bordered align-middle bg-white mb-4">
+        <thead>
+            <tr>
+                <th>İsim</th>
+                <th>Bölüm</th>
+                <th>Alt Dal</th>
+                <th>Seviye</th>
+                <th>Deneyim</th>
+                <th>Tarih</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var review in Model.PendingReviews)
+            {
+                <tr>
+                    <td>@review.Name</td>
+                    <td>@review.Department?.Name</td>
+                    <td>@review.SubField?.Name</td>
+                    <td>@review.Level</td>
+                    <td style="max-width: 320px;">@review.Text</td>
+                    <td class="text-nowrap">@review.CreatedAt.ToString("dd.MM.yyyy")</td>
+                    <td class="text-end text-nowrap">
+                        <form method="post" asp-page-handler="Approve" asp-route-id="@review.Id" class="d-inline">
+                            <button type="submit" class="btn btn-sm btn-outline-success">Onayla</button>
+                        </form>
+                        <form method="post" asp-page-handler="Reject" asp-route-id="@review.Id" class="d-inline"
+                              onsubmit="return confirm('Bu deneyimi reddedip silmek istediğine emin misin?');">
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Reddet</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<h2 class="h5">Yayınlanan Deneyimler (@Model.ApprovedReviews.Count)</h2>
+@if (!Model.ApprovedReviews.Any())
+{
+    <div class="alert alert-light border">Henüz yayınlanan deneyim yok.</div>
+}
+else
+{
+    <table class="table table-bordered align-middle bg-white">
+        <thead>
+            <tr>
+                <th>İsim</th>
+                <th>Bölüm</th>
+                <th>Alt Dal</th>
+                <th>Seviye</th>
+                <th>Deneyim</th>
+                <th>Tarih</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var review in Model.ApprovedReviews)
+            {
+                <tr>
+                    <td>@review.Name</td>
+                    <td>@review.Department?.Name</td>
+                    <td>@review.SubField?.Name</td>
+                    <td>@review.Level</td>
+                    <td style="max-width: 320px;">@review.Text</td>
+                    <td class="text-nowrap">@review.CreatedAt.ToString("dd.MM.yyyy")</td>
+                    <td class="text-end text-nowrap">
+                        <form method="post" asp-page-handler="Reject" asp-route-id="@review.Id" class="d-inline"
+                              onsubmit="return confirm('Bu deneyimi kaldırmak istediğine emin misin?');">
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Kaldır</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

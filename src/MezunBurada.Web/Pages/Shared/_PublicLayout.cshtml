@@ -1,0 +1,90 @@
+@using System.Globalization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    var currentCulture = CultureInfo.CurrentUICulture;
+    var isRtl = currentCulture.TextInfo.IsRightToLeft;
+    var returnUrl = Context.Request.Path + Context.Request.QueryString;
+    var activeNav = ViewData["ActiveNav"] as string ?? "";
+}
+<!DOCTYPE html>
+<html lang="@currentCulture.TwoLetterISOLanguageName" dir="@(isRtl ? "rtl" : "ltr")">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - @Localizer["SiteTitle"]</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    @if (isRtl)
+    {
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />
+    }
+    else
+    {
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    }
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <nav class="public-nav">
+        <div class="container d-flex align-items-center justify-content-between py-3">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+                <span class="brand-mark">M</span>
+                <span>@Localizer["SiteTitle"]</span>
+            </a>
+            <div class="d-none d-md-flex align-items-center gap-4">
+                <a href="/" class="public-nav-link @(activeNav == "home" ? "active" : "")">@Localizer["PublicNavHome"]</a>
+                <a href="/test/bolum" class="public-nav-link @(activeNav == "departments" ? "active" : "")">@Localizer["PublicNavDepartments"]</a>
+                <a href="/deneyimler" class="public-nav-link @(activeNav == "experiences" ? "active" : "")">@Localizer["PublicNavExperiences"]</a>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <div class="dropdown">
+                    <a class="btn-brand-outline dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        @currentCulture.TwoLetterISOLanguageName.ToUpperInvariant()
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/set-language?culture=tr&returnUrl=@Uri.EscapeDataString(returnUrl)">Türkçe</a></li>
+                        <li><a class="dropdown-item" href="/set-language?culture=en&returnUrl=@Uri.EscapeDataString(returnUrl)">English</a></li>
+                        <li><a class="dropdown-item" href="/set-language?culture=ar&returnUrl=@Uri.EscapeDataString(returnUrl)">العربية</a></li>
+                    </ul>
+                </div>
+                <a href="/giris" class="btn-brand-outline d-none d-sm-inline-flex">@Localizer["LoginButtonLabel"]</a>
+                <a href="/test/bolum" class="btn-brand">@Localizer["StartFreeTestLabel"] &rarr;</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <footer class="public-footer">
+        <div class="container">
+            <div class="public-footer-grid">
+                <div>
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span class="brand-mark">M</span>
+                        <span class="fw-bold">@Localizer["SiteTitle"]</span>
+                    </div>
+                    <p class="text-muted small">@Localizer["FooterTagline"]</p>
+                </div>
+                <div>
+                    <div class="public-footer-heading">@Localizer["FooterPlatformHeading"]</div>
+                    <a href="/deneyimler">@Localizer["PublicNavExperiences"]</a>
+                    <a href="/test/bolum">@Localizer["PublicNavDepartments"]</a>
+                </div>
+                <div>
+                    <div class="public-footer-heading">@Localizer["FooterLegalHeading"]</div>
+                    <a href="#">@Localizer["FooterPrivacyLink"]</a>
+                    <a href="#">@Localizer["FooterTermsLink"]</a>
+                </div>
+            </div>
+            <div class="public-footer-copyright">&copy; @DateTime.UtcNow.Year @Localizer["SiteTitle"]</div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
