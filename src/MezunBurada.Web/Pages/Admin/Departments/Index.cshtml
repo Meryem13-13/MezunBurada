@@ -1,0 +1,50 @@
+@page "/admin/bolumler"
+@model MezunBurada.Web.Pages.Admin.Departments.IndexModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Bölümler";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="h3 mb-0">Bölümler</h1>
+    <a class="btn-brand" href="/admin/bolumler/ekle">+ Yeni Bölüm Ekle</a>
+</div>
+
+@if (!Model.Departments.Any())
+{
+    <div class="alert alert-light border">Henüz bölüm eklenmemiş.</div>
+}
+else
+{
+    <table class="table table-bordered align-middle bg-white">
+        <thead>
+            <tr>
+                <th>Bölüm Adı</th>
+                <th>Kategori</th>
+                <th>Derece</th>
+                <th>Puan Türü</th>
+                <th>Aktif mi?</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var dept in Model.Departments)
+            {
+                <tr>
+                    <td><strong>@dept.Name</strong><br /><span class="text-muted small">@dept.Slug</span></td>
+                    <td>@dept.Category?.Name</td>
+                    <td>@dept.DegreeType</td>
+                    <td>@dept.ExamType</td>
+                    <td>@(dept.IsActive ? "Evet" : "Hayır")</td>
+                    <td class="text-end text-nowrap">
+                        <a class="btn btn-sm btn-outline-secondary" href="/admin/bolumler/duzenle/@dept.Id">Düzenle</a>
+                        <form method="post" asp-page-handler="Delete" asp-route-id="@dept.Id" class="d-inline"
+                              onsubmit="return confirm('Bu bölümü silmek, ona bağlı alt dal/soru/roadmap gibi TÜM içeriği de siler. Emin misin?');">
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Sil</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

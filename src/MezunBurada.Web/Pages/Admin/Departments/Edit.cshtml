@@ -1,0 +1,84 @@
+@page "/admin/bolumler/duzenle/{id:int}"
+@model MezunBurada.Web.Pages.Admin.Departments.EditModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Bölümü Düzenle";
+}
+
+<h1 class="h3 mb-4">Bölümü Düzenle</h1>
+
+<form method="post" class="bg-white border rounded p-4" style="max-width: 640px;">
+    <input type="hidden" asp-for="Input.Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="mb-3">
+        <label asp-for="Input.CategoryId" class="form-label">Kategori</label>
+        <select asp-for="Input.CategoryId" asp-items="Model.CategoryOptions" class="form-select">
+            <option value="">-- Seç --</option>
+        </select>
+        <span asp-validation-for="Input.CategoryId" class="text-danger"></span>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="Input.Name" class="form-label">Bölüm Adı</label>
+            <input asp-for="Input.Name" class="form-control" />
+            <span asp-validation-for="Input.Name" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="Input.Slug" class="form-label">Slug</label>
+            <input asp-for="Input.Slug" class="form-control" />
+            <span asp-validation-for="Input.Slug" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.ShortDescription" class="form-label">Kısa Açıklama</label>
+        <input asp-for="Input.ShortDescription" class="form-control" />
+        <span asp-validation-for="Input.ShortDescription" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.LongDescription" class="form-label">Detaylı Açıklama</label>
+        <textarea asp-for="Input.LongDescription" class="form-control" rows="4"></textarea>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label asp-for="Input.DegreeType" class="form-label">Eğitim Seviyesi</label>
+            <select asp-for="Input.DegreeType" asp-items="Model.DegreeTypeOptions" class="form-select"></select>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label asp-for="Input.ExamType" class="form-label">Puan Türü</label>
+            <select asp-for="Input.ExamType" asp-items="Model.ExamTypeOptions" class="form-select"></select>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label asp-for="Input.EducationDurationYears" class="form-label">Eğitim Süresi (Yıl)</label>
+            <input asp-for="Input.EducationDurationYears" type="number" class="form-control" />
+            <span asp-validation-for="Input.EducationDurationYears" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.MainTopics" class="form-label">Öğretilen Ana Konular</label>
+        <input asp-for="Input.MainTopics" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.SuitableFor" class="form-label">Kimler İçin Uygun</label>
+        <input asp-for="Input.SuitableFor" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.ChallengingFor" class="form-label">Kimler İçin Zorlayıcı</label>
+        <input asp-for="Input.ChallengingFor" class="form-control" />
+    </div>
+
+    <div class="form-check mb-4">
+        <input asp-for="Input.IsActive" class="form-check-input" />
+        <label asp-for="Input.IsActive" class="form-check-label">Aktif (Bölüm Seçimi sayfasında görünsün)</label>
+    </div>
+
+    <button type="submit" class="btn-brand">Güncelle</button>
+    <a href="/admin/bolumler" class="btn btn-outline-secondary">Vazgeç</a>
+</form>
