@@ -1,0 +1,40 @@
+@page "/admin/is-pozisyonlari/duzenle/{id:int}"
+@model MezunBurada.Web.Pages.Admin.JobRoles.EditModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "İş Pozisyonunu Düzenle";
+}
+
+<h1 class="h3 mb-4">İş Pozisyonunu Düzenle</h1>
+
+<form method="post" class="bg-white border rounded p-4" style="max-width: 560px;">
+    <input type="hidden" asp-for="Input.Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="mb-3">
+        <label asp-for="Input.CareerPathId" class="form-label">Kariyer Yolu</label>
+        <select asp-for="Input.CareerPathId" asp-items="Model.CareerPathOptions" class="form-select">
+            <option value="">-- Seç --</option>
+        </select>
+        <span asp-validation-for="Input.CareerPathId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Title" class="form-label">Pozisyon Adı</label>
+        <input asp-for="Input.Title" class="form-control" />
+        <span asp-validation-for="Input.Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.RequiredSkills" class="form-label">Gerekli Beceriler</label>
+        <input asp-for="Input.RequiredSkills" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Level" class="form-label">Seviye</label>
+        <input asp-for="Input.Level" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn-brand">Güncelle</button>
+    <a href="/admin/is-pozisyonlari" class="btn btn-outline-secondary">Vazgeç</a>
+</form>

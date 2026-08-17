@@ -1,0 +1,32 @@
+@page "/admin/kaynaklar/ekle"
+@model MezunBurada.Web.Pages.Admin.Resources.CreateModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Yeni Kaynak";
+}
+
+<h1 class="h3 mb-4">Yeni Kaynak Ekle</h1>
+
+<form method="post" class="bg-white border rounded p-4" style="max-width: 560px;">
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Title" class="form-label">Başlık</label>
+        <input asp-for="Input.Title" class="form-control" placeholder="örn. BTK Akademi" />
+        <span asp-validation-for="Input.Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Url" class="form-label">URL</label>
+        <input asp-for="Input.Url" class="form-control" placeholder="https://..." />
+        <span asp-validation-for="Input.Url" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Type" class="form-label">Tip</label>
+        <select asp-for="Input.Type" asp-items="Model.TypeOptions" class="form-select"></select>
+    </div>
+
+    <button type="submit" class="btn-brand">Kaydet</button>
+    <a href="/admin/kaynaklar" class="btn btn-outline-secondary">Vazgeç</a>
+</form>

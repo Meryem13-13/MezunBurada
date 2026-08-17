@@ -1,0 +1,56 @@
+@page "/admin/projeler/duzenle/{id:int}"
+@model MezunBurada.Web.Pages.Admin.Projects.EditModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Projeyi Düzenle";
+}
+
+<h1 class="h3 mb-4">Projeyi Düzenle</h1>
+
+<form method="post" class="bg-white border rounded p-4" style="max-width: 640px;">
+    <input type="hidden" asp-for="Input.Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="mb-3">
+        <label asp-for="Input.CareerPathId" class="form-label">Kariyer Yolu</label>
+        <select asp-for="Input.CareerPathId" asp-items="Model.CareerPathOptions" class="form-select">
+            <option value="">-- Seç --</option>
+        </select>
+        <span asp-validation-for="Input.CareerPathId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Name" class="form-label">Proje Adı</label>
+        <input asp-for="Input.Name" class="form-control" />
+        <span asp-validation-for="Input.Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Description" class="form-label">Açıklama</label>
+        <textarea asp-for="Input.Description" class="form-control" rows="2"></textarea>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="Input.Difficulty" class="form-label">Zorluk</label>
+            <input asp-for="Input.Difficulty" class="form-control" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="Input.EstimatedDuration" class="form-label">Tahmini Süre</label>
+            <input asp-for="Input.EstimatedDuration" class="form-control" />
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Technologies" class="form-label">Kullanılacak Teknolojiler</label>
+        <input asp-for="Input.Technologies" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Steps" class="form-label">Adımlar</label>
+        <textarea asp-for="Input.Steps" class="form-control" rows="3"></textarea>
+    </div>
+
+    <button type="submit" class="btn-brand">Güncelle</button>
+    <a href="/admin/projeler" class="btn btn-outline-secondary">Vazgeç</a>
+</form>

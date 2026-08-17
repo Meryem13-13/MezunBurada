@@ -1,0 +1,36 @@
+@page "/admin/sss/duzenle/{id:int}"
+@model MezunBurada.Web.Pages.Admin.Faqs.EditModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "SSS Düzenle";
+}
+
+<h1 class="h3 mb-4">Soruyu Düzenle</h1>
+
+<form method="post" class="bg-white border rounded p-4" style="max-width: 640px;">
+    <input type="hidden" asp-for="Input.Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="mb-3">
+        <label asp-for="Input.DepartmentId" class="form-label">Bölüm</label>
+        <select asp-for="Input.DepartmentId" asp-items="Model.DepartmentOptions" class="form-select">
+            <option value="">-- Seç --</option>
+        </select>
+        <span asp-validation-for="Input.DepartmentId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Question" class="form-label">Soru</label>
+        <input asp-for="Input.Question" class="form-control" />
+        <span asp-validation-for="Input.Question" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Answer" class="form-label">Cevap</label>
+        <textarea asp-for="Input.Answer" class="form-control" rows="4"></textarea>
+        <span asp-validation-for="Input.Answer" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn-brand">Güncelle</button>
+    <a href="/admin/sss" class="btn btn-outline-secondary">Vazgeç</a>
+</form>

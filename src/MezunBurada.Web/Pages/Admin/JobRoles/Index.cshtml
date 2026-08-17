@@ -1,0 +1,46 @@
+@page "/admin/is-pozisyonlari"
+@model MezunBurada.Web.Pages.Admin.JobRoles.IndexModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "İş Pozisyonları";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="h3 mb-0">İş Pozisyonları</h1>
+    <a class="btn-brand" href="/admin/is-pozisyonlari/ekle">+ Yeni Pozisyon Ekle</a>
+</div>
+
+@if (!Model.JobRoles.Any())
+{
+    <div class="alert alert-light border">Henüz iş pozisyonu eklenmemiş.</div>
+}
+else
+{
+    <table class="table table-bordered align-middle bg-white">
+        <thead>
+            <tr>
+                <th>Kariyer Yolu</th>
+                <th>Pozisyon</th>
+                <th>Seviye</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var role in Model.JobRoles)
+            {
+                <tr>
+                    <td>@role.CareerPath?.Name</td>
+                    <td><strong>@role.Title</strong></td>
+                    <td>@role.Level</td>
+                    <td class="text-end text-nowrap">
+                        <a class="btn btn-sm btn-outline-secondary" href="/admin/is-pozisyonlari/duzenle/@role.Id">Düzenle</a>
+                        <form method="post" asp-page-handler="Delete" asp-route-id="@role.Id" class="d-inline"
+                              onsubmit="return confirm('Bu pozisyonu silmek istediğine emin misin?');">
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Sil</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,26 @@
+@page "/admin/beceriler/ekle"
+@model MezunBurada.Web.Pages.Admin.Skills.CreateModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Yeni Beceri";
+}
+
+<h1 class="h3 mb-4">Yeni Beceri Ekle</h1>
+
+<form method="post" class="bg-white border rounded p-4" style="max-width: 480px;">
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Name" class="form-label">Beceri Adı</label>
+        <input asp-for="Input.Name" class="form-control" placeholder="örn. Docker" />
+        <span asp-validation-for="Input.Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Category" class="form-label">Kategori</label>
+        <select asp-for="Input.Category" asp-items="Model.CategoryOptions" class="form-select"></select>
+    </div>
+
+    <button type="submit" class="btn-brand">Kaydet</button>
+    <a href="/admin/beceriler" class="btn btn-outline-secondary">Vazgeç</a>
+</form>

@@ -1,0 +1,67 @@
+@page "/admin/alt-dallar/duzenle/{id:int}"
+@model MezunBurada.Web.Pages.Admin.SubFields.EditModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Alt Dalı Düzenle";
+}
+
+<h1 class="h3 mb-4">Alt Dalı Düzenle</h1>
+
+<form method="post" class="bg-white border rounded p-4" style="max-width: 640px;">
+    <input type="hidden" asp-for="Input.Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="mb-3">
+        <label asp-for="Input.DepartmentId" class="form-label">Bölüm</label>
+        <select asp-for="Input.DepartmentId" asp-items="Model.DepartmentOptions" class="form-select">
+            <option value="">-- Seç --</option>
+        </select>
+        <span asp-validation-for="Input.DepartmentId" class="text-danger"></span>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="Input.Name" class="form-label">Alt Dal Adı</label>
+            <input asp-for="Input.Name" class="form-control" />
+            <span asp-validation-for="Input.Name" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="Input.Slug" class="form-label">Slug</label>
+            <input asp-for="Input.Slug" class="form-control" />
+            <span asp-validation-for="Input.Slug" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Description" class="form-label">Açıklama</label>
+        <textarea asp-for="Input.Description" class="form-control" rows="2"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.DifficultyLevel" class="form-label">Zorluk Seviyesi</label>
+        <input asp-for="Input.DifficultyLevel" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.RequiredSkills" class="form-label">Gerekli Temel Beceriler</label>
+        <input asp-for="Input.RequiredSkills" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.RecommendedTechnologies" class="form-label">Önerilen Teknolojiler</label>
+        <input asp-for="Input.RecommendedTechnologies" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.ExamplePositions" class="form-label">Örnek Pozisyonlar</label>
+        <input asp-for="Input.ExamplePositions" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.StartingTopics" class="form-label">Başlangıç Öğrenme Konuları</label>
+        <input asp-for="Input.StartingTopics" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn-brand">Güncelle</button>
+    <a href="/admin/alt-dallar" class="btn btn-outline-secondary">Vazgeç</a>
+</form>
