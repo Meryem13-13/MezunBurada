@@ -1,0 +1,33 @@
+@page "/sss"
+@model MezunBurada.Web.Pages.SssModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "/Pages/Shared/_PublicLayout.cshtml";
+    ViewData["Title"] = Localizer["GeneralFaqPageTitle"];
+    var questions = new[] { 1, 2, 3, 4, 5, 6 };
+}
+
+<div class="legal-page">
+    <h1>@Localizer["GeneralFaqPageTitle"]</h1>
+    <p class="legal-intro">@Localizer["GeneralFaqPageSubtitle"]</p>
+
+    <div class="accordion themed-accordion" id="generalFaqAccordion">
+        @for (var i = 0; i < questions.Length; i++)
+        {
+            var n = questions[i];
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button @(i > 0 ? "collapsed" : "")" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq-@n"
+                            aria-expanded="@(i == 0 ? "true" : "false")" aria-controls="faq-@n">
+                        @Localizer[$"GeneralFaq{n}Question"]
+                    </button>
+                </h2>
+                <div id="faq-@n" class="accordion-collapse collapse @(i == 0 ? "show" : "")" data-bs-parent="#generalFaqAccordion">
+                    <div class="accordion-body">@Localizer[$"GeneralFaq{n}Answer"]</div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

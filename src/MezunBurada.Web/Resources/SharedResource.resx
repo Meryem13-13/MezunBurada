@@ -349,7 +349,7 @@
     <value>Ad Soyad</value>
   </data>
   <data name="TermsAgreementText" xml:space="preserve">
-    <value>Kullanım Şartları ve Gizlilik Politikası'nı kabul ediyorum.</value>
+    <value>&lt;a href="/kullanim-sartlari" target="_blank"&gt;Kullanım Şartları&lt;/a&gt; ve &lt;a href="/gizlilik" target="_blank"&gt;Gizlilik Politikası&lt;/a&gt;'nı kabul ediyorum.</value>
   </data>
   <data name="TrustText" xml:space="preserve">
     <value>Bilgilerin güvenle saklanır ve izin olmadan paylaşılmaz.</value>
@@ -725,5 +725,161 @@
   </data>
   <data name="RoadmapCtaDesc" xml:space="preserve">
     <value>İlerlemeni takip etmek, tamamladığın adımları işaretlemek ve dilediğin zaman kaldığın yerden devam etmek için ücretsiz hesabını oluştur.</value>
+  </data>
+  <data name="AboutPageTitle" xml:space="preserve">
+    <value>Hakkımızda</value>
+  </data>
+  <data name="AboutIntro" xml:space="preserve">
+    <value>MezunBurada, yeni mezunların "şimdi ne yapmalıyım?" sorusuna ücretsiz ve kişiselleştirilmiş bir cevap bulabilmesi için kuruldu.</value>
+  </data>
+  <data name="AboutMissionTitle" xml:space="preserve">
+    <value>Misyonumuz</value>
+  </data>
+  <data name="AboutMissionText" xml:space="preserve">
+    <value>Her mezunun, ailesinin imkânları ya da tanıdığı kişiler fark etmeksizin kendi potansiyeline uygun bir kariyer yoluna adil bir başlangıç yapabilmesini sağlamak. Kariyer rehberliği bir ayrıcalık değil, herkesin ulaşabileceği bir hak olmalı.</value>
+  </data>
+  <data name="AboutHowItWorksTitle" xml:space="preserve">
+    <value>Nasıl Çalışıyor</value>
+  </data>
+  <data name="AboutHowItWorksText" xml:space="preserve">
+    <value>Kısa bir ilgi alanı ve seviye testiyle başlıyoruz. Testin sonunda sana özel bir yol haritası çıkarıyoruz: hangi konuları hangi sırayla öğrenmen gerektiğini, hangi kaynaklardan çalışabileceğini ve bu becerileri nasıl ispatlayacağını küçük bir proje fikriyle gösteriyoruz.</value>
+  </data>
+  <data name="AboutSocialImpactTitle" xml:space="preserve">
+    <value>Neden Ücretsiz</value>
+  </data>
+  <data name="AboutSocialImpactText" xml:space="preserve">
+    <value>MezunBurada sosyal fayda amacıyla kuruldu, tamamen ücretsizdir ve ücretsiz kalmaya devam edecek. Amacımız kâr değil, her mezunun eşit bir başlangıç şansına sahip olması.</value>
+  </data>
+  <data name="GeneralFaqPageTitle" xml:space="preserve">
+    <value>Sık Sorulan Sorular</value>
+  </data>
+  <data name="GeneralFaqPageSubtitle" xml:space="preserve">
+    <value>Aklına takılan bir şey mi var? Aşağıda cevabını bulamazsan deneyimlerini paylaşarak bize ulaşabilirsin.</value>
+  </data>
+  <data name="GeneralFaq1Question" xml:space="preserve">
+    <value>MezunBurada ücretsiz mi?</value>
+  </data>
+  <data name="GeneralFaq1Answer" xml:space="preserve">
+    <value>Evet. Testi almak, yol haritanı görmek ve ilerlemeni kaydetmek dahil platformun tamamı ücretsizdir ve ücretsiz kalacaktır.</value>
+  </data>
+  <data name="GeneralFaq2Question" xml:space="preserve">
+    <value>Verilerim ne olacak, kiminle paylaşılıyor?</value>
+  </data>
+  <data name="GeneralFaq2Answer" xml:space="preserve">
+    <value>Verilerin yalnızca sana kişiselleştirilmiş bir yol haritası sunmak için kullanılır; üçüncü taraflarla paylaşılmaz ya da satılmaz. Detaylar için Gizlilik Politikamıza göz atabilirsin.</value>
+  </data>
+  <data name="GeneralFaq3Question" xml:space="preserve">
+    <value>Test ne kadar sürer?</value>
+  </data>
+  <data name="GeneralFaq3Answer" xml:space="preserve">
+    <value>Ortalama 5-10 dakika sürer — kısa bir ilgi alanı testi ve ardından biraz daha uzun bir seviye testinden oluşur.</value>
+  </data>
+  <data name="GeneralFaq4Question" xml:space="preserve">
+    <value>Hesap oluşturmak zorunda mıyım?</value>
+  </data>
+  <data name="GeneralFaq4Answer" xml:space="preserve">
+    <value>Hayır, testi hesap oluşturmadan da alabilirsin. Ama sonucunu kaydetmek ve daha sonra tekrar görebilmek istersen kayıt olman gerekir.</value>
+  </data>
+  <data name="GeneralFaq5Question" xml:space="preserve">
+    <value>Sonucumu beğenmezsem tekrar test olabilir miyim?</value>
+  </data>
+  <data name="GeneralFaq5Answer" xml:space="preserve">
+    <value>Evet, istediğin zaman testi tekrar alabilirsin. En güncel sonucun panelinde görünür, önceki sonuçların kaybolmaz.</value>
+  </data>
+  <data name="GeneralFaq6Question" xml:space="preserve">
+    <value>Yol haritasındaki bazı kaynaklar neden ücretli?</value>
+  </data>
+  <data name="GeneralFaq6Answer" xml:space="preserve">
+    <value>Yol haritandaki kaynakların çoğu ücretsizdir. Bazıları platform dışı ücretli kurslara yönlendirebilir; bunları kaliteli bulduğumuz için öneriyoruz ama zorunlu değildir, dilediğin kaynaktan da çalışabilirsin.</value>
+  </data>
+  <data name="LegalLastUpdatedLabel" xml:space="preserve">
+    <value>Son güncelleme</value>
+  </data>
+  <data name="PrivacyPageTitle" xml:space="preserve">
+    <value>Gizlilik Politikası ve KVKK Aydınlatma Metni</value>
+  </data>
+  <data name="PrivacyIntro" xml:space="preserve">
+    <value>MezunBurada olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında kişisel verilerinizin güvenliğine önem veriyoruz. Bu sayfa, hangi verileri topladığımızı, neden topladığımızı ve haklarınızı açıklar.</value>
+  </data>
+  <data name="PrivacyDataCollectedTitle" xml:space="preserve">
+    <value>Hangi Verileri Topluyoruz</value>
+  </data>
+  <data name="PrivacyDataCollectedText" xml:space="preserve">
+    <value>Hesap oluşturduğunda ad-soyad ve e-posta adresini, test sonuçlarını (ilgi alanı, seviye, seçilen bölüm) ve isteğe bağlı olarak paylaştığın deneyim yorumlarını topluyoruz. Şifren geri döndürülemeyecek şekilde şifrelenerek saklanır — düz metin olarak hiçbir yerde tutulmaz.</value>
+  </data>
+  <data name="PrivacyDataUseTitle" xml:space="preserve">
+    <value>Verilerini Ne İçin Kullanıyoruz</value>
+  </data>
+  <data name="PrivacyDataUseText" xml:space="preserve">
+    <value>Verilerini yalnızca sana kişiselleştirilmiş bir kariyer yol haritası sunmak, ilerlemeni panelinde göstermek ve hesabına giriş yapmanı sağlamak için kullanıyoruz. Pazarlama amaçlı e-posta göndermiyoruz.</value>
+  </data>
+  <data name="PrivacyDataSharingTitle" xml:space="preserve">
+    <value>Verilerin Kiminle Paylaşılıyor</value>
+  </data>
+  <data name="PrivacyDataSharingText" xml:space="preserve">
+    <value>Verilerin üçüncü taraflarla paylaşılmaz, satılmaz veya kiralanmaz. Yalnızca platformu çalıştırmak için gerekli teknik altyapı sağlayıcılarıyla (örneğin barındırma hizmeti) sınırlı ve gerekli ölçüde paylaşılabilir.</value>
+  </data>
+  <data name="PrivacyDataRetentionTitle" xml:space="preserve">
+    <value>Verilerin Ne Kadar Süre Saklanıyor</value>
+  </data>
+  <data name="PrivacyDataRetentionText" xml:space="preserve">
+    <value>Hesabın aktif olduğu sürece verilerin saklanır. Hesabını silmek istediğinde, iletişim kanalımızdan bize ulaşarak verilerinin silinmesini talep edebilirsin.</value>
+  </data>
+  <data name="PrivacyKvkkRightsTitle" xml:space="preserve">
+    <value>KVKK Kapsamındaki Haklarınız</value>
+  </data>
+  <data name="PrivacyKvkkRightsText" xml:space="preserve">
+    <value>KVKK'nın 11. maddesi uyarınca; verilerinin işlenip işlenmediğini öğrenme, işlenmişse buna ilişkin bilgi talep etme, işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme, yurt içinde veya dışında aktarıldığı üçüncü kişileri bilme, eksik ya da yanlış işlenmişse düzeltilmesini isteme, silinmesini ya da yok edilmesini isteme ve bu işlemlerin ilgili üçüncü kişilere bildirilmesini isteme haklarına sahipsin.</value>
+  </data>
+  <data name="LegalContactTitle" xml:space="preserve">
+    <value>Bize Ulaşın</value>
+  </data>
+  <data name="PrivacyContactText" xml:space="preserve">
+    <value>Bu haklarını kullanmak için bizimle iletişime geçmen yeterli; iletişim bilgilerimiz yakında bu sayfaya eklenecektir.</value>
+  </data>
+  <data name="TermsPageTitle" xml:space="preserve">
+    <value>Kullanım Şartları</value>
+  </data>
+  <data name="TermsIntro" xml:space="preserve">
+    <value>Bu sayfa, MezunBurada'yı kullanırken geçerli olan kuralları ve karşılıklı sorumlulukları açıklar. Platforma kayıt olarak veya kullanarak bu şartları kabul etmiş olursun.</value>
+  </data>
+  <data name="TermsServiceDescriptionTitle" xml:space="preserve">
+    <value>Hizmetin Kapsamı</value>
+  </data>
+  <data name="TermsServiceDescriptionText" xml:space="preserve">
+    <value>MezunBurada, yeni mezunlara ücretsiz kariyer testi ve kişiselleştirilmiş yol haritası sunan bir platformdur. Sunulan öneriler genel rehberlik niteliğindedir, profesyonel kariyer danışmanlığının yerini almaz.</value>
+  </data>
+  <data name="TermsUserResponsibilitiesTitle" xml:space="preserve">
+    <value>Kullanıcı Sorumlulukları</value>
+  </data>
+  <data name="TermsUserResponsibilitiesText" xml:space="preserve">
+    <value>Hesap bilgilerini doğru ve güncel tutmak, hesap güvenliğinden (şifreni kimseyle paylaşmamak dahil) sorumlu olmak ve deneyim paylaşırken gerçek ve saygılı içerik göndermek senin sorumluluğundadır. Uygunsuz veya yanıltıcı içerikler moderasyon sürecinde reddedilir.</value>
+  </data>
+  <data name="TermsContentOwnershipTitle" xml:space="preserve">
+    <value>İçerik Sahipliği</value>
+  </data>
+  <data name="TermsContentOwnershipText" xml:space="preserve">
+    <value>Paylaştığın deneyim yorumları sana ait kalır; bunları platformda yayınlama iznini bize vermiş olursun. İstediğin zaman bir yorumunun kaldırılmasını talep edebilirsin.</value>
+  </data>
+  <data name="TermsLiabilityTitle" xml:space="preserve">
+    <value>Sorumluluk Sınırı</value>
+  </data>
+  <data name="TermsLiabilityText" xml:space="preserve">
+    <value>Yol haritasındaki öneriler dikkatle hazırlanmış olsa da bir sonucun garantisi değildir. MezunBurada, platformdaki bilgilere dayanarak alınan kararlardan doğabilecek sonuçlardan sorumlu tutulamaz.</value>
+  </data>
+  <data name="TermsChangesTitle" xml:space="preserve">
+    <value>Şartlardaki Değişiklikler</value>
+  </data>
+  <data name="TermsChangesText" xml:space="preserve">
+    <value>Bu şartları zaman zaman güncelleyebiliriz. Önemli değişikliklerde seni bilgilendirmeye çalışırız; platformu kullanmaya devam etmen güncel şartları kabul ettiğin anlamına gelir.</value>
+  </data>
+  <data name="TermsContactText" xml:space="preserve">
+    <value>Kullanım şartlarıyla ilgili sorularını iletmek için iletişim bilgilerimiz yakında bu sayfaya eklenecektir.</value>
+  </data>
+  <data name="FooterAboutLink" xml:space="preserve">
+    <value>Hakkımızda</value>
+  </data>
+  <data name="FooterFaqLink" xml:space="preserve">
+    <value>Sık Sorulan Sorular</value>
   </data>
 </root>

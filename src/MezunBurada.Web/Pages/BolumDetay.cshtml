@@ -87,7 +87,7 @@ else
 @if (Model.Faqs.Any())
 {
     <h2 class="accent-heading">@Localizer["DeptDetailFaqTitle"]</h2>
-    <div class="accordion mb-5" id="deptFaqAccordion">
+    <div class="accordion themed-accordion mb-5" id="deptFaqAccordion">
         @for (var i = 0; i < Model.Faqs.Count; i++)
         {
             var faq = Model.Faqs[i];

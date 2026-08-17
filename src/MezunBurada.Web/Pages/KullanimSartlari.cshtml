@@ -1,0 +1,46 @@
+@page "/kullanim-sartlari"
+@model MezunBurada.Web.Pages.KullanimSartlariModel
+@using System.Globalization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "/Pages/Shared/_PublicLayout.cshtml";
+    ViewData["Title"] = Localizer["TermsPageTitle"];
+    var lastUpdated = new DateTime(2026, 8, 18).ToString("d MMMM yyyy", CultureInfo.CurrentUICulture);
+}
+
+<div class="legal-page">
+    <h1>@Localizer["TermsPageTitle"]</h1>
+    <p class="legal-updated">@Localizer["LegalLastUpdatedLabel"]: <span class="ltr-nums">@lastUpdated</span></p>
+    <p class="legal-intro">@Localizer["TermsIntro"]</p>
+
+    <section>
+        <h2>@Localizer["TermsServiceDescriptionTitle"]</h2>
+        <p>@Localizer["TermsServiceDescriptionText"]</p>
+    </section>
+
+    <section>
+        <h2>@Localizer["TermsUserResponsibilitiesTitle"]</h2>
+        <p>@Localizer["TermsUserResponsibilitiesText"]</p>
+    </section>
+
+    <section>
+        <h2>@Localizer["TermsContentOwnershipTitle"]</h2>
+        <p>@Localizer["TermsContentOwnershipText"]</p>
+    </section>
+
+    <section>
+        <h2>@Localizer["TermsLiabilityTitle"]</h2>
+        <p>@Localizer["TermsLiabilityText"]</p>
+    </section>
+
+    <section>
+        <h2>@Localizer["TermsChangesTitle"]</h2>
+        <p>@Localizer["TermsChangesText"]</p>
+    </section>
+
+    <section>
+        <h2>@Localizer["LegalContactTitle"]</h2>
+        <p>@Localizer["TermsContactText"]</p>
+    </section>
+</div>

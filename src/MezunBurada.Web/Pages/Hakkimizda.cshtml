@@ -1,0 +1,30 @@
+@page "/hakkimizda"
+@model MezunBurada.Web.Pages.HakkimizdaModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "/Pages/Shared/_PublicLayout.cshtml";
+    ViewData["Title"] = Localizer["AboutPageTitle"];
+}
+
+<div class="legal-page">
+    <h1>@Localizer["AboutPageTitle"]</h1>
+    <p class="legal-intro">@Localizer["AboutIntro"]</p>
+
+    <section>
+        <h2>@Localizer["AboutMissionTitle"]</h2>
+        <p>@Localizer["AboutMissionText"]</p>
+    </section>
+
+    <section>
+        <h2>@Localizer["AboutHowItWorksTitle"]</h2>
+        <p>@Localizer["AboutHowItWorksText"]</p>
+    </section>
+
+    <section>
+        <h2>@Localizer["AboutSocialImpactTitle"]</h2>
+        <p>@Localizer["AboutSocialImpactText"]</p>
+    </section>
+
+    <a href="/test/bolum" class="btn-brand">@Localizer["StartFreeTestLabel"] &rarr;</a>
+</div>

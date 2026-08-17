@@ -349,7 +349,7 @@
     <value>الاسم الكامل</value>
   </data>
   <data name="TermsAgreementText" xml:space="preserve">
-    <value>أوافق على شروط الاستخدام وسياسة الخصوصية.</value>
+    <value>أوافق على &lt;a href="/kullanim-sartlari" target="_blank"&gt;شروط الاستخدام&lt;/a&gt; و&lt;a href="/gizlilik" target="_blank"&gt;سياسة الخصوصية&lt;/a&gt;.</value>
   </data>
   <data name="TrustText" xml:space="preserve">
     <value>يتم حفظ بياناتك بأمان ولا تتم مشاركتها دون إذن.</value>
@@ -725,5 +725,161 @@
   </data>
   <data name="RoadmapCtaDesc" xml:space="preserve">
     <value>أنشئ حسابك المجاني لتتابع تقدمك، وتؤشر الخطوات المكتملة، وتكمل في أي وقت من حيث توقفت.</value>
+  </data>
+  <data name="AboutPageTitle" xml:space="preserve">
+    <value>من نحن</value>
+  </data>
+  <data name="AboutIntro" xml:space="preserve">
+    <value>تأسست منصة ميزون بوردا لتمنح الخريجين الجدد إجابة مجانية وشخصية على سؤال "ماذا أفعل الآن؟".</value>
+  </data>
+  <data name="AboutMissionTitle" xml:space="preserve">
+    <value>مهمتنا</value>
+  </data>
+  <data name="AboutMissionText" xml:space="preserve">
+    <value>منح كل خريج بداية عادلة نحو مسار مهني يناسب إمكاناته، بغض النظر عن إمكانيات عائلته أو معارفه. التوجيه المهني يجب ألا يكون امتيازًا، بل حقًا يمكن للجميع الوصول إليه.</value>
+  </data>
+  <data name="AboutHowItWorksTitle" xml:space="preserve">
+    <value>كيف تعمل المنصة</value>
+  </data>
+  <data name="AboutHowItWorksText" xml:space="preserve">
+    <value>نبدأ باختبار قصير للاهتمامات والمستوى. وفي النهاية نضع لك خارطة طريق شخصية: ما المواضيع التي يجب تعلمها وبأي ترتيب، ومن أي مصادر يمكنك الدراسة، وكيف تثبت هذه المهارات عبر فكرة مشروع صغير.</value>
+  </data>
+  <data name="AboutSocialImpactTitle" xml:space="preserve">
+    <value>لماذا هي مجانية</value>
+  </data>
+  <data name="AboutSocialImpactText" xml:space="preserve">
+    <value>تأسست ميزون بوردا لتحقيق فائدة اجتماعية، وهي مجانية بالكامل وستبقى كذلك. هدفنا ليس الربح، بل ضمان حصول كل خريج على فرصة بداية متساوية.</value>
+  </data>
+  <data name="GeneralFaqPageTitle" xml:space="preserve">
+    <value>الأسئلة الشائعة</value>
+  </data>
+  <data name="GeneralFaqPageSubtitle" xml:space="preserve">
+    <value>هل لديك سؤال؟ إذا لم تجد إجابتك أدناه، يمكنك التواصل معنا من خلال مشاركة تجربتك.</value>
+  </data>
+  <data name="GeneralFaq1Question" xml:space="preserve">
+    <value>هل ميزون بوردا مجانية؟</value>
+  </data>
+  <data name="GeneralFaq1Answer" xml:space="preserve">
+    <value>نعم. المنصة بأكملها مجانية وستبقى كذلك — بما في ذلك إجراء الاختبار ومشاهدة خارطة طريقك وحفظ تقدمك.</value>
+  </data>
+  <data name="GeneralFaq2Question" xml:space="preserve">
+    <value>ماذا يحدث لبياناتي، ومع من تتم مشاركتها؟</value>
+  </data>
+  <data name="GeneralFaq2Answer" xml:space="preserve">
+    <value>تُستخدم بياناتك فقط لتقديم خارطة طريق شخصية لك، ولا تتم مشاركتها أو بيعها لأطراف ثالثة. راجع سياسة الخصوصية لدينا لمزيد من التفاصيل.</value>
+  </data>
+  <data name="GeneralFaq3Question" xml:space="preserve">
+    <value>كم يستغرق الاختبار؟</value>
+  </data>
+  <data name="GeneralFaq3Answer" xml:space="preserve">
+    <value>حوالي 5-10 دقائق في المتوسط — اختبار اهتمامات قصير يليه اختبار مستوى أطول قليلاً.</value>
+  </data>
+  <data name="GeneralFaq4Question" xml:space="preserve">
+    <value>هل يجب إنشاء حساب؟</value>
+  </data>
+  <data name="GeneralFaq4Answer" xml:space="preserve">
+    <value>لا، يمكنك إجراء الاختبار دون إنشاء حساب. لكنك ستحتاج إلى التسجيل إذا أردت حفظ نتيجتك ومشاهدتها لاحقًا.</value>
+  </data>
+  <data name="GeneralFaq5Question" xml:space="preserve">
+    <value>هل يمكنني إعادة الاختبار إذا لم تعجبني نتيجتي؟</value>
+  </data>
+  <data name="GeneralFaq5Answer" xml:space="preserve">
+    <value>نعم، يمكنك إعادة الاختبار في أي وقت. تظهر أحدث نتيجة لك في لوحتك، ولا تُفقد نتائجك السابقة.</value>
+  </data>
+  <data name="GeneralFaq6Question" xml:space="preserve">
+    <value>لماذا بعض المصادر في خارطة الطريق مدفوعة؟</value>
+  </data>
+  <data name="GeneralFaq6Answer" xml:space="preserve">
+    <value>معظم المصادر في خارطة طريقك مجانية. قد يشير بعضها إلى دورات مدفوعة خارج المنصة؛ نوصي بها لأننا نجدها عالية الجودة، وليست إلزامية — يمكنك الدراسة من أي مصدر تفضله.</value>
+  </data>
+  <data name="LegalLastUpdatedLabel" xml:space="preserve">
+    <value>آخر تحديث</value>
+  </data>
+  <data name="PrivacyPageTitle" xml:space="preserve">
+    <value>سياسة الخصوصية وإشعار حماية البيانات</value>
+  </data>
+  <data name="PrivacyIntro" xml:space="preserve">
+    <value>نولي في ميزون بوردا أهمية كبيرة لأمان بياناتك الشخصية بموجب قانون حماية البيانات الشخصية التركي (KVKK، القانون رقم 6698). توضح هذه الصفحة البيانات التي نجمعها، ولماذا نجمعها، وحقوقك.</value>
+  </data>
+  <data name="PrivacyDataCollectedTitle" xml:space="preserve">
+    <value>البيانات التي نجمعها</value>
+  </data>
+  <data name="PrivacyDataCollectedText" xml:space="preserve">
+    <value>عند إنشاء حساب، نجمع اسمك الكامل وبريدك الإلكتروني، ونتائج اختباراتك (مجال الاهتمام، المستوى، القسم المختار)، وأي تجارب تختار مشاركتها. تُخزَّن كلمة مرورك بشكل مشفر لا يمكن عكسه — ولا تُحفظ كنص عادي في أي مكان.</value>
+  </data>
+  <data name="PrivacyDataUseTitle" xml:space="preserve">
+    <value>كيف نستخدم بياناتك</value>
+  </data>
+  <data name="PrivacyDataUseText" xml:space="preserve">
+    <value>نستخدم بياناتك فقط لتقديم خارطة طريق مهنية شخصية لك، وعرض تقدمك في لوحتك، وتمكينك من تسجيل الدخول إلى حسابك. لا نرسل رسائل بريد إلكتروني تسويقية.</value>
+  </data>
+  <data name="PrivacyDataSharingTitle" xml:space="preserve">
+    <value>مع من تتم مشاركة بياناتك</value>
+  </data>
+  <data name="PrivacyDataSharingText" xml:space="preserve">
+    <value>لا تتم مشاركة بياناتك أو بيعها أو تأجيرها لأطراف ثالثة. قد تُشارَك فقط، وبالقدر اللازم، مع مزودي البنية التحتية التقنية اللازمة لتشغيل المنصة (مثل خدمة الاستضافة).</value>
+  </data>
+  <data name="PrivacyDataRetentionTitle" xml:space="preserve">
+    <value>مدة الاحتفاظ ببياناتك</value>
+  </data>
+  <data name="PrivacyDataRetentionText" xml:space="preserve">
+    <value>تُحفظ بياناتك طالما كان حسابك نشطًا. إذا أردت حذف حسابك، يمكنك طلب حذف بياناتك من خلال التواصل معنا عبر قناة الاتصال الخاصة بنا.</value>
+  </data>
+  <data name="PrivacyKvkkRightsTitle" xml:space="preserve">
+    <value>حقوقك بموجب KVKK</value>
+  </data>
+  <data name="PrivacyKvkkRightsText" xml:space="preserve">
+    <value>بموجب المادة 11 من قانون KVKK، لديك الحق في: معرفة ما إذا كانت بياناتك تتم معالجتها، وطلب معلومات عن ذلك، ومعرفة الغرض من المعالجة وما إذا كانت تُستخدم وفقًا له، ومعرفة الأطراف الثالثة التي تُنقل إليها بياناتك داخل البلاد أو خارجها، وطلب تصحيحها إذا كانت غير مكتملة أو غير صحيحة، وطلب حذفها أو إتلافها، وطلب إخطار الأطراف الثالثة ذات الصلة بهذه الإجراءات.</value>
+  </data>
+  <data name="LegalContactTitle" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="PrivacyContactText" xml:space="preserve">
+    <value>للاستفادة من هذه الحقوق، ما عليك سوى التواصل معنا؛ ستُضاف معلومات الاتصال الخاصة بنا إلى هذه الصفحة قريبًا.</value>
+  </data>
+  <data name="TermsPageTitle" xml:space="preserve">
+    <value>شروط الاستخدام</value>
+  </data>
+  <data name="TermsIntro" xml:space="preserve">
+    <value>توضح هذه الصفحة القواعد والمسؤوليات المتبادلة السارية عند استخدام ميزون بوردا. من خلال التسجيل في المنصة أو استخدامها، فإنك توافق على هذه الشروط.</value>
+  </data>
+  <data name="TermsServiceDescriptionTitle" xml:space="preserve">
+    <value>نطاق الخدمة</value>
+  </data>
+  <data name="TermsServiceDescriptionText" xml:space="preserve">
+    <value>ميزون بوردا منصة تقدم للخريجين الجدد اختبارًا مهنيًا مجانيًا وخارطة طريق شخصية. الاقتراحات المقدمة هي إرشادات عامة ولا تحل محل الاستشارة المهنية المتخصصة.</value>
+  </data>
+  <data name="TermsUserResponsibilitiesTitle" xml:space="preserve">
+    <value>مسؤوليات المستخدم</value>
+  </data>
+  <data name="TermsUserResponsibilitiesText" xml:space="preserve">
+    <value>أنت مسؤول عن الحفاظ على دقة معلومات حسابك وتحديثها، وعن أمان حسابك (بما في ذلك عدم مشاركة كلمة مرورك)، وعن تقديم محتوى حقيقي ومحترم عند مشاركة تجربة. يتم رفض المحتوى غير اللائق أو المضلل أثناء عملية المراجعة.</value>
+  </data>
+  <data name="TermsContentOwnershipTitle" xml:space="preserve">
+    <value>ملكية المحتوى</value>
+  </data>
+  <data name="TermsContentOwnershipText" xml:space="preserve">
+    <value>تظل تجارب المستخدمين التي تشاركها ملكًا لك؛ وأنت تمنحنا إذنًا بنشرها على المنصة. يمكنك طلب إزالة تجربتك في أي وقت.</value>
+  </data>
+  <data name="TermsLiabilityTitle" xml:space="preserve">
+    <value>حدود المسؤولية</value>
+  </data>
+  <data name="TermsLiabilityText" xml:space="preserve">
+    <value>على الرغم من إعداد الاقتراحات في خارطة طريقك بعناية، إلا أنها لا تشكل ضمانًا لأي نتيجة. لا يمكن تحميل ميزون بوردا مسؤولية أي عواقب تنشأ عن قرارات مبنية على المعلومات الواردة في المنصة.</value>
+  </data>
+  <data name="TermsChangesTitle" xml:space="preserve">
+    <value>التغييرات على هذه الشروط</value>
+  </data>
+  <data name="TermsChangesText" xml:space="preserve">
+    <value>قد نقوم بتحديث هذه الشروط من وقت لآخر. سنحاول إعلامك بالتغييرات المهمة؛ ويعني استمرارك في استخدام المنصة موافقتك على الشروط الحالية.</value>
+  </data>
+  <data name="TermsContactText" xml:space="preserve">
+    <value>لإرسال أسئلتك حول شروط الاستخدام، ستُضاف معلومات الاتصال الخاصة بنا إلى هذه الصفحة قريبًا.</value>
+  </data>
+  <data name="FooterAboutLink" xml:space="preserve">
+    <value>من نحن</value>
+  </data>
+  <data name="FooterFaqLink" xml:space="preserve">
+    <value>الأسئلة الشائعة</value>
   </data>
 </root>

@@ -32,7 +32,7 @@
         </div>
         <label class="form-check-row">
             <input asp-for="Input.AcceptTerms" />
-            <span>@Localizer["TermsAgreementText"]</span>
+            <span>@Html.Raw(Localizer["TermsAgreementText"].Value)</span>
         </label>
 
         <button type="submit" class="btn-brand full-width">@Localizer["RegisterButtonLabel"] &rarr;</button>

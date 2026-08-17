@@ -1164,6 +1164,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0.2rem;
 }
 
+.form-check-row a {
+  color: var(--color-primary);
+}
+
 .auth-divider {
   display: flex;
   align-items: center;
@@ -1990,13 +1994,50 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-primary);
 }
 
-#deptFaqAccordion .accordion-button:not(.collapsed) {
+.themed-accordion .accordion-button:not(.collapsed) {
   background-color: var(--color-blush-light);
   color: var(--color-primary);
   box-shadow: none;
 }
 
-#deptFaqAccordion .accordion-button:focus {
+.themed-accordion .accordion-button:focus {
   box-shadow: none;
   border-color: var(--color-border);
+}
+
+/* ==========================================================================
+   Static content pages (Hakkımızda, SSS, Gizlilik, Kullanım Şartları)
+   ========================================================================== */
+.legal-page {
+  max-width: 720px;
+  margin: 2.5rem auto 4rem;
+}
+
+.legal-page h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.legal-page .legal-updated {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.legal-page .legal-intro {
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+}
+
+.legal-page section {
+  margin-bottom: 1.75rem;
+}
+
+.legal-page h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.legal-page p {
+  line-height: 1.7;
 }

@@ -1,0 +1,46 @@
+@page "/gizlilik"
+@model MezunBurada.Web.Pages.GizlilikModel
+@using System.Globalization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "/Pages/Shared/_PublicLayout.cshtml";
+    ViewData["Title"] = Localizer["PrivacyPageTitle"];
+    var lastUpdated = new DateTime(2026, 8, 18).ToString("d MMMM yyyy", CultureInfo.CurrentUICulture);
+}
+
+<div class="legal-page">
+    <h1>@Localizer["PrivacyPageTitle"]</h1>
+    <p class="legal-updated">@Localizer["LegalLastUpdatedLabel"]: <span class="ltr-nums">@lastUpdated</span></p>
+    <p class="legal-intro">@Localizer["PrivacyIntro"]</p>
+
+    <section>
+        <h2>@Localizer["PrivacyDataCollectedTitle"]</h2>
+        <p>@Localizer["PrivacyDataCollectedText"]</p>
+    </section>
+
+    <section>
+        <h2>@Localizer["PrivacyDataUseTitle"]</h2>
+        <p>@Localizer["PrivacyDataUseText"]</p>
+    </section>
+
+    <section>
+        <h2>@Localizer["PrivacyDataSharingTitle"]</h2>
+        <p>@Localizer["PrivacyDataSharingText"]</p>
+    </section>
+
+    <section>
+        <h2>@Localizer["PrivacyDataRetentionTitle"]</h2>
+        <p>@Localizer["PrivacyDataRetentionText"]</p>
+    </section>
+
+    <section>
+        <h2>@Localizer["PrivacyKvkkRightsTitle"]</h2>
+        <p>@Localizer["PrivacyKvkkRightsText"]</p>
+    </section>
+
+    <section>
+        <h2>@Localizer["LegalContactTitle"]</h2>
+        <p>@Localizer["PrivacyContactText"]</p>
+    </section>
+</div>

@@ -349,7 +349,7 @@
     <value>Full Name</value>
   </data>
   <data name="TermsAgreementText" xml:space="preserve">
-    <value>I agree to the Terms of Service and Privacy Policy.</value>
+    <value>I agree to the &lt;a href="/kullanim-sartlari" target="_blank"&gt;Terms of Use&lt;/a&gt; and &lt;a href="/gizlilik" target="_blank"&gt;Privacy Policy&lt;/a&gt;.</value>
   </data>
   <data name="TrustText" xml:space="preserve">
     <value>Your information is stored securely and never shared without permission.</value>
@@ -725,5 +725,161 @@
   </data>
   <data name="RoadmapCtaDesc" xml:space="preserve">
     <value>Create your free account to track your progress, check off completed steps, and continue anytime from where you left off.</value>
+  </data>
+  <data name="AboutPageTitle" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="AboutIntro" xml:space="preserve">
+    <value>MezunBurada was built so new graduates can get a free, personalized answer to "what should I do now?"</value>
+  </data>
+  <data name="AboutMissionTitle" xml:space="preserve">
+    <value>Our Mission</value>
+  </data>
+  <data name="AboutMissionText" xml:space="preserve">
+    <value>To give every graduate a fair start toward a career path suited to their own potential, regardless of their family's means or who they know. Career guidance shouldn't be a privilege — it should be a right everyone can reach.</value>
+  </data>
+  <data name="AboutHowItWorksTitle" xml:space="preserve">
+    <value>How It Works</value>
+  </data>
+  <data name="AboutHowItWorksText" xml:space="preserve">
+    <value>We start with a short interest and level test. At the end, we build you a personal roadmap: which topics to learn and in what order, which resources to study from, and how to prove those skills with a small project idea.</value>
+  </data>
+  <data name="AboutSocialImpactTitle" xml:space="preserve">
+    <value>Why It's Free</value>
+  </data>
+  <data name="AboutSocialImpactText" xml:space="preserve">
+    <value>MezunBurada was founded for social good, is completely free, and will stay free. Our goal isn't profit — it's making sure every graduate gets an equal starting chance.</value>
+  </data>
+  <data name="GeneralFaqPageTitle" xml:space="preserve">
+    <value>Frequently Asked Questions</value>
+  </data>
+  <data name="GeneralFaqPageSubtitle" xml:space="preserve">
+    <value>Have a question? If you can't find the answer below, you can reach us by sharing your experience.</value>
+  </data>
+  <data name="GeneralFaq1Question" xml:space="preserve">
+    <value>Is MezunBurada free?</value>
+  </data>
+  <data name="GeneralFaq1Answer" xml:space="preserve">
+    <value>Yes. The entire platform is free and will stay free — taking the test, seeing your roadmap, and saving your progress.</value>
+  </data>
+  <data name="GeneralFaq2Question" xml:space="preserve">
+    <value>What happens to my data, who is it shared with?</value>
+  </data>
+  <data name="GeneralFaq2Answer" xml:space="preserve">
+    <value>Your data is only used to give you a personalized roadmap; it's never shared with or sold to third parties. See our Privacy Policy for details.</value>
+  </data>
+  <data name="GeneralFaq3Question" xml:space="preserve">
+    <value>How long does the test take?</value>
+  </data>
+  <data name="GeneralFaq3Answer" xml:space="preserve">
+    <value>About 5-10 minutes on average — a short interest test followed by a slightly longer level test.</value>
+  </data>
+  <data name="GeneralFaq4Question" xml:space="preserve">
+    <value>Do I have to create an account?</value>
+  </data>
+  <data name="GeneralFaq4Answer" xml:space="preserve">
+    <value>No, you can take the test without an account. But you'll need to register if you want to save your result and view it again later.</value>
+  </data>
+  <data name="GeneralFaq5Question" xml:space="preserve">
+    <value>Can I retake the test if I don't like my result?</value>
+  </data>
+  <data name="GeneralFaq5Answer" xml:space="preserve">
+    <value>Yes, you can retake the test anytime. Your most recent result shows on your panel, and your earlier results aren't lost.</value>
+  </data>
+  <data name="GeneralFaq6Question" xml:space="preserve">
+    <value>Why are some resources in the roadmap paid?</value>
+  </data>
+  <data name="GeneralFaq6Answer" xml:space="preserve">
+    <value>Most resources in your roadmap are free. Some may point to paid courses outside the platform — we recommend these because we find them high quality, not because they're required; you're free to study from whatever resource you prefer.</value>
+  </data>
+  <data name="LegalLastUpdatedLabel" xml:space="preserve">
+    <value>Last updated</value>
+  </data>
+  <data name="PrivacyPageTitle" xml:space="preserve">
+    <value>Privacy Policy &amp; Data Protection Notice</value>
+  </data>
+  <data name="PrivacyIntro" xml:space="preserve">
+    <value>At MezunBurada, we take the security of your personal data seriously under Turkey's Personal Data Protection Law (KVKK, Law No. 6698). This page explains what data we collect, why we collect it, and your rights.</value>
+  </data>
+  <data name="PrivacyDataCollectedTitle" xml:space="preserve">
+    <value>What Data We Collect</value>
+  </data>
+  <data name="PrivacyDataCollectedText" xml:space="preserve">
+    <value>When you create an account, we collect your full name and email address, your test results (interest area, level, chosen department), and any experience reviews you choose to share. Your password is stored irreversibly hashed — it is never kept as plain text anywhere.</value>
+  </data>
+  <data name="PrivacyDataUseTitle" xml:space="preserve">
+    <value>What We Use Your Data For</value>
+  </data>
+  <data name="PrivacyDataUseText" xml:space="preserve">
+    <value>We only use your data to give you a personalized career roadmap, show your progress on your panel, and let you sign in to your account. We do not send marketing emails.</value>
+  </data>
+  <data name="PrivacyDataSharingTitle" xml:space="preserve">
+    <value>Who Your Data Is Shared With</value>
+  </data>
+  <data name="PrivacyDataSharingText" xml:space="preserve">
+    <value>Your data is never shared with, sold to, or rented to third parties. It may only be shared, to the extent necessary, with the technical infrastructure providers required to run the platform (such as hosting).</value>
+  </data>
+  <data name="PrivacyDataRetentionTitle" xml:space="preserve">
+    <value>How Long We Keep Your Data</value>
+  </data>
+  <data name="PrivacyDataRetentionText" xml:space="preserve">
+    <value>Your data is kept for as long as your account is active. If you want your account deleted, you can request deletion of your data by reaching us through our contact channel.</value>
+  </data>
+  <data name="PrivacyKvkkRightsTitle" xml:space="preserve">
+    <value>Your Rights Under KVKK</value>
+  </data>
+  <data name="PrivacyKvkkRightsText" xml:space="preserve">
+    <value>Under Article 11 of KVKK, you have the right to: learn whether your data is being processed, request information about it if so, learn the purpose of processing and whether it's used accordingly, know the third parties your data is transferred to in or outside the country, request correction if processed incompletely or incorrectly, request deletion or destruction, and request that these actions be notified to relevant third parties.</value>
+  </data>
+  <data name="LegalContactTitle" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="PrivacyContactText" xml:space="preserve">
+    <value>Just reach out to us to exercise these rights — our contact details will be added to this page soon.</value>
+  </data>
+  <data name="TermsPageTitle" xml:space="preserve">
+    <value>Terms of Use</value>
+  </data>
+  <data name="TermsIntro" xml:space="preserve">
+    <value>This page explains the rules and mutual responsibilities that apply when using MezunBurada. By registering or using the platform, you accept these terms.</value>
+  </data>
+  <data name="TermsServiceDescriptionTitle" xml:space="preserve">
+    <value>Scope of the Service</value>
+  </data>
+  <data name="TermsServiceDescriptionText" xml:space="preserve">
+    <value>MezunBurada is a platform offering new graduates a free career test and a personalized roadmap. The suggestions provided are general guidance and do not replace professional career counseling.</value>
+  </data>
+  <data name="TermsUserResponsibilitiesTitle" xml:space="preserve">
+    <value>User Responsibilities</value>
+  </data>
+  <data name="TermsUserResponsibilitiesText" xml:space="preserve">
+    <value>You are responsible for keeping your account information accurate and up to date, for your account's security (including not sharing your password), and for submitting genuine, respectful content when sharing an experience. Inappropriate or misleading content is rejected during moderation.</value>
+  </data>
+  <data name="TermsContentOwnershipTitle" xml:space="preserve">
+    <value>Content Ownership</value>
+  </data>
+  <data name="TermsContentOwnershipText" xml:space="preserve">
+    <value>Experience reviews you share remain yours; you grant us permission to publish them on the platform. You can request removal of your review at any time.</value>
+  </data>
+  <data name="TermsLiabilityTitle" xml:space="preserve">
+    <value>Limitation of Liability</value>
+  </data>
+  <data name="TermsLiabilityText" xml:space="preserve">
+    <value>While the suggestions in your roadmap are prepared carefully, they are not a guarantee of any outcome. MezunBurada cannot be held responsible for consequences arising from decisions made based on information on the platform.</value>
+  </data>
+  <data name="TermsChangesTitle" xml:space="preserve">
+    <value>Changes to These Terms</value>
+  </data>
+  <data name="TermsChangesText" xml:space="preserve">
+    <value>We may update these terms from time to time. We'll try to notify you of significant changes; continuing to use the platform means you accept the current terms.</value>
+  </data>
+  <data name="TermsContactText" xml:space="preserve">
+    <value>To send questions about these terms, our contact details will be added to this page soon.</value>
+  </data>
+  <data name="FooterAboutLink" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="FooterFaqLink" xml:space="preserve">
+    <value>FAQ</value>
   </data>
 </root>
