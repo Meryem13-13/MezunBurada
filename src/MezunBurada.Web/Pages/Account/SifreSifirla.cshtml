@@ -1,0 +1,46 @@
+@page "/sifre-sifirla"
+@model MezunBurada.Web.Pages.Account.SifreSifirlaModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "_AuthLayout";
+    ViewData["Title"] = Localizer["ResetPasswordTitle"];
+    ViewData["AuthHeadlineKey"] = "LoginIllustrationHeadline";
+}
+
+<div class="auth-form-card">
+    @if (Model.PasswordUpdated)
+    {
+        <h2>@Localizer["PasswordUpdatedTitle"]</h2>
+        <p class="form-hint">@Localizer["PasswordUpdatedText"]</p>
+        <a href="/giris" class="btn-brand full-width">@Localizer["BackToLoginLabel"]</a>
+    }
+    else if (!Model.TokenValid)
+    {
+        <h2>@Localizer["ResetLinkInvalidTitle"]</h2>
+        <p class="form-hint">@Localizer["ResetLinkInvalidText"]</p>
+        <a href="/sifremi-unuttum" class="btn-brand full-width">@Localizer["ForgotPasswordLabel"]</a>
+    }
+    else
+    {
+        <h2>@Localizer["ResetPasswordTitle"]</h2>
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger mb-3"></div>
+            @if (Model.ErrorMessage is not null)
+            {
+                <div class="text-danger mb-3">@Model.ErrorMessage</div>
+            }
+
+            <input type="hidden" asp-for="Input.Email" />
+            <input type="hidden" asp-for="Input.Token" />
+
+            <div class="form-field">
+                <label asp-for="Input.NewPassword">@Localizer["NewPasswordLabel"]</label>
+                <input asp-for="Input.NewPassword" type="password" />
+                <div class="form-hint">@Localizer["PasswordMinHint"]</div>
+            </div>
+
+            <button type="submit" class="btn-brand full-width">@Localizer["UpdatePasswordLabel"]</button>
+        </form>
+    }
+</div>

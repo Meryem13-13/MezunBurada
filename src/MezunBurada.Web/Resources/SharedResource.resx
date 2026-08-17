@@ -882,4 +882,40 @@
   <data name="FooterFaqLink" xml:space="preserve">
     <value>Sık Sorulan Sorular</value>
   </data>
+  <data name="ForgotPasswordSubtitle" xml:space="preserve">
+    <value>Hesabına kayıtlı e-posta adresini gir, sana bir şifre sıfırlama bağlantısı gönderelim.</value>
+  </data>
+  <data name="SendResetLinkLabel" xml:space="preserve">
+    <value>Sıfırlama Bağlantısı Gönder</value>
+  </data>
+  <data name="ForgotPasswordCheckEmailTitle" xml:space="preserve">
+    <value>E-postanı Kontrol Et</value>
+  </data>
+  <data name="ForgotPasswordCheckEmailText" xml:space="preserve">
+    <value>Bu e-posta ile kayıtlı bir hesap varsa, şifre sıfırlama bağlantısı gönderildi.</value>
+  </data>
+  <data name="BackToLoginLabel" xml:space="preserve">
+    <value>Girişe Dön</value>
+  </data>
+  <data name="ResetPasswordTitle" xml:space="preserve">
+    <value>Şifreni Sıfırla</value>
+  </data>
+  <data name="NewPasswordLabel" xml:space="preserve">
+    <value>Yeni Şifre</value>
+  </data>
+  <data name="UpdatePasswordLabel" xml:space="preserve">
+    <value>Şifreyi Güncelle</value>
+  </data>
+  <data name="PasswordUpdatedTitle" xml:space="preserve">
+    <value>Şifren Güncellendi</value>
+  </data>
+  <data name="PasswordUpdatedText" xml:space="preserve">
+    <value>Yeni şifrenle giriş yapabilirsin.</value>
+  </data>
+  <data name="ResetLinkInvalidTitle" xml:space="preserve">
+    <value>Bağlantı Geçersiz</value>
+  </data>
+  <data name="ResetLinkInvalidText" xml:space="preserve">
+    <value>Bu şifre sıfırlama bağlantısının süresi dolmuş veya geçersiz. Yeni bir bağlantı talep edebilirsin.</value>
+  </data>
 </root>

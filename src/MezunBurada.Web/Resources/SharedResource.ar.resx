@@ -882,4 +882,40 @@
   <data name="FooterFaqLink" xml:space="preserve">
     <value>الأسئلة الشائعة</value>
   </data>
+  <data name="ForgotPasswordSubtitle" xml:space="preserve">
+    <value>أدخل البريد الإلكتروني المسجل في حسابك، وسنرسل لك رابط إعادة تعيين كلمة المرور.</value>
+  </data>
+  <data name="SendResetLinkLabel" xml:space="preserve">
+    <value>إرسال رابط إعادة التعيين</value>
+  </data>
+  <data name="ForgotPasswordCheckEmailTitle" xml:space="preserve">
+    <value>تحقق من بريدك الإلكتروني</value>
+  </data>
+  <data name="ForgotPasswordCheckEmailText" xml:space="preserve">
+    <value>إذا كان هناك حساب مسجل بهذا البريد الإلكتروني، فقد تم إرسال رابط إعادة تعيين كلمة المرور.</value>
+  </data>
+  <data name="BackToLoginLabel" xml:space="preserve">
+    <value>العودة إلى تسجيل الدخول</value>
+  </data>
+  <data name="ResetPasswordTitle" xml:space="preserve">
+    <value>إعادة تعيين كلمة المرور</value>
+  </data>
+  <data name="NewPasswordLabel" xml:space="preserve">
+    <value>كلمة المرور الجديدة</value>
+  </data>
+  <data name="UpdatePasswordLabel" xml:space="preserve">
+    <value>تحديث كلمة المرور</value>
+  </data>
+  <data name="PasswordUpdatedTitle" xml:space="preserve">
+    <value>تم تحديث كلمة المرور</value>
+  </data>
+  <data name="PasswordUpdatedText" xml:space="preserve">
+    <value>يمكنك الآن تسجيل الدخول بكلمة المرور الجديدة.</value>
+  </data>
+  <data name="ResetLinkInvalidTitle" xml:space="preserve">
+    <value>الرابط غير صالح</value>
+  </data>
+  <data name="ResetLinkInvalidText" xml:space="preserve">
+    <value>انتهت صلاحية رابط إعادة تعيين كلمة المرور هذا أو أنه غير صالح. يمكنك طلب رابط جديد.</value>
+  </data>
 </root>

@@ -8,6 +8,11 @@ public class User
     public string PasswordHash { get; set; } = string.Empty;
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
+    // Only the hash is stored — the raw token lives solely in the emailed/logged reset link,
+    // so a database leak alone can't be used to reset anyone's password.
+    public string? PasswordResetTokenHash { get; set; }
+    public DateTime? PasswordResetTokenExpiresAt { get; set; }
+
     public ICollection<MentorSession> MentorSessions { get; set; } = new List<MentorSession>();
     public ICollection<TestResult> TestResults { get; set; } = new List<TestResult>();
 }

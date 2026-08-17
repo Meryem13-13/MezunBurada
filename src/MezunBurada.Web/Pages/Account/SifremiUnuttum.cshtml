@@ -1,0 +1,37 @@
+@page "/sifremi-unuttum"
+@model MezunBurada.Web.Pages.Account.SifremiUnuttumModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "_AuthLayout";
+    ViewData["Title"] = Localizer["ForgotPasswordLabel"];
+    ViewData["AuthHeadlineKey"] = "LoginIllustrationHeadline";
+}
+
+<div class="auth-form-card">
+    @if (Model.Submitted)
+    {
+        <h2>@Localizer["ForgotPasswordCheckEmailTitle"]</h2>
+        <p class="form-hint">@Localizer["ForgotPasswordCheckEmailText"]</p>
+        <a href="/giris" class="btn-brand full-width">@Localizer["BackToLoginLabel"]</a>
+    }
+    else
+    {
+        <h2>@Localizer["ForgotPasswordLabel"]</h2>
+        <p class="form-hint mb-3">@Localizer["ForgotPasswordSubtitle"]</p>
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+            <div class="form-field">
+                <label asp-for="Input.Email">@Localizer["EmailLabel"]</label>
+                <input asp-for="Input.Email" type="email" placeholder="@Localizer["EmailPlaceholder"]" />
+            </div>
+
+            <button type="submit" class="btn-brand full-width">@Localizer["SendResetLinkLabel"]</button>
+
+            <p class="auth-switch-text">
+                <a href="/giris">@Localizer["BackToLoginLabel"]</a>
+            </p>
+        </form>
+    }
+</div>

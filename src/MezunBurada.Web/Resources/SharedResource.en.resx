@@ -882,4 +882,40 @@
   <data name="FooterFaqLink" xml:space="preserve">
     <value>FAQ</value>
   </data>
+  <data name="ForgotPasswordSubtitle" xml:space="preserve">
+    <value>Enter the email address on your account and we'll send you a password reset link.</value>
+  </data>
+  <data name="SendResetLinkLabel" xml:space="preserve">
+    <value>Send Reset Link</value>
+  </data>
+  <data name="ForgotPasswordCheckEmailTitle" xml:space="preserve">
+    <value>Check Your Email</value>
+  </data>
+  <data name="ForgotPasswordCheckEmailText" xml:space="preserve">
+    <value>If an account exists with that email, a password reset link has been sent.</value>
+  </data>
+  <data name="BackToLoginLabel" xml:space="preserve">
+    <value>Back to Login</value>
+  </data>
+  <data name="ResetPasswordTitle" xml:space="preserve">
+    <value>Reset Your Password</value>
+  </data>
+  <data name="NewPasswordLabel" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="UpdatePasswordLabel" xml:space="preserve">
+    <value>Update Password</value>
+  </data>
+  <data name="PasswordUpdatedTitle" xml:space="preserve">
+    <value>Password Updated</value>
+  </data>
+  <data name="PasswordUpdatedText" xml:space="preserve">
+    <value>You can now sign in with your new password.</value>
+  </data>
+  <data name="ResetLinkInvalidTitle" xml:space="preserve">
+    <value>Link Invalid</value>
+  </data>
+  <data name="ResetLinkInvalidText" xml:space="preserve">
+    <value>This password reset link has expired or is invalid. You can request a new one.</value>
+  </data>
 </root>
