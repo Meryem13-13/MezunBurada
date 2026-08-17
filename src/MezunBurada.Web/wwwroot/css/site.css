@@ -1879,3 +1879,124 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-muted);
   margin-bottom: 1.5rem;
 }
+
+/* ==========================================================================
+   Bölüm Detay (department detail) page
+   ========================================================================== */
+.dept-detail-hero {
+  padding: 2.5rem 0 1.5rem;
+}
+
+.dept-detail-hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.dept-detail-hero p {
+  color: var(--color-text-muted);
+  max-width: 720px;
+  margin-bottom: 1.25rem;
+}
+
+.dept-detail-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.dept-detail-badge {
+  display: inline-block;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-pill, 999px);
+  background-color: var(--color-blush-light);
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.info-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .info-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.info-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.info-card h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-card p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.subfield-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.subfield-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.subfield-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.subfield-card p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.subfield-card .difficulty-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.dept-card-info-link {
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  margin-top: 0.4rem;
+}
+
+.dept-card-info-link:hover {
+  color: var(--color-primary);
+}
+
+#deptFaqAccordion .accordion-button:not(.collapsed) {
+  background-color: var(--color-blush-light);
+  color: var(--color-primary);
+  box-shadow: none;
+}
+
+#deptFaqAccordion .accordion-button:focus {
+  box-shadow: none;
+  border-color: var(--color-border);
+}

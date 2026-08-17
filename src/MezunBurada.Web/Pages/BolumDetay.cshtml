@@ -1,0 +1,108 @@
+@page "/bolum/{slug}"
+@model MezunBurada.Web.Pages.BolumDetayModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "/Pages/Shared/_PublicLayout.cshtml";
+    ViewData["Title"] = Model.Department.Name;
+    ViewData["ActiveNav"] = "departments";
+}
+
+<a href="/test/bolum" class="public-nav-link">@Localizer["BackToDepartmentsLabel"]</a>
+
+<div class="dept-detail-hero">
+    <h1>@Model.Department.Name</h1>
+    <p>@Model.Department.LongDescription</p>
+
+    <div class="dept-detail-badges">
+        <span class="dept-detail-badge">@Model.DegreeTypeDisplay</span>
+        <span class="dept-detail-badge">@Model.ExamTypeDisplay</span>
+        <span class="dept-detail-badge ltr-nums">@Model.Department.EducationDurationYears @Localizer["DeptDetailDurationSuffix"]</span>
+    </div>
+
+    <a href="/test/ilgi-alani?departmentId=@Model.Department.Id" class="btn-brand">@Localizer["StartFreeTestLabel"] &rarr;</a>
+</div>
+
+<div class="info-card-grid">
+    <div class="info-card">
+        <h3>@Localizer["DeptDetailMainTopicsLabel"]</h3>
+        <p>@Model.Department.MainTopics</p>
+    </div>
+    <div class="info-card">
+        <h3>@Localizer["DeptDetailSuitableForLabel"]</h3>
+        <p>@Model.Department.SuitableFor</p>
+    </div>
+    <div class="info-card">
+        <h3>@Localizer["DeptDetailChallengingForLabel"]</h3>
+        <p>@Model.Department.ChallengingFor</p>
+    </div>
+</div>
+
+@if (Model.SubFields.Any())
+{
+    <h2 class="accent-heading">@Localizer["DeptDetailSubFieldsTitle"]</h2>
+    <div class="subfield-grid">
+        @foreach (var sf in Model.SubFields)
+        {
+            <div class="subfield-card">
+                <h3>@sf.Name</h3>
+                @if (!string.IsNullOrWhiteSpace(sf.Description))
+                {
+                    <p>@sf.Description</p>
+                }
+                @if (!string.IsNullOrWhiteSpace(sf.DifficultyLevel))
+                {
+                    <span class="difficulty-tag">@sf.DifficultyLevel</span>
+                }
+            </div>
+        }
+    </div>
+}
+
+@if (Model.Reviews.Any())
+{
+    <h2 class="accent-heading">@Localizer["DeptDetailReviewsTitle"]</h2>
+    <div class="review-grid">
+        @foreach (var review in Model.Reviews)
+        {
+            <div class="review-card">
+                <div class="review-card-header">
+                    <span class="review-avatar">@review.Name.Substring(0, 1).ToUpperInvariant()</span>
+                    <div>
+                        <div class="review-name">@review.Name</div>
+                        <div class="review-meta">@(review.SubField?.Name)</div>
+                    </div>
+                </div>
+                <p class="review-text">"@review.Text"</p>
+            </div>
+        }
+    </div>
+    <p class="mb-5"><a href="/deneyimler?departmentId=@Model.Department.Id" class="public-nav-link">@Localizer["ViewAllExperiencesLabel"] &rarr;</a></p>
+}
+else
+{
+    <p class="text-muted mb-5">@Localizer["DeptDetailNoReviewsText"]</p>
+}
+
+@if (Model.Faqs.Any())
+{
+    <h2 class="accent-heading">@Localizer["DeptDetailFaqTitle"]</h2>
+    <div class="accordion mb-5" id="deptFaqAccordion">
+        @for (var i = 0; i < Model.Faqs.Count; i++)
+        {
+            var faq = Model.Faqs[i];
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button @(i > 0 ? "collapsed" : "")" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq-@faq.Id"
+                            aria-expanded="@(i == 0 ? "true" : "false")" aria-controls="faq-@faq.Id">
+                        @faq.Question
+                    </button>
+                </h2>
+                <div id="faq-@faq.Id" class="accordion-collapse collapse @(i == 0 ? "show" : "")" data-bs-parent="#deptFaqAccordion">
+                    <div class="accordion-body">@faq.Answer</div>
+                </div>
+            </div>
+        }
+    </div>
+}

@@ -28,7 +28,10 @@ else
     <div class="dept-grid mb-5">
         @foreach (var dept in Model.Departments)
         {
-            <a href="/test/ilgi-alani?departmentId=@dept.Id" class="dept-card">@dept.Name</a>
+            <div>
+                <a href="/test/ilgi-alani?departmentId=@dept.Id" class="dept-card">@dept.Name</a>
+                <a href="/bolum/@dept.Slug" class="dept-card-info-link">@Localizer["DeptDetailInfoLinkLabel"]</a>
+            </div>
         }
     </div>
 }
