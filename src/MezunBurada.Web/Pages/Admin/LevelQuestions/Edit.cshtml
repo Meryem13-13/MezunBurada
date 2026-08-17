@@ -1,0 +1,100 @@
+@page "/admin/seviye-sorulari/duzenle/{id:int}"
+@model MezunBurada.Web.Pages.Admin.LevelQuestions.EditModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Soruyu Düzenle";
+}
+
+<h1 class="h3 mb-4">Soruyu Düzenle</h1>
+
+<form method="post" class="bg-white border rounded p-4 mb-4" style="max-width: 640px;">
+    <input type="hidden" asp-for="Input.Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="mb-3">
+        <label asp-for="Input.SubFieldId" class="form-label">Alt Dal</label>
+        <select asp-for="Input.SubFieldId" asp-items="Model.SubFieldOptions" class="form-select">
+            <option value="">-- Seç --</option>
+        </select>
+        <span asp-validation-for="Input.SubFieldId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Text" class="form-label">Soru Metni</label>
+        <input asp-for="Input.Text" class="form-control" />
+        <span asp-validation-for="Input.Text" class="text-danger"></span>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label asp-for="Input.Difficulty" class="form-label">Zorluk</label>
+            <select asp-for="Input.Difficulty" asp-items="Model.DifficultyOptions" class="form-select"></select>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label asp-for="Input.Points" class="form-label">Puan</label>
+            <input asp-for="Input.Points" type="number" class="form-control" />
+            <span asp-validation-for="Input.Points" class="text-danger"></span>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label asp-for="Input.SkillId" class="form-label">İlgili Beceri (opsiyonel)</label>
+            <select asp-for="Input.SkillId" asp-items="Model.SkillOptions" class="form-select">
+                <option value="">-- Yok --</option>
+            </select>
+        </div>
+    </div>
+
+    <button type="submit" class="btn-brand">Güncelle</button>
+    <a href="/admin/seviye-sorulari" class="btn btn-outline-secondary">Listeye Dön</a>
+</form>
+
+<div class="bg-white border rounded p-4" style="max-width: 640px;">
+    <h2 class="h5 mb-3">Seçenekler</h2>
+
+    @if (!Model.Options.Any())
+    {
+        <p class="text-muted">Henüz seçenek eklenmemiş. Genelde 4 seçenek, birinde doğru cevap işaretli olur.</p>
+    }
+    else
+    {
+        <table class="table table-sm table-bordered align-middle">
+            <thead>
+                <tr>
+                    <th>Seçenek Metni</th>
+                    <th>Doğru mu?</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var option in Model.Options)
+                {
+                    <tr class="@(option.IsCorrect ? "table-success" : "")">
+                        <td>@option.Text</td>
+                        <td>@(option.IsCorrect ? "✓ Doğru" : "")</td>
+                        <td class="text-end">
+                            <form method="post" asp-page-handler="DeleteOption" asp-route-id="@Model.Input.Id" asp-route-optionId="@option.Id"
+                                  onsubmit="return confirm('Bu seçeneği silmek istediğine emin misin?');">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Sil</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    <form method="post" asp-page-handler="AddOption" asp-route-id="@Model.Input.Id" class="row g-2 align-items-end mt-3">
+        <div class="col-md-7">
+            <label asp-for="NewOption.Text" class="form-label">Yeni Seçenek Metni</label>
+            <input asp-for="NewOption.Text" class="form-control" placeholder="örn. Veri değişimi sağlar" />
+        </div>
+        <div class="col-md-3">
+            <div class="form-check mb-2">
+                <input asp-for="NewOption.IsCorrect" class="form-check-input" />
+                <label asp-for="NewOption.IsCorrect" class="form-check-label">Doğru cevap bu</label>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn-brand w-100">Ekle</button>
+        </div>
+    </form>
+</div>

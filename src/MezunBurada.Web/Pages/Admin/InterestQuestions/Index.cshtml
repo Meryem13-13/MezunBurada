@@ -1,0 +1,48 @@
+@page "/admin/ilgi-sorulari"
+@model MezunBurada.Web.Pages.Admin.InterestQuestions.IndexModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "İlgi Alanı Soruları";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="h3 mb-0">İlgi Alanı Soruları</h1>
+    <a class="btn-brand" href="/admin/ilgi-sorulari/ekle">+ Yeni Soru Ekle</a>
+</div>
+
+<p class="text-muted">Bu sorular, bir bölümü seçen herkese sırayla sorulur — hangi seçenek en çok işaretlenirse kullanıcı o alt dala yönlendirilir.</p>
+
+@if (!Model.Questions.Any())
+{
+    <div class="alert alert-light border">Henüz soru eklenmemiş.</div>
+}
+else
+{
+    <table class="table table-bordered align-middle bg-white">
+        <thead>
+            <tr>
+                <th>Bölüm</th>
+                <th>Soru</th>
+                <th>Seçenek Sayısı</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var q in Model.Questions)
+            {
+                <tr>
+                    <td>@q.Department?.Name</td>
+                    <td>@q.Text</td>
+                    <td class="ltr-nums">@q.Options.Count</td>
+                    <td class="text-end text-nowrap">
+                        <a class="btn btn-sm btn-outline-secondary" href="/admin/ilgi-sorulari/duzenle/@q.Id">Düzenle / Seçenekler</a>
+                        <form method="post" asp-page-handler="Delete" asp-route-id="@q.Id" class="d-inline"
+                              onsubmit="return confirm('Bu soruyu ve tüm seçeneklerini silmek istediğine emin misin?');">
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Sil</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

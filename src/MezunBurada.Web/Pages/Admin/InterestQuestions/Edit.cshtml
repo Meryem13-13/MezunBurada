@@ -1,0 +1,83 @@
+@page "/admin/ilgi-sorulari/duzenle/{id:int}"
+@model MezunBurada.Web.Pages.Admin.InterestQuestions.EditModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Soruyu Düzenle";
+}
+
+<h1 class="h3 mb-4">Soruyu Düzenle</h1>
+
+<form method="post" class="bg-white border rounded p-4 mb-4" style="max-width: 640px;">
+    <input type="hidden" asp-for="Input.Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="mb-3">
+        <label asp-for="Input.DepartmentId" class="form-label">Bölüm</label>
+        <select asp-for="Input.DepartmentId" asp-items="Model.DepartmentOptions" class="form-select">
+            <option value="">-- Seç --</option>
+        </select>
+        <span asp-validation-for="Input.DepartmentId" class="text-danger"></span>
+        <div class="form-text">Bölümü değiştirip kaydedersen, seçenek eklerken alt dal listesi de değişir.</div>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Text" class="form-label">Soru Metni</label>
+        <input asp-for="Input.Text" class="form-control" />
+        <span asp-validation-for="Input.Text" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn-brand">Güncelle</button>
+    <a href="/admin/ilgi-sorulari" class="btn btn-outline-secondary">Listeye Dön</a>
+</form>
+
+<div class="bg-white border rounded p-4" style="max-width: 640px;">
+    <h2 class="h5 mb-3">Seçenekler</h2>
+
+    @if (!Model.Options.Any())
+    {
+        <p class="text-muted">Henüz seçenek eklenmemiş. En az 2 seçenek önerilir.</p>
+    }
+    else
+    {
+        <table class="table table-sm table-bordered align-middle">
+            <thead>
+                <tr>
+                    <th>Seçenek Metni</th>
+                    <th>Hangi Alt Dala Yönlendiriyor</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var option in Model.Options)
+                {
+                    <tr>
+                        <td>@option.Text</td>
+                        <td>@option.MapsToSubField?.Name</td>
+                        <td class="text-end">
+                            <form method="post" asp-page-handler="DeleteOption" asp-route-id="@Model.Input.Id" asp-route-optionId="@option.Id"
+                                  onsubmit="return confirm('Bu seçeneği silmek istediğine emin misin?');">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Sil</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    <form method="post" asp-page-handler="AddOption" asp-route-id="@Model.Input.Id" class="row g-2 align-items-end mt-3">
+        <div class="col-md-6">
+            <label asp-for="NewOption.Text" class="form-label">Yeni Seçenek Metni</label>
+            <input asp-for="NewOption.Text" class="form-control" placeholder="örn. Mobil uygulama" />
+        </div>
+        <div class="col-md-4">
+            <label asp-for="NewOption.MapsToSubFieldId" class="form-label">Yönlendirdiği Alt Dal</label>
+            <select asp-for="NewOption.MapsToSubFieldId" asp-items="Model.SubFieldOptions" class="form-select">
+                <option value="">-- Seç --</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn-brand w-100">Ekle</button>
+        </div>
+    </form>
+</div>

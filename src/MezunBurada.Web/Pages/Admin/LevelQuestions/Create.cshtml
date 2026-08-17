@@ -1,0 +1,42 @@
+@page "/admin/seviye-sorulari/ekle"
+@model MezunBurada.Web.Pages.Admin.LevelQuestions.CreateModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Yeni Seviye Sorusu";
+}
+
+<h1 class="h3 mb-4">Yeni Soru Ekle</h1>
+<p class="text-muted">Kaydedince seçenek ekleyebileceğin bir sonraki sayfaya geçeceksin.</p>
+
+<form method="post" class="bg-white border rounded p-4" style="max-width: 560px;">
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="mb-3">
+        <label asp-for="Input.SubFieldId" class="form-label">Alt Dal</label>
+        <select asp-for="Input.SubFieldId" asp-items="Model.SubFieldOptions" class="form-select">
+            <option value="">-- Seç --</option>
+        </select>
+        <span asp-validation-for="Input.SubFieldId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Text" class="form-label">Soru Metni</label>
+        <input asp-for="Input.Text" class="form-control" placeholder="örn. REST API ne işe yarar?" />
+        <span asp-validation-for="Input.Text" class="text-danger"></span>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="Input.Difficulty" class="form-label">Zorluk</label>
+            <select asp-for="Input.Difficulty" asp-items="Model.DifficultyOptions" class="form-select"></select>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="Input.Points" class="form-label">Puan</label>
+            <input asp-for="Input.Points" type="number" class="form-control" />
+            <span asp-validation-for="Input.Points" class="text-danger"></span>
+        </div>
+    </div>
+
+    <button type="submit" class="btn-brand">Kaydet ve Seçenek Ekle</button>
+    <a href="/admin/seviye-sorulari" class="btn btn-outline-secondary">Vazgeç</a>
+</form>

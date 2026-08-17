@@ -1,0 +1,146 @@
+@page "/admin/roadmaplar/duzenle/{id:int}"
+@model MezunBurada.Web.Pages.Admin.Roadmaps.EditModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Roadmap'i Düzenle";
+}
+
+<h1 class="h3 mb-4">Roadmap'i Düzenle</h1>
+
+<form method="post" class="bg-white border rounded p-4 mb-4" style="max-width: 640px;">
+    <input type="hidden" asp-for="Input.Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="mb-3">
+        <label asp-for="Input.CareerPathId" class="form-label">Kariyer Yolu</label>
+        <select asp-for="Input.CareerPathId" asp-items="Model.CareerPathOptions" class="form-select">
+            <option value="">-- Seç --</option>
+        </select>
+        <span asp-validation-for="Input.CareerPathId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Title" class="form-label">Roadmap Başlığı</label>
+        <input asp-for="Input.Title" class="form-control" />
+        <span asp-validation-for="Input.Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Level" class="form-label">Seviye</label>
+        <select asp-for="Input.Level" asp-items="Model.LevelOptions" class="form-select"></select>
+    </div>
+
+    <button type="submit" class="btn-brand">Güncelle</button>
+    <a href="/admin/roadmaplar" class="btn btn-outline-secondary">Listeye Dön</a>
+</form>
+
+<div class="bg-white border rounded p-4" style="max-width: 760px;">
+    <h2 class="h5 mb-3">Adımlar</h2>
+
+    @if (!Model.Steps.Any())
+    {
+        <p class="text-muted">Henüz adım eklenmemiş.</p>
+    }
+    else
+    {
+        <table class="table table-sm table-bordered align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Başlık</th>
+                    <th>Süre</th>
+                    <th>Beceri</th>
+                    <th>Kaynak</th>
+                    <th>Önerilen Proje</th>
+                    <th>Önkoşul</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var step in Model.Steps)
+                {
+                    <tr>
+                        <td class="ltr-nums">@step.Order</td>
+                        <td>
+                            <strong>@step.Title</strong>
+                            @if (!string.IsNullOrEmpty(step.HowToApproach))
+                            {
+                                <br />
+                                <span class="text-muted small">Nasıl ilerlemelisin metni var</span>
+                            }
+                        </td>
+                        <td>@step.EstimatedDuration</td>
+                        <td>@step.Skill?.Name</td>
+                        <td>@step.Resource?.Title</td>
+                        <td>@step.SuggestedProject?.Name</td>
+                        <td>@step.PrerequisiteStep?.Title</td>
+                        <td class="text-end">
+                            <form method="post" asp-page-handler="DeleteStep" asp-route-id="@Model.Input.Id" asp-route-stepId="@step.Id"
+                                  onsubmit="return confirm('Bu adımı silmek istediğine emin misin?');">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Sil</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    <h3 class="h6 mt-4 mb-3">Yeni Adım Ekle</h3>
+    <form method="post" asp-page-handler="AddStep" asp-route-id="@Model.Input.Id">
+        <div class="row">
+            <div class="col-md-2 mb-3">
+                <label asp-for="NewStep.Order" class="form-label">Sıra</label>
+                <input asp-for="NewStep.Order" type="number" class="form-control" />
+            </div>
+            <div class="col-md-10 mb-3">
+                <label asp-for="NewStep.Title" class="form-label">Başlık</label>
+                <input asp-for="NewStep.Title" class="form-control" placeholder="örn. HTTP ve REST API Temelleri" />
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="NewStep.Description" class="form-label">Açıklama</label>
+            <textarea asp-for="NewStep.Description" class="form-control" rows="2"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="NewStep.HowToApproach" class="form-label">Nasıl İlerlemelisin? (opsiyonel)</label>
+            <textarea asp-for="NewStep.HowToApproach" class="form-control" rows="2" placeholder="Önce dokümantasyonu oku, sonra..."></textarea>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 mb-3">
+                <label asp-for="NewStep.EstimatedDuration" class="form-label">Tahmini Süre</label>
+                <input asp-for="NewStep.EstimatedDuration" class="form-control" placeholder="örn. 2 hafta" />
+            </div>
+            <div class="col-md-3 mb-3">
+                <label asp-for="NewStep.SkillId" class="form-label">Beceri</label>
+                <select asp-for="NewStep.SkillId" asp-items="Model.SkillOptions" class="form-select">
+                    <option value="">-- Yok --</option>
+                </select>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label asp-for="NewStep.ResourceId" class="form-label">Kaynak</label>
+                <select asp-for="NewStep.ResourceId" asp-items="Model.ResourceOptions" class="form-select">
+                    <option value="">-- Yok --</option>
+                </select>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label asp-for="NewStep.SuggestedProjectId" class="form-label">Önerilen Proje</label>
+                <select asp-for="NewStep.SuggestedProjectId" asp-items="Model.ProjectOptions" class="form-select">
+                    <option value="">-- Yok --</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mb-3" style="max-width: 320px;">
+            <label asp-for="NewStep.PrerequisiteStepId" class="form-label">Önkoşul Adım (opsiyonel)</label>
+            <select asp-for="NewStep.PrerequisiteStepId" asp-items="Model.PrerequisiteStepOptions" class="form-select">
+                <option value="">-- Yok --</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn-brand">Adımı Ekle</button>
+    </form>
+</div>
