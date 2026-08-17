@@ -591,6 +591,30 @@
   <data name="ChooseDepartmentPlaceholder" xml:space="preserve">
     <value>اختر قسمك</value>
   </data>
+  <data name="HomeHeroTitle" xml:space="preserve">
+    <value>لنجد طريقك بعد التخرج معًا</value>
+  </data>
+  <data name="HomeHeroSubtitle" xml:space="preserve">
+    <value>اختبار مجاني مدته 5 دقائق يحدد اهتماماتك ومستواك، ونضع لك خارطة طريق مهنية خاصة بك.</value>
+  </data>
+  <data name="PopularDepartmentsTitle" xml:space="preserve">
+    <value>الأقسام الشائعة</value>
+  </data>
+  <data name="ViewAllDepartmentsLabel" xml:space="preserve">
+    <value>عرض جميع الأقسام</value>
+  </data>
+  <data name="FeaturedExperiencesTitle" xml:space="preserve">
+    <value>تجارب من الخريجين</value>
+  </data>
+  <data name="ViewAllExperiencesLabel" xml:space="preserve">
+    <value>عرض جميع التجارب</value>
+  </data>
+  <data name="SearchSitePlaceholder" xml:space="preserve">
+    <value>ابحث عن قسم...</value>
+  </data>
+  <data name="NoDepartmentsYetText" xml:space="preserve">
+    <value>لا يوجد قسم يطابق بحثك.</value>
+  </data>
   <data name="RoadmapStep3Title" xml:space="preserve">
     <value>03. SQL وقواعد البيانات</value>
   </data>

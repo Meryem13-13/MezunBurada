@@ -421,6 +421,7 @@ public static class DbSeeder
                 Department = department,
                 SubField = backend,
                 Status = ReviewStatus.Approved,
+                IsFeatured = true,
             },
             new Review
             {
@@ -430,6 +431,7 @@ public static class DbSeeder
                 Department = department,
                 SubField = backend,
                 Status = ReviewStatus.Approved,
+                IsFeatured = true,
             },
             new Review
             {
@@ -439,6 +441,7 @@ public static class DbSeeder
                 Department = department,
                 SubField = frontend,
                 Status = ReviewStatus.Approved,
+                IsFeatured = true,
             }
         );
 

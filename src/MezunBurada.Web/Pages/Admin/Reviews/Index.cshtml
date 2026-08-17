@@ -67,6 +67,7 @@ else
                 <th>Seviye</th>
                 <th>Deneyim</th>
                 <th>Tarih</th>
+                <th>Öne Çıkan</th>
                 <th></th>
             </tr>
         </thead>
@@ -80,7 +81,18 @@ else
                     <td>@review.Level</td>
                     <td style="max-width: 320px;">@review.Text</td>
                     <td class="text-nowrap">@review.CreatedAt.ToString("dd.MM.yyyy")</td>
+                    <td>
+                        @if (review.IsFeatured)
+                        {
+                            <span class="badge text-bg-warning">★ Öne Çıkan</span>
+                        }
+                    </td>
                     <td class="text-end text-nowrap">
+                        <form method="post" asp-page-handler="ToggleFeatured" asp-route-id="@review.Id" class="d-inline">
+                            <button type="submit" class="btn btn-sm btn-outline-secondary">
+                                @(review.IsFeatured ? "Öne Çıkarmayı Kaldır" : "Ana Sayfada Öne Çıkar")
+                            </button>
+                        </form>
                         <form method="post" asp-page-handler="Reject" asp-route-id="@review.Id" class="d-inline"
                               onsubmit="return confirm('Bu deneyimi kaldırmak istediğine emin misin?');">
                             <button type="submit" class="btn btn-sm btn-outline-danger">Kaldır</button>

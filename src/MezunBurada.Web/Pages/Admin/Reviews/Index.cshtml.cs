@@ -42,6 +42,18 @@ public class IndexModel : PageModel
         return RedirectToPage();
     }
 
+    public async Task<IActionResult> OnPostToggleFeaturedAsync(int id)
+    {
+        var review = await _db.Reviews.FindAsync(id);
+        if (review is not null && review.Status == ReviewStatus.Approved)
+        {
+            review.IsFeatured = !review.IsFeatured;
+            await _db.SaveChangesAsync();
+        }
+
+        return RedirectToPage();
+    }
+
     public async Task<IActionResult> OnPostRejectAsync(int id)
     {
         var review = await _db.Reviews.FindAsync(id);

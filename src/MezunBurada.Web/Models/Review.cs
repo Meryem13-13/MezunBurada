@@ -13,6 +13,7 @@ public class Review
     public string? Level { get; set; }
 
     public ReviewStatus Status { get; set; } = ReviewStatus.Pending;
+    public bool IsFeatured { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
     public int DepartmentId { get; set; }

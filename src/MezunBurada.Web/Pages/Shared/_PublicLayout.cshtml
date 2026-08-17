@@ -39,6 +39,9 @@
                 <a href="/deneyimler" class="public-nav-link @(activeNav == "experiences" ? "active" : "")">@Localizer["PublicNavExperiences"]</a>
             </div>
             <div class="d-flex align-items-center gap-3">
+                <form method="get" action="/" class="d-none d-lg-block">
+                    <input type="text" name="q" class="nav-search-input" placeholder="@Localizer["SearchSitePlaceholder"]" />
+                </form>
                 <div class="dropdown">
                     <a class="btn-brand-outline dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         @currentCulture.TwoLetterISOLanguageName.ToUpperInvariant()

@@ -1,19 +1,41 @@
-using Microsoft.AspNetCore.Mvc;
+using MezunBurada.Web.Data;
+using MezunBurada.Web.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace MezunBurada.Web.Pages;
 
 public class IndexModel : PageModel
 {
-    private readonly ILogger<IndexModel> _logger;
+    private readonly ApplicationDbContext _db;
 
-    public IndexModel(ILogger<IndexModel> logger)
+    public IndexModel(ApplicationDbContext db)
     {
-        _logger = logger;
+        _db = db;
     }
 
-    public void OnGet()
-    {
+    public string? SearchTerm { get; private set; }
+    public IList<Department> Departments { get; private set; } = new List<Department>();
+    public IList<Review> FeaturedReviews { get; private set; } = new List<Review>();
 
+    public async Task OnGetAsync(string? q)
+    {
+        SearchTerm = q;
+
+        var query = _db.Departments.Where(d => d.IsActive).AsQueryable();
+        if (!string.IsNullOrWhiteSpace(q))
+        {
+            query = query.Where(d => d.Name.Contains(q));
+        }
+
+        Departments = await query.OrderBy(d => d.Name).Take(8).ToListAsync();
+
+        FeaturedReviews = await _db.Reviews
+            .Include(r => r.Department)
+            .Include(r => r.SubField)
+            .Where(r => r.Status == ReviewStatus.Approved && r.IsFeatured)
+            .OrderByDescending(r => r.CreatedAt)
+            .Take(4)
+            .ToListAsync();
     }
 }

@@ -1,10 +1,58 @@
-﻿@page
-@model IndexModel
+@page "/"
+@model MezunBurada.Web.Pages.IndexModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
 @{
-    ViewData["Title"] = "Home page";
+    Layout = "/Pages/Shared/_PublicLayout.cshtml";
+    ViewData["Title"] = Localizer["SiteTitle"];
+    ViewData["ActiveNav"] = "home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="experience-hero">
+    <h1>@Localizer["HomeHeroTitle"]</h1>
+    <p>@Localizer["HomeHeroSubtitle"]</p>
+    <a href="/test/bolum" class="btn-brand">@Localizer["StartFreeTestLabel"] &rarr;</a>
 </div>
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="accent-heading mb-0">@Localizer["PopularDepartmentsTitle"]</h2>
+    <a href="/test/bolum" class="public-nav-link">@Localizer["ViewAllDepartmentsLabel"] &rarr;</a>
+</div>
+
+@if (!Model.Departments.Any())
+{
+    <div class="alert alert-light border mb-5">@Localizer["NoDepartmentsYetText"]</div>
+}
+else
+{
+    <div class="dept-grid mb-5">
+        @foreach (var dept in Model.Departments)
+        {
+            <a href="/test/ilgi-alani?departmentId=@dept.Id" class="dept-card">@dept.Name</a>
+        }
+    </div>
+}
+
+@if (Model.FeaturedReviews.Any())
+{
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="accent-heading mb-0">@Localizer["FeaturedExperiencesTitle"]</h2>
+        <a href="/deneyimler" class="public-nav-link">@Localizer["ViewAllExperiencesLabel"] &rarr;</a>
+    </div>
+
+    <div class="review-grid mb-5">
+        @foreach (var review in Model.FeaturedReviews)
+        {
+            <div class="review-card">
+                <div class="review-card-header">
+                    <span class="review-avatar">@review.Name.Substring(0, 1).ToUpperInvariant()</span>
+                    <div>
+                        <div class="review-name">@review.Name</div>
+                        <div class="review-meta">@review.Department?.Name @(review.SubField is not null ? $"· {review.SubField.Name}" : "")</div>
+                    </div>
+                </div>
+                <p class="review-text">"@review.Text"</p>
+            </div>
+        }
+    </div>
+}
