@@ -20,9 +20,14 @@ public class EditModel : PageModel
     [BindProperty]
     public InputModel Input { get; set; } = new();
 
+    [BindProperty]
+    public int NewSkillId { get; set; }
+
     public SelectList CategoryOptions { get; private set; } = null!;
     public SelectList DegreeTypeOptions { get; private set; } = null!;
     public SelectList ExamTypeOptions { get; private set; } = null!;
+    public SelectList SkillOptions { get; private set; } = null!;
+    public List<DepartmentSkill> DepartmentSkills { get; private set; } = new();
 
     public class InputModel
     {
@@ -129,11 +134,43 @@ public class EditModel : PageModel
         return RedirectToPage("Index");
     }
 
+    public async Task<IActionResult> OnPostAddSkillAsync(int id)
+    {
+        var alreadyLinked = await _db.DepartmentSkills.AnyAsync(ds => ds.DepartmentId == id && ds.SkillId == NewSkillId);
+        if (NewSkillId > 0 && !alreadyLinked)
+        {
+            _db.DepartmentSkills.Add(new DepartmentSkill { DepartmentId = id, SkillId = NewSkillId });
+            await _db.SaveChangesAsync();
+        }
+
+        return RedirectToPage(new { id });
+    }
+
+    public async Task<IActionResult> OnPostRemoveSkillAsync(int id, int skillId)
+    {
+        var link = await _db.DepartmentSkills.FindAsync(id, skillId);
+        if (link is not null)
+        {
+            _db.DepartmentSkills.Remove(link);
+            await _db.SaveChangesAsync();
+        }
+
+        return RedirectToPage(new { id });
+    }
+
     private async Task LoadOptionsAsync()
     {
         var categories = await _db.Categories.OrderBy(c => c.Name).ToListAsync();
         CategoryOptions = new SelectList(categories, nameof(Category.Id), nameof(Category.Name));
         DegreeTypeOptions = new SelectList(Enum.GetValues<DegreeType>());
         ExamTypeOptions = new SelectList(Enum.GetValues<ExamType>());
+
+        var skills = await _db.Skills.OrderBy(s => s.Name).ToListAsync();
+        SkillOptions = new SelectList(skills, nameof(Skill.Id), nameof(Skill.Name));
+
+        DepartmentSkills = await _db.DepartmentSkills
+            .Include(ds => ds.Skill)
+            .Where(ds => ds.DepartmentId == Input.Id)
+            .ToListAsync();
     }
 }

@@ -38,3 +38,34 @@
     <button type="submit" class="btn-brand">Güncelle</button>
     <a href="/admin/kariyer-yollari" class="btn btn-outline-secondary">Vazgeç</a>
 </form>
+
+<div class="bg-white border rounded p-4 mt-4" style="max-width: 560px;">
+    <h2 class="h5 mb-3">Gerekli Beceriler</h2>
+
+    @if (!Model.CareerPathSkills.Any())
+    {
+        <p class="text-muted">Bu kariyer yoluna henüz beceri eklenmemiş.</p>
+    }
+    else
+    {
+        <ul class="list-group mb-3">
+            @foreach (var cps in Model.CareerPathSkills)
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    @cps.Skill?.Name <span class="text-muted small">(@cps.RequiredLevel)</span>
+                    <form method="post" asp-page-handler="RemoveSkill" asp-route-id="@Model.Input.Id" asp-route-skillId="@cps.SkillId" class="d-inline">
+                        <button type="submit" class="btn btn-sm btn-outline-danger">Kaldır</button>
+                    </form>
+                </li>
+            }
+        </ul>
+    }
+
+    <form method="post" asp-page-handler="AddSkill" asp-route-id="@Model.Input.Id" class="d-flex gap-2">
+        <select asp-for="NewSkill.SkillId" asp-items="Model.SkillOptions" class="form-select">
+            <option value="">-- Beceri Seç --</option>
+        </select>
+        <select asp-for="NewSkill.RequiredLevel" asp-items="Model.LevelOptions" class="form-select"></select>
+        <button type="submit" class="btn-brand text-nowrap">Ekle</button>
+    </form>
+</div>

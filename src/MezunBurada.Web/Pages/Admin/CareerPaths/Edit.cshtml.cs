@@ -20,7 +20,19 @@ public class EditModel : PageModel
     [BindProperty]
     public InputModel Input { get; set; } = new();
 
+    [BindProperty]
+    public NewSkillModel NewSkill { get; set; } = new();
+
     public SelectList SubFieldOptions { get; private set; } = null!;
+    public SelectList SkillOptions { get; private set; } = null!;
+    public SelectList LevelOptions { get; } = new(Enum.GetValues<ProficiencyLevel>());
+    public List<CareerPathSkill> CareerPathSkills { get; private set; } = new();
+
+    public class NewSkillModel
+    {
+        public int SkillId { get; set; }
+        public ProficiencyLevel RequiredLevel { get; set; }
+    }
 
     public class InputModel
     {
@@ -82,6 +94,35 @@ public class EditModel : PageModel
         return RedirectToPage("Index");
     }
 
+    public async Task<IActionResult> OnPostAddSkillAsync(int id)
+    {
+        var alreadyLinked = await _db.CareerPathSkills.AnyAsync(cps => cps.CareerPathId == id && cps.SkillId == NewSkill.SkillId);
+        if (NewSkill.SkillId > 0 && !alreadyLinked)
+        {
+            _db.CareerPathSkills.Add(new CareerPathSkill
+            {
+                CareerPathId = id,
+                SkillId = NewSkill.SkillId,
+                RequiredLevel = NewSkill.RequiredLevel,
+            });
+            await _db.SaveChangesAsync();
+        }
+
+        return RedirectToPage(new { id });
+    }
+
+    public async Task<IActionResult> OnPostRemoveSkillAsync(int id, int skillId)
+    {
+        var link = await _db.CareerPathSkills.FindAsync(id, skillId);
+        if (link is not null)
+        {
+            _db.CareerPathSkills.Remove(link);
+            await _db.SaveChangesAsync();
+        }
+
+        return RedirectToPage(new { id });
+    }
+
     private async Task LoadOptionsAsync()
     {
         var subFields = await _db.SubFields
@@ -90,5 +131,13 @@ public class EditModel : PageModel
             .ToListAsync();
         var items = subFields.Select(sf => new { sf.Id, Label = $"{sf.Department?.Name} · {sf.Name}" });
         SubFieldOptions = new SelectList(items, "Id", "Label");
+
+        var skills = await _db.Skills.OrderBy(s => s.Name).ToListAsync();
+        SkillOptions = new SelectList(skills, nameof(Skill.Id), nameof(Skill.Name));
+
+        CareerPathSkills = await _db.CareerPathSkills
+            .Include(cps => cps.Skill)
+            .Where(cps => cps.CareerPathId == Input.Id)
+            .ToListAsync();
     }
 }
