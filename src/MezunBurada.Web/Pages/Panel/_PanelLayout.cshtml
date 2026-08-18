@@ -47,8 +47,12 @@
                 <button type="submit" class="panel-logout w-100">↩ @Localizer["PanelLogout"]</button>
             </form>
         </aside>
+        <div class="panel-sidebar-backdrop" id="panelSidebarBackdrop"></div>
         <div class="panel-main">
             <div class="panel-topbar">
+                <button class="panel-mobile-toggle d-md-none" type="button" id="panelSidebarToggle" aria-label="Menü">
+                    ☰
+                </button>
                 <nav class="panel-tabs">
                     <a href="/panel" class="@(activeTab == "dashboard" ? "active" : "")">@Localizer["PanelNavDashboard"]</a>
                     <a href="#" class="@(activeTab == "roadmap" ? "active" : "")">@Localizer["PanelNavRoadmap"]</a>
@@ -81,6 +85,23 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (function () {
+            var toggle = document.getElementById('panelSidebarToggle');
+            var sidebar = document.querySelector('.panel-sidebar');
+            var backdrop = document.getElementById('panelSidebarBackdrop');
+            if (!toggle || !sidebar || !backdrop) return;
+            function closeSidebar() {
+                sidebar.classList.remove('mobile-open');
+                backdrop.classList.remove('show');
+            }
+            toggle.addEventListener('click', function () {
+                sidebar.classList.toggle('mobile-open');
+                backdrop.classList.toggle('show');
+            });
+            backdrop.addEventListener('click', closeSidebar);
+        })();
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

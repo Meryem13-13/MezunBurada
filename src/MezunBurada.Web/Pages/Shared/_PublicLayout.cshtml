@@ -27,33 +27,39 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
-    <nav class="public-nav">
-        <div class="container d-flex align-items-center justify-content-between py-3">
+    <nav class="navbar navbar-expand-md public-nav">
+        <div class="container py-2 py-md-3">
             <a class="navbar-brand d-flex align-items-center gap-2" href="/">
                 <span class="brand-mark">M</span>
                 <span>@Localizer["SiteTitle"]</span>
             </a>
-            <div class="d-none d-md-flex align-items-center gap-4">
-                <a href="/" class="public-nav-link @(activeNav == "home" ? "active" : "")">@Localizer["PublicNavHome"]</a>
-                <a href="/test/bolum" class="public-nav-link @(activeNav == "departments" ? "active" : "")">@Localizer["PublicNavDepartments"]</a>
-                <a href="/deneyimler" class="public-nav-link @(activeNav == "experiences" ? "active" : "")">@Localizer["PublicNavExperiences"]</a>
-            </div>
-            <div class="d-flex align-items-center gap-3">
-                <form method="get" action="/" class="d-none d-lg-block">
-                    <input type="text" name="q" class="nav-search-input" placeholder="@Localizer["SearchSitePlaceholder"]" />
-                </form>
-                <div class="dropdown">
-                    <a class="btn-brand-outline dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        @currentCulture.TwoLetterISOLanguageName.ToUpperInvariant()
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/set-language?culture=tr&returnUrl=@Uri.EscapeDataString(returnUrl)">Türkçe</a></li>
-                        <li><a class="dropdown-item" href="/set-language?culture=en&returnUrl=@Uri.EscapeDataString(returnUrl)">English</a></li>
-                        <li><a class="dropdown-item" href="/set-language?culture=ar&returnUrl=@Uri.EscapeDataString(returnUrl)">العربية</a></li>
-                    </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#publicNavCollapse"
+                    aria-controls="publicNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <div class="collapse navbar-collapse" id="publicNavCollapse">
+                <div class="d-flex flex-column flex-md-row align-items-md-center gap-2 gap-md-4 mt-3 mt-md-0 ms-md-4">
+                    <a href="/" class="public-nav-link @(activeNav == "home" ? "active" : "")">@Localizer["PublicNavHome"]</a>
+                    <a href="/test/bolum" class="public-nav-link @(activeNav == "departments" ? "active" : "")">@Localizer["PublicNavDepartments"]</a>
+                    <a href="/deneyimler" class="public-nav-link @(activeNav == "experiences" ? "active" : "")">@Localizer["PublicNavExperiences"]</a>
                 </div>
-                <a href="/giris" class="btn-brand-outline d-none d-sm-inline-flex">@Localizer["LoginButtonLabel"]</a>
-                <a href="/test/bolum" class="btn-brand">@Localizer["StartFreeTestLabel"] &rarr;</a>
+                <div class="d-flex flex-column flex-md-row align-items-stretch align-items-md-center gap-2 gap-md-3 mt-3 mt-md-0 ms-md-auto">
+                    <form method="get" action="/" class="d-none d-lg-block">
+                        <input type="text" name="q" class="nav-search-input" placeholder="@Localizer["SearchSitePlaceholder"]" />
+                    </form>
+                    <div class="dropdown">
+                        <a class="btn-brand-outline dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            @currentCulture.TwoLetterISOLanguageName.ToUpperInvariant()
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/set-language?culture=tr&returnUrl=@Uri.EscapeDataString(returnUrl)">Türkçe</a></li>
+                            <li><a class="dropdown-item" href="/set-language?culture=en&returnUrl=@Uri.EscapeDataString(returnUrl)">English</a></li>
+                            <li><a class="dropdown-item" href="/set-language?culture=ar&returnUrl=@Uri.EscapeDataString(returnUrl)">العربية</a></li>
+                        </ul>
+                    </div>
+                    <a href="/giris" class="btn-brand-outline text-center">@Localizer["LoginButtonLabel"]</a>
+                    <a href="/test/bolum" class="btn-brand text-center">@Localizer["StartFreeTestLabel"] &rarr;</a>
+                </div>
             </div>
         </div>
     </nav>
