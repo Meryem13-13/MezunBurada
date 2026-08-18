@@ -20,6 +20,13 @@ var supportedCultures = new[]
 builder.Services.AddRazorPages()
     .AddViewLocalization();
 
+// Every page under /Admin requires the AdminOnly policy (see below) — added here in one place
+// rather than an [Authorize] attribute on each of the ~15 admin page folders.
+builder.Services.Configure<Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions>(options =>
+{
+    options.Conventions.AuthorizeFolder("/Admin", "AdminOnly");
+});
+
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
 builder.Services.Configure<RequestLocalizationOptions>(options =>
@@ -58,7 +65,10 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.ExpireTimeSpan = TimeSpan.FromDays(30);
         options.SlidingExpiration = true;
     });
-builder.Services.AddAuthorization();
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly", policy => policy.RequireClaim("IsAdmin", "true"));
+});
 
 var app = builder.Build();
 
