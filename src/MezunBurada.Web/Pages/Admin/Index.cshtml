@@ -1,0 +1,99 @@
+@page "/admin"
+@model MezunBurada.Web.Pages.Admin.IndexModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h1 class="h3 mb-4">Genel Bakış</h1>
+
+<div class="row g-3 mb-4">
+    <div class="col-6 col-lg-3">
+        <div class="bg-white border rounded p-3 h-100">
+            <div class="text-muted small">Toplam Kullanıcı</div>
+            <div class="h3 mb-0 ltr-nums">@Model.TotalUsers</div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="bg-white border rounded p-3 h-100">
+            <div class="text-muted small">Tamamlanan Test</div>
+            <div class="h3 mb-0 ltr-nums">@Model.TotalCompletedTests</div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="bg-white border rounded p-3 h-100">
+            <div class="text-muted small">Onay Bekleyen Deneyim</div>
+            <div class="h3 mb-0 ltr-nums">
+                @Model.PendingReviewsCount
+                @if (Model.PendingReviewsCount > 0)
+                {
+                    <a href="/admin/deneyimler" class="small ms-2">İncele &rarr;</a>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="bg-white border rounded p-3 h-100">
+            <div class="text-muted small">Toplam Bölüm</div>
+            <div class="h3 mb-0 ltr-nums">@Model.TotalDepartments</div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-3">
+    <div class="col-lg-7">
+        <div class="bg-white border rounded p-3">
+            <h2 class="h5 mb-3">Bölüme Göre Dağılım</h2>
+            <table class="table table-sm table-bordered align-middle mb-0">
+                <thead>
+                    <tr>
+                        <th>Bölüm</th>
+                        <th class="text-end">Alt Dal</th>
+                        <th class="text-end">Kariyer Yolu</th>
+                        <th class="text-end">Tamamlanan Test</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var row in Model.DepartmentBreakdown)
+                    {
+                        <tr>
+                            <td>@row.DepartmentName</td>
+                            <td class="text-end ltr-nums">@row.SubFieldCount</td>
+                            <td class="text-end ltr-nums">@row.CareerPathCount</td>
+                            <td class="text-end ltr-nums">@row.CompletedTestCount</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-5">
+        <div class="bg-white border rounded p-3">
+            <h2 class="h5 mb-3">Son Kayıt Olanlar</h2>
+            @if (!Model.RecentUsers.Any())
+            {
+                <p class="text-muted mb-0">Henüz kayıtlı kullanıcı yok.</p>
+            }
+            else
+            {
+                <table class="table table-sm table-bordered align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th>İsim</th>
+                            <th>Kayıt Tarihi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var user in Model.RecentUsers)
+                        {
+                            <tr>
+                                <td>@user.FullName</td>
+                                <td class="ltr-nums text-nowrap">@user.CreatedAt.ToString("dd.MM.yyyy")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+</div>
