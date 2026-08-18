@@ -14,6 +14,14 @@ public class IlgiAlaniModel : PageModel
     private const string TallySessionKey = "InterestTally";
     private const string ResultSubFieldSessionKey = "ResultSubFieldId";
 
+    // Keys owned by Seviye/Roadmap — must also reset here so a previous department's leftover
+    // level-test progress can't short-circuit a freshly-started one (SeviyeModel would otherwise
+    // see a stale "already answered N questions" count from the last department and skip straight
+    // to the roadmap with the wrong result).
+    private const string LevelAnsweredCountSessionKey = "LevelAnsweredCount";
+    private const string LevelPointsEarnedSessionKey = "LevelPointsEarned";
+    private const string ResultLevelSessionKey = "ResultLevel";
+
     private readonly ApplicationDbContext _db;
 
     public IlgiAlaniModel(ApplicationDbContext db)
@@ -31,10 +39,15 @@ public class IlgiAlaniModel : PageModel
     {
         if (departmentId.HasValue)
         {
-            // Starting fresh for this department — reset any earlier progress.
+            // Starting fresh for this department — reset any earlier progress, including
+            // leftover level-test state from a different department tested earlier this session.
             HttpContext.Session.SetInt32(DeptSessionKey, departmentId.Value);
             HttpContext.Session.SetInt32(AnsweredCountSessionKey, 0);
             HttpContext.Session.SetString(TallySessionKey, "{}");
+            HttpContext.Session.Remove(ResultSubFieldSessionKey);
+            HttpContext.Session.Remove(LevelAnsweredCountSessionKey);
+            HttpContext.Session.Remove(LevelPointsEarnedSessionKey);
+            HttpContext.Session.Remove(ResultLevelSessionKey);
         }
 
         var deptId = HttpContext.Session.GetInt32(DeptSessionKey);
