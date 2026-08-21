@@ -861,6 +861,9 @@
   <data name="OrganizationNameLabel" xml:space="preserve">
     <value>Organization Name</value>
   </data>
+  <data name="SiteMetaDescriptionDefault" xml:space="preserve">
+    <value>Free, personalized career test and roadmap for new graduates. Pick your department, discover your interests and level, and start your career path step by step.</value>
+  </data>
   <data name="AboutPageTitle" xml:space="preserve">
     <value>About Us</value>
   </data>

@@ -4,8 +4,9 @@
 @inject IStringLocalizer<SharedResource> Localizer
 @{
     Layout = "/Pages/Shared/_PublicLayout.cshtml";
-    ViewData["Title"] = Localizer["SiteTitle"];
+    ViewData["Title"] = Localizer["HomeHeroTitle"];
     ViewData["ActiveNav"] = "home";
+    ViewData["MetaDescription"] = Localizer["HomeHeroSubtitle"];
 }
 
 <div class="experience-hero">

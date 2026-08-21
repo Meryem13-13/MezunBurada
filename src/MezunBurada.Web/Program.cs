@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Text;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
@@ -120,6 +121,62 @@ app.MapPost("/cikis-yap", async (HttpContext context) =>
 {
     await context.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
     return Results.LocalRedirect("/");
+});
+
+// robots.txt and sitemap.xml build their absolute URLs from the current request's host rather
+// than a hardcoded domain — the real production domain isn't chosen yet, so this way neither
+// file needs to be remembered and edited once it is.
+app.MapGet("/robots.txt", (HttpContext context) =>
+{
+    var baseUrl = $"{context.Request.Scheme}://{context.Request.Host}";
+    var content = $"""
+        User-agent: *
+        Allow: /
+        Disallow: /admin/
+        Disallow: /panel
+        Disallow: /profil
+        Disallow: /kayit
+        Disallow: /giris
+        Disallow: /sifremi-unuttum
+        Disallow: /sifre-sifirla
+
+        Sitemap: {baseUrl}/sitemap.xml
+        """;
+    return Results.Text(content, "text/plain", Encoding.UTF8);
+});
+
+app.MapGet("/sitemap.xml", async (HttpContext context, ApplicationDbContext db) =>
+{
+    var baseUrl = $"{context.Request.Scheme}://{context.Request.Host}";
+
+    var staticPaths = new[]
+    {
+        "/", "/test/bolum", "/deneyimler", "/deneyim-paylas", "/hakkimizda", "/sss",
+        "/gizlilik", "/kullanim-sartlari", "/iletisim", "/kurumlar-icin",
+    };
+
+    var departmentSlugs = await db.Departments
+        .Where(d => d.IsActive)
+        .Select(d => d.Slug)
+        .ToListAsync();
+
+    var sb = new StringBuilder();
+    sb.AppendLine("""<?xml version="1.0" encoding="UTF-8"?>""");
+    sb.AppendLine("""<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">""");
+
+    foreach (var path in staticPaths)
+    {
+        sb.AppendLine($"  <url><loc>{baseUrl}{path}</loc></url>");
+    }
+
+    foreach (var slug in departmentSlugs)
+    {
+        sb.AppendLine($"  <url><loc>{baseUrl}/bolum/{slug}</loc></url>");
+    }
+
+    sb.AppendLine("</urlset>");
+
+    return Results.Text(sb.ToString(), "application/xml", Encoding.UTF8);
 });
 
 app.Run();

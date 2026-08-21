@@ -861,6 +861,9 @@
   <data name="OrganizationNameLabel" xml:space="preserve">
     <value>اسم المؤسسة</value>
   </data>
+  <data name="SiteMetaDescriptionDefault" xml:space="preserve">
+    <value>اختبار مهني مجاني وشخصي وخارطة طريق للخريجين الجدد. اختر قسمك، اكتشف اهتماماتك ومستواك، وابدأ مسارك المهني خطوة بخطوة.</value>
+  </data>
   <data name="AboutPageTitle" xml:space="preserve">
     <value>من نحن</value>
   </data>

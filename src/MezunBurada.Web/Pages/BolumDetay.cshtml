@@ -6,6 +6,7 @@
     Layout = "/Pages/Shared/_PublicLayout.cshtml";
     ViewData["Title"] = Model.Department.Name;
     ViewData["ActiveNav"] = "departments";
+    ViewData["MetaDescription"] = Model.Department.ShortDescription;
 }
 
 <a href="/test/bolum" class="public-nav-link">@Localizer["BackToDepartmentsLabel"]</a>
