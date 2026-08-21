@@ -1,0 +1,77 @@
+@page "/admin/kullanicilar"
+@model MezunBurada.Web.Pages.Admin.Users.IndexModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Kullanıcılar";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="h3 mb-0">Kullanıcılar</h1>
+    <form method="get" class="d-flex gap-2">
+        <input type="text" name="q" value="@Model.SearchTerm" class="form-control" placeholder="İsim veya e-posta ara..." style="min-width: 260px;" />
+        <button type="submit" class="btn-brand">Ara</button>
+    </form>
+</div>
+
+@if (Model.ErrorMessage is not null)
+{
+    <div class="alert alert-danger">@Model.ErrorMessage</div>
+}
+
+@if (!Model.Users.Any())
+{
+    <div class="alert alert-light border">
+        @(string.IsNullOrWhiteSpace(Model.SearchTerm) ? "Henüz kayıtlı kullanıcı yok." : "Aramanla eşleşen kullanıcı bulunamadı.")
+    </div>
+}
+else
+{
+    <table class="table table-bordered align-middle bg-white">
+        <thead>
+            <tr>
+                <th>İsim</th>
+                <th>E-posta</th>
+                <th>Kayıt Tarihi</th>
+                <th class="text-end">Tamamlanan Test</th>
+                <th>Yetki</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>@user.FullName</td>
+                    <td>@user.Email</td>
+                    <td class="ltr-nums text-nowrap">@user.CreatedAt.ToString("dd.MM.yyyy")</td>
+                    <td class="text-end ltr-nums">@user.TestResultCount</td>
+                    <td>
+                        @if (user.IsAdmin)
+                        {
+                            <span class="badge text-bg-warning">★ Admin</span>
+                        }
+                        else
+                        {
+                            <span class="text-muted small">Kullanıcı</span>
+                        }
+                    </td>
+                    <td class="text-end text-nowrap">
+                        @if (user.Id == Model.CurrentUserId)
+                        {
+                            <span class="text-muted small">(sen)</span>
+                        }
+                        else
+                        {
+                            <form method="post" asp-page-handler="ToggleAdmin" asp-route-id="@user.Id" asp-route-q="@Model.SearchTerm" class="d-inline"
+                                  onsubmit="return confirm('@(user.IsAdmin ? "Bu kullanıcının admin yetkisini kaldırmak istediğine emin misin?" : "Bu kullanıcıya admin yetkisi vermek istediğine emin misin?")');">
+                                <button type="submit" class="btn btn-sm @(user.IsAdmin ? "btn-outline-danger" : "btn-outline-secondary")">
+                                    @(user.IsAdmin ? "Adminliği Kaldır" : "Admin Yap")
+                                </button>
+                            </form>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
