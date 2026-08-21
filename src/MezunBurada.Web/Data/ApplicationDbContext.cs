@@ -33,6 +33,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<MentorSession> MentorSessions => Set<MentorSession>();
     public DbSet<TestResult> TestResults => Set<TestResult>();
     public DbSet<Review> Reviews => Set<Review>();
+    public DbSet<ContactMessage> ContactMessages => Set<ContactMessage>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

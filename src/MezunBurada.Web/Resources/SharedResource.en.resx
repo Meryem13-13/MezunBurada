@@ -807,6 +807,60 @@
   <data name="ExternalLinkNoticeText" xml:space="preserve">
     <value>This links to a site outside the platform. MezunBurada is not responsible for that site's content.</value>
   </data>
+  <data name="ContactPageTitle" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="ContactPageSubtitle" xml:space="preserve">
+    <value>Have a question or a suggestion? Write to us and we'll get back to you soon.</value>
+  </data>
+  <data name="MessageLabel" xml:space="preserve">
+    <value>Your Message</value>
+  </data>
+  <data name="SendMessageLabel" xml:space="preserve">
+    <value>Send Message</value>
+  </data>
+  <data name="ContactThankYouTitle" xml:space="preserve">
+    <value>Thank You!</value>
+  </data>
+  <data name="ContactThankYouText" xml:space="preserve">
+    <value>Your message has reached us — we'll get back to you soon.</value>
+  </data>
+  <data name="InstitutionsPageTitle" xml:space="preserve">
+    <value>For Institutions</value>
+  </data>
+  <data name="InstitutionsHeroTitle" xml:space="preserve">
+    <value>Give your students real direction after graduation</value>
+  </data>
+  <data name="InstitutionsHeroSubtitle" xml:space="preserve">
+    <value>MezunBurada partners with your university's career center to offer your students a free, personalized career roadmap.</value>
+  </data>
+  <data name="InstitutionsBenefit1Title" xml:space="preserve">
+    <value>Completely Free</value>
+  </data>
+  <data name="InstitutionsBenefit1Text" xml:space="preserve">
+    <value>No cost for your students at all — we were built as a social-good platform.</value>
+  </data>
+  <data name="InstitutionsBenefit2Title" xml:space="preserve">
+    <value>Department-Specific Content</value>
+  </data>
+  <data name="InstitutionsBenefit2Text" xml:space="preserve">
+    <value>Every department has its own interest and level test, its own career roadmaps — not generic advice.</value>
+  </data>
+  <data name="InstitutionsBenefit3Title" xml:space="preserve">
+    <value>Easy Integration</value>
+  </data>
+  <data name="InstitutionsBenefit3Text" xml:space="preserve">
+    <value>Your career center can point graduates to the platform with a single link — no setup required.</value>
+  </data>
+  <data name="InstitutionsFormTitle" xml:space="preserve">
+    <value>Get in Touch</value>
+  </data>
+  <data name="InstitutionsFormSubtitle" xml:space="preserve">
+    <value>Let's talk about how your institution can use MezunBurada.</value>
+  </data>
+  <data name="OrganizationNameLabel" xml:space="preserve">
+    <value>Organization Name</value>
+  </data>
   <data name="AboutPageTitle" xml:space="preserve">
     <value>About Us</value>
   </data>
@@ -916,7 +970,7 @@
     <value>Contact Us</value>
   </data>
   <data name="PrivacyContactText" xml:space="preserve">
-    <value>Just reach out to us to exercise these rights — our contact details will be added to this page soon.</value>
+    <value>You can reach us through our &lt;a href="/iletisim"&gt;contact page&lt;/a&gt; to exercise these rights.</value>
   </data>
   <data name="TermsPageTitle" xml:space="preserve">
     <value>Terms of Use</value>
@@ -955,7 +1009,7 @@
     <value>We may update these terms from time to time. We'll try to notify you of significant changes; continuing to use the platform means you accept the current terms.</value>
   </data>
   <data name="TermsContactText" xml:space="preserve">
-    <value>To send questions about these terms, our contact details will be added to this page soon.</value>
+    <value>You can send questions about these terms through our &lt;a href="/iletisim"&gt;contact page&lt;/a&gt;.</value>
   </data>
   <data name="FooterAboutLink" xml:space="preserve">
     <value>About Us</value>

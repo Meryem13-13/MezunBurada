@@ -2152,3 +2152,7 @@ h1, h2, h3, h4, h5, h6 {
 .legal-page p {
   line-height: 1.7;
 }
+
+.legal-page p a {
+  color: var(--color-primary);
+}

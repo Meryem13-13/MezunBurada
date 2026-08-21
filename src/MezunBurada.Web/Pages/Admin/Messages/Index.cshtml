@@ -1,0 +1,114 @@
+@page "/admin/mesajlar"
+@model MezunBurada.Web.Pages.Admin.Messages.IndexModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Mesajlar";
+}
+
+<h1 class="h3 mb-3">Mesajlar</h1>
+
+<h2 class="h5">Bekleyen Mesajlar (@Model.UnhandledMessages.Count)</h2>
+@if (!Model.UnhandledMessages.Any())
+{
+    <div class="alert alert-light border mb-4">Bekleyen mesaj yok.</div>
+}
+else
+{
+    <table class="table table-bordered align-middle bg-white mb-4">
+        <thead>
+            <tr>
+                <th>İsim</th>
+                <th>E-posta</th>
+                <th>Kurum</th>
+                <th>Kategori</th>
+                <th>Mesaj</th>
+                <th>Tarih</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var msg in Model.UnhandledMessages)
+            {
+                <tr>
+                    <td>@msg.Name</td>
+                    <td>@msg.Email</td>
+                    <td>@msg.OrganizationName</td>
+                    <td>
+                        @if (msg.Category == MezunBurada.Web.Models.ContactCategory.Institutional)
+                        {
+                            <span class="badge bg-info text-dark">Kurumsal</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary text-white">Genel</span>
+                        }
+                    </td>
+                    <td style="max-width: 320px;">@msg.Message</td>
+                    <td class="text-nowrap">@msg.CreatedAt.ToString("dd.MM.yyyy")</td>
+                    <td class="text-end text-nowrap">
+                        <form method="post" asp-page-handler="ToggleHandled" asp-route-id="@msg.Id" class="d-inline">
+                            <button type="submit" class="btn btn-sm btn-outline-success">Halledildi</button>
+                        </form>
+                        <form method="post" asp-page-handler="Delete" asp-route-id="@msg.Id" class="d-inline"
+                              onsubmit="return confirm('Bu mesajı silmek istediğine emin misin?');">
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Sil</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<h2 class="h5">Halledilenler (@Model.HandledMessages.Count)</h2>
+@if (!Model.HandledMessages.Any())
+{
+    <div class="alert alert-light border">Henüz halledilen mesaj yok.</div>
+}
+else
+{
+    <table class="table table-bordered align-middle bg-white">
+        <thead>
+            <tr>
+                <th>İsim</th>
+                <th>E-posta</th>
+                <th>Kurum</th>
+                <th>Kategori</th>
+                <th>Mesaj</th>
+                <th>Tarih</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var msg in Model.HandledMessages)
+            {
+                <tr>
+                    <td>@msg.Name</td>
+                    <td>@msg.Email</td>
+                    <td>@msg.OrganizationName</td>
+                    <td>
+                        @if (msg.Category == MezunBurada.Web.Models.ContactCategory.Institutional)
+                        {
+                            <span class="badge bg-info text-dark">Kurumsal</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary text-white">Genel</span>
+                        }
+                    </td>
+                    <td style="max-width: 320px;">@msg.Message</td>
+                    <td class="text-nowrap">@msg.CreatedAt.ToString("dd.MM.yyyy")</td>
+                    <td class="text-end text-nowrap">
+                        <form method="post" asp-page-handler="ToggleHandled" asp-route-id="@msg.Id" class="d-inline">
+                            <button type="submit" class="btn btn-sm btn-outline-secondary">Bekleyene Al</button>
+                        </form>
+                        <form method="post" asp-page-handler="Delete" asp-route-id="@msg.Id" class="d-inline"
+                              onsubmit="return confirm('Bu mesajı silmek istediğine emin misin?');">
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Sil</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -807,6 +807,60 @@
   <data name="ExternalLinkNoticeText" xml:space="preserve">
     <value>Bu, platform dışı bir siteye yönlendirir. MezunBurada bu sitenin içeriğinden sorumlu değildir.</value>
   </data>
+  <data name="ContactPageTitle" xml:space="preserve">
+    <value>İletişim</value>
+  </data>
+  <data name="ContactPageSubtitle" xml:space="preserve">
+    <value>Bir sorun mu var, bir öneri mi var? Bize yaz, en kısa sürede dönüş yapalım.</value>
+  </data>
+  <data name="MessageLabel" xml:space="preserve">
+    <value>Mesajın</value>
+  </data>
+  <data name="SendMessageLabel" xml:space="preserve">
+    <value>Mesajı Gönder</value>
+  </data>
+  <data name="ContactThankYouTitle" xml:space="preserve">
+    <value>Teşekkürler!</value>
+  </data>
+  <data name="ContactThankYouText" xml:space="preserve">
+    <value>Mesajın bize ulaştı, en kısa sürede döneceğiz.</value>
+  </data>
+  <data name="InstitutionsPageTitle" xml:space="preserve">
+    <value>Kurumlar İçin</value>
+  </data>
+  <data name="InstitutionsHeroTitle" xml:space="preserve">
+    <value>Öğrencilerinize mezuniyet sonrası gerçek bir yön verin</value>
+  </data>
+  <data name="InstitutionsHeroSubtitle" xml:space="preserve">
+    <value>MezunBurada, üniversitenizin kariyer merkeziyle birlikte çalışarak öğrencilerinize ücretsiz, kişiselleştirilmiş bir kariyer yol haritası sunar.</value>
+  </data>
+  <data name="InstitutionsBenefit1Title" xml:space="preserve">
+    <value>Tamamen Ücretsiz</value>
+  </data>
+  <data name="InstitutionsBenefit1Text" xml:space="preserve">
+    <value>Öğrencileriniz için hiçbir ücret yok — sosyal fayda odaklı bir platform olarak kurulduk.</value>
+  </data>
+  <data name="InstitutionsBenefit2Title" xml:space="preserve">
+    <value>Bölüme Özel İçerik</value>
+  </data>
+  <data name="InstitutionsBenefit2Text" xml:space="preserve">
+    <value>Her bölümün kendi ilgi alanı ve seviye testi, kendi kariyer yol haritaları var — genel geçer tavsiyeler değil.</value>
+  </data>
+  <data name="InstitutionsBenefit3Title" xml:space="preserve">
+    <value>Kolay Entegrasyon</value>
+  </data>
+  <data name="InstitutionsBenefit3Text" xml:space="preserve">
+    <value>Kariyer merkeziniz mezunlarınıza tek bir link paylaşarak platforma yönlendirebilir, ek bir kuruluma gerek yok.</value>
+  </data>
+  <data name="InstitutionsFormTitle" xml:space="preserve">
+    <value>Bizimle İletişime Geçin</value>
+  </data>
+  <data name="InstitutionsFormSubtitle" xml:space="preserve">
+    <value>Kurumunuz için MezunBurada'yı nasıl kullanabileceğinizi konuşalım.</value>
+  </data>
+  <data name="OrganizationNameLabel" xml:space="preserve">
+    <value>Kurum Adı</value>
+  </data>
   <data name="AboutPageTitle" xml:space="preserve">
     <value>Hakkımızda</value>
   </data>
@@ -916,7 +970,7 @@
     <value>Bize Ulaşın</value>
   </data>
   <data name="PrivacyContactText" xml:space="preserve">
-    <value>Bu haklarını kullanmak için bizimle iletişime geçmen yeterli; iletişim bilgilerimiz yakında bu sayfaya eklenecektir.</value>
+    <value>Bu haklarını kullanmak için &lt;a href="/iletisim"&gt;iletişim sayfamızdan&lt;/a&gt; bize ulaşabilirsin.</value>
   </data>
   <data name="TermsPageTitle" xml:space="preserve">
     <value>Kullanım Şartları</value>
@@ -955,7 +1009,7 @@
     <value>Bu şartları zaman zaman güncelleyebiliriz. Önemli değişikliklerde seni bilgilendirmeye çalışırız; platformu kullanmaya devam etmen güncel şartları kabul ettiğin anlamına gelir.</value>
   </data>
   <data name="TermsContactText" xml:space="preserve">
-    <value>Kullanım şartlarıyla ilgili sorularını iletmek için iletişim bilgilerimiz yakında bu sayfaya eklenecektir.</value>
+    <value>Kullanım şartlarıyla ilgili sorularını &lt;a href="/iletisim"&gt;iletişim sayfamızdan&lt;/a&gt; bize iletebilirsin.</value>
   </data>
   <data name="FooterAboutLink" xml:space="preserve">
     <value>Hakkımızda</value>

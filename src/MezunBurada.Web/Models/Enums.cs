@@ -53,3 +53,9 @@ public enum ReviewStatus
     Pending,
     Approved,
 }
+
+public enum ContactCategory
+{
+    General,
+    Institutional,
+}

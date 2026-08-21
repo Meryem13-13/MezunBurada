@@ -1,0 +1,71 @@
+@page "/kurumlar-icin"
+@model MezunBurada.Web.Pages.KurumlarIcinModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "/Pages/Shared/_PublicLayout.cshtml";
+    ViewData["Title"] = Localizer["InstitutionsPageTitle"];
+}
+
+<div class="experience-hero">
+    <h1>@Localizer["InstitutionsHeroTitle"]</h1>
+    <p>@Localizer["InstitutionsHeroSubtitle"]</p>
+</div>
+
+<div class="info-card-grid">
+    <div class="info-card">
+        <h3>@Localizer["InstitutionsBenefit1Title"]</h3>
+        <p>@Localizer["InstitutionsBenefit1Text"]</p>
+    </div>
+    <div class="info-card">
+        <h3>@Localizer["InstitutionsBenefit2Title"]</h3>
+        <p>@Localizer["InstitutionsBenefit2Text"]</p>
+    </div>
+    <div class="info-card">
+        <h3>@Localizer["InstitutionsBenefit3Title"]</h3>
+        <p>@Localizer["InstitutionsBenefit3Text"]</p>
+    </div>
+</div>
+
+@if (Model.Submitted)
+{
+    <div class="thank-you-card">
+        <div class="thank-you-icon">🤝</div>
+        <h2>@Localizer["ContactThankYouTitle"]</h2>
+        <p>@Localizer["ContactThankYouText"]</p>
+        <a href="/" class="btn-brand">@Localizer["PublicNavHome"]</a>
+    </div>
+}
+else
+{
+    <div class="simple-form-card">
+        <h2>@Localizer["InstitutionsFormTitle"]</h2>
+        <p class="form-subtitle">@Localizer["InstitutionsFormSubtitle"]</p>
+
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+            <div class="form-field">
+                <label asp-for="Input.OrganizationName">@Localizer["OrganizationNameLabel"]</label>
+                <input asp-for="Input.OrganizationName" placeholder="@Localizer["OrganizationNameLabel"]" />
+            </div>
+
+            <div class="form-field">
+                <label asp-for="Input.Name">@Localizer["YourNameLabel"]</label>
+                <input asp-for="Input.Name" placeholder="@Localizer["YourNameLabel"]" />
+            </div>
+
+            <div class="form-field">
+                <label asp-for="Input.Email">@Localizer["EmailLabel"]</label>
+                <input asp-for="Input.Email" type="email" placeholder="@Localizer["EmailPlaceholder"]" />
+            </div>
+
+            <div class="form-field">
+                <label asp-for="Input.Message">@Localizer["MessageLabel"]</label>
+                <textarea asp-for="Input.Message" placeholder="@Localizer["MessageLabel"]"></textarea>
+            </div>
+
+            <button type="submit" class="btn-brand full-width">@Localizer["SendMessageLabel"]</button>
+        </form>
+    </div>
+}

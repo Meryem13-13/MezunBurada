@@ -807,6 +807,60 @@
   <data name="ExternalLinkNoticeText" xml:space="preserve">
     <value>يوجّه هذا الرابط إلى موقع خارج المنصة. ميزون بوردا غير مسؤولة عن محتوى هذا الموقع.</value>
   </data>
+  <data name="ContactPageTitle" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="ContactPageSubtitle" xml:space="preserve">
+    <value>هل لديك سؤال أو اقتراح؟ راسلنا وسنعود إليك في أقرب وقت.</value>
+  </data>
+  <data name="MessageLabel" xml:space="preserve">
+    <value>رسالتك</value>
+  </data>
+  <data name="SendMessageLabel" xml:space="preserve">
+    <value>إرسال الرسالة</value>
+  </data>
+  <data name="ContactThankYouTitle" xml:space="preserve">
+    <value>شكرًا لك!</value>
+  </data>
+  <data name="ContactThankYouText" xml:space="preserve">
+    <value>وصلتنا رسالتك، سنعود إليك في أقرب وقت.</value>
+  </data>
+  <data name="InstitutionsPageTitle" xml:space="preserve">
+    <value>للمؤسسات</value>
+  </data>
+  <data name="InstitutionsHeroTitle" xml:space="preserve">
+    <value>امنح طلابك توجيهًا حقيقيًا بعد التخرج</value>
+  </data>
+  <data name="InstitutionsHeroSubtitle" xml:space="preserve">
+    <value>تتعاون ميزون بوردا مع مركز التوجيه المهني في جامعتك لتقديم خارطة طريق مهنية مجانية وشخصية لطلابك.</value>
+  </data>
+  <data name="InstitutionsBenefit1Title" xml:space="preserve">
+    <value>مجانية بالكامل</value>
+  </data>
+  <data name="InstitutionsBenefit1Text" xml:space="preserve">
+    <value>لا توجد أي تكلفة على طلابك — تأسسنا كمنصة تهدف إلى الفائدة الاجتماعية.</value>
+  </data>
+  <data name="InstitutionsBenefit2Title" xml:space="preserve">
+    <value>محتوى خاص بكل قسم</value>
+  </data>
+  <data name="InstitutionsBenefit2Text" xml:space="preserve">
+    <value>لكل قسم اختبار اهتمامات ومستوى خاص به، وخرائط طريق مهنية خاصة به — وليست نصائح عامة.</value>
+  </data>
+  <data name="InstitutionsBenefit3Title" xml:space="preserve">
+    <value>تكامل سهل</value>
+  </data>
+  <data name="InstitutionsBenefit3Text" xml:space="preserve">
+    <value>يمكن لمركز التوجيه المهني توجيه الخريجين إلى المنصة برابط واحد فقط — دون الحاجة لأي إعداد.</value>
+  </data>
+  <data name="InstitutionsFormTitle" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="InstitutionsFormSubtitle" xml:space="preserve">
+    <value>لنتحدث عن كيفية استخدام مؤسستكم لميزون بوردا.</value>
+  </data>
+  <data name="OrganizationNameLabel" xml:space="preserve">
+    <value>اسم المؤسسة</value>
+  </data>
   <data name="AboutPageTitle" xml:space="preserve">
     <value>من نحن</value>
   </data>
@@ -916,7 +970,7 @@
     <value>تواصل معنا</value>
   </data>
   <data name="PrivacyContactText" xml:space="preserve">
-    <value>للاستفادة من هذه الحقوق، ما عليك سوى التواصل معنا؛ ستُضاف معلومات الاتصال الخاصة بنا إلى هذه الصفحة قريبًا.</value>
+    <value>يمكنك التواصل معنا عبر &lt;a href="/iletisim"&gt;صفحة الاتصال&lt;/a&gt; للاستفادة من هذه الحقوق.</value>
   </data>
   <data name="TermsPageTitle" xml:space="preserve">
     <value>شروط الاستخدام</value>
@@ -955,7 +1009,7 @@
     <value>قد نقوم بتحديث هذه الشروط من وقت لآخر. سنحاول إعلامك بالتغييرات المهمة؛ ويعني استمرارك في استخدام المنصة موافقتك على الشروط الحالية.</value>
   </data>
   <data name="TermsContactText" xml:space="preserve">
-    <value>لإرسال أسئلتك حول شروط الاستخدام، ستُضاف معلومات الاتصال الخاصة بنا إلى هذه الصفحة قريبًا.</value>
+    <value>يمكنك إرسال أسئلتك حول شروط الاستخدام عبر &lt;a href="/iletisim"&gt;صفحة الاتصال&lt;/a&gt;.</value>
   </data>
   <data name="FooterAboutLink" xml:space="preserve">
     <value>من نحن</value>
