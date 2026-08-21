@@ -789,6 +789,24 @@
   <data name="SearchResultsResourcesHeading" xml:space="preserve">
     <value>Kaynaklar</value>
   </data>
+  <data name="WhyRecommendedTitle" xml:space="preserve">
+    <value>Bu Kaynak Neden Önerildi?</value>
+  </data>
+  <data name="GenericFreeResourceNote" xml:space="preserve">
+    <value>Bu kaynak tamamen ücretsizdir.</value>
+  </data>
+  <data name="GenericAffiliateResourceNote" xml:space="preserve">
+    <value>Bu kaynak platform dışı, ücretli bir kaynağa yönlendirir. Kaliteli bulduğumuz için öneriyoruz — zorunlu değildir, dilediğin başka bir kaynaktan da çalışabilirsin.</value>
+  </data>
+  <data name="GoToResourceLabel" xml:space="preserve">
+    <value>Kaynağa Git</value>
+  </data>
+  <data name="BackToRoadmapLabel" xml:space="preserve">
+    <value>← Yol Haritasına Dön</value>
+  </data>
+  <data name="ExternalLinkNoticeText" xml:space="preserve">
+    <value>Bu, platform dışı bir siteye yönlendirir. MezunBurada bu sitenin içeriğinden sorumlu değildir.</value>
+  </data>
   <data name="AboutPageTitle" xml:space="preserve">
     <value>Hakkımızda</value>
   </data>

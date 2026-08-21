@@ -789,6 +789,24 @@
   <data name="SearchResultsResourcesHeading" xml:space="preserve">
     <value>المصادر</value>
   </data>
+  <data name="WhyRecommendedTitle" xml:space="preserve">
+    <value>لماذا تمت التوصية بهذا المصدر؟</value>
+  </data>
+  <data name="GenericFreeResourceNote" xml:space="preserve">
+    <value>هذا المصدر مجاني بالكامل.</value>
+  </data>
+  <data name="GenericAffiliateResourceNote" xml:space="preserve">
+    <value>يوجّه هذا المصدر إلى دورة مدفوعة خارج المنصة. نوصي به لأننا نجده عالي الجودة — وهو غير إلزامي، يمكنك الدراسة من أي مصدر تفضله.</value>
+  </data>
+  <data name="GoToResourceLabel" xml:space="preserve">
+    <value>الذهاب إلى المصدر</value>
+  </data>
+  <data name="BackToRoadmapLabel" xml:space="preserve">
+    <value>→ العودة إلى خارطة الطريق</value>
+  </data>
+  <data name="ExternalLinkNoticeText" xml:space="preserve">
+    <value>يوجّه هذا الرابط إلى موقع خارج المنصة. ميزون بوردا غير مسؤولة عن محتوى هذا الموقع.</value>
+  </data>
   <data name="AboutPageTitle" xml:space="preserve">
     <value>من نحن</value>
   </data>

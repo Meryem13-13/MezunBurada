@@ -1,0 +1,44 @@
+@page "/kaynak/{id:int}"
+@model MezunBurada.Web.Pages.KaynakModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "/Pages/Shared/_PublicLayout.cshtml";
+    ViewData["Title"] = Model.Resource.Title;
+}
+
+<div class="legal-page">
+    @if (Model.SourceStep is not null)
+    {
+        <a href="/yol-haritasi" class="public-nav-link">@Localizer["BackToRoadmapLabel"]</a>
+    }
+
+    <h1 class="mt-3">@Model.Resource.Title</h1>
+    <div class="dept-detail-badges">
+        <span class="dept-detail-badge">@Model.Resource.Type</span>
+    </div>
+
+    <section>
+        <h2>@Localizer["WhyRecommendedTitle"]</h2>
+        @if (Model.SourceStep is not null)
+        {
+            <p>@Model.SourceStep.Title &mdash; @Model.SourceStep.Description</p>
+            @if (!string.IsNullOrEmpty(Model.SourceStep.HowToApproach))
+            {
+                <p class="text-muted small">@Model.SourceStep.HowToApproach</p>
+            }
+        }
+        else if (Model.Resource.Type == MezunBurada.Web.Models.ResourceType.Affiliate)
+        {
+            <p>@Localizer["GenericAffiliateResourceNote"]</p>
+        }
+        else
+        {
+            <p>@Localizer["GenericFreeResourceNote"]</p>
+        }
+    </section>
+
+    <p class="form-hint mb-4">@Localizer["ExternalLinkNoticeText"]</p>
+
+    <a href="@Model.Resource.Url" target="_blank" rel="noopener" class="btn-brand">@Localizer["GoToResourceLabel"] &rarr;</a>
+</div>

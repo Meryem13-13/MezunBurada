@@ -789,6 +789,24 @@
   <data name="SearchResultsResourcesHeading" xml:space="preserve">
     <value>Resources</value>
   </data>
+  <data name="WhyRecommendedTitle" xml:space="preserve">
+    <value>Why Was This Recommended?</value>
+  </data>
+  <data name="GenericFreeResourceNote" xml:space="preserve">
+    <value>This resource is completely free.</value>
+  </data>
+  <data name="GenericAffiliateResourceNote" xml:space="preserve">
+    <value>This resource points to a paid course outside the platform. We recommend it because we find it high quality — it's not required, you're free to study from whatever resource you prefer.</value>
+  </data>
+  <data name="GoToResourceLabel" xml:space="preserve">
+    <value>Go to Resource</value>
+  </data>
+  <data name="BackToRoadmapLabel" xml:space="preserve">
+    <value>← Back to Roadmap</value>
+  </data>
+  <data name="ExternalLinkNoticeText" xml:space="preserve">
+    <value>This links to a site outside the platform. MezunBurada is not responsible for that site's content.</value>
+  </data>
   <data name="AboutPageTitle" xml:space="preserve">
     <value>About Us</value>
   </data>

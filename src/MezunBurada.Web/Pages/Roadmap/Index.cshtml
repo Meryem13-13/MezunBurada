@@ -81,7 +81,7 @@ else
                             <p>@step.Description</p>
                             @if (step.Resource is not null)
                             {
-                                <span class="pill-tag">@step.Resource.Title &middot; @step.EstimatedDuration</span>
+                                <a href="/kaynak/@step.Resource.Id?stepId=@step.Id" class="pill-tag" style="text-decoration: none;">@step.Resource.Title &middot; @step.EstimatedDuration</a>
                             }
                             else
                             {
