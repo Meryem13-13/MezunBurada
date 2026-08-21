@@ -1,0 +1,78 @@
+@page "/arama"
+@model MezunBurada.Web.Pages.AramaModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "/Pages/Shared/_PublicLayout.cshtml";
+    ViewData["Title"] = Localizer["SearchResultsPageTitle"];
+}
+
+<div class="legal-page" style="max-width: 760px;">
+    <h1>@Localizer["SearchResultsPageTitle"]</h1>
+
+    @if (string.IsNullOrWhiteSpace(Model.SearchTerm))
+    {
+        <p class="legal-intro">@Localizer["EnterSearchTermText"]</p>
+    }
+    else
+    {
+        <p class="legal-intro">@Localizer["SearchResultsForFormat", Model.SearchTerm]</p>
+
+        @if (!Model.HasResults)
+        {
+            <div class="empty-state-card" style="max-width: 480px; margin: 0 auto;">
+                <div class="empty-illustration">🔍</div>
+                <h3>@Localizer["NoSearchResultsTitle"]</h3>
+                <p>@Localizer["NoSearchResultsFormat", Model.SearchTerm]</p>
+                <a href="/" class="btn-brand-outline">@Localizer["PublicNavHome"]</a>
+            </div>
+        }
+        else
+        {
+            @if (Model.Departments.Any())
+            {
+                <section>
+                    <h2>@Localizer["SearchResultsDepartmentsHeading"]</h2>
+                    <div class="dept-grid mb-4">
+                        @foreach (var dept in Model.Departments)
+                        {
+                            <a href="/bolum/@dept.Slug" class="dept-card">@dept.Name</a>
+                        }
+                    </div>
+                </section>
+            }
+
+            @if (Model.SubFields.Any())
+            {
+                <section>
+                    <h2>@Localizer["SearchResultsSubFieldsHeading"]</h2>
+                    <div class="subfield-grid mb-4">
+                        @foreach (var sf in Model.SubFields)
+                        {
+                            <a href="/bolum/@sf.Department?.Slug" class="subfield-card" style="display: block; text-decoration: none; color: inherit;">
+                                <h3>@sf.Name</h3>
+                                <p class="text-muted small mb-0">@sf.Department?.Name</p>
+                            </a>
+                        }
+                    </div>
+                </section>
+            }
+
+            @if (Model.Resources.Any())
+            {
+                <section>
+                    <h2>@Localizer["SearchResultsResourcesHeading"]</h2>
+                    <ul class="list-group mb-4">
+                        @foreach (var resource in Model.Resources)
+                        {
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="@resource.Url" target="_blank" rel="noopener">@resource.Title</a>
+                                <span class="pill-tag">@resource.Type</span>
+                            </li>
+                        }
+                    </ul>
+                </section>
+            }
+        }
+    }
+</div>

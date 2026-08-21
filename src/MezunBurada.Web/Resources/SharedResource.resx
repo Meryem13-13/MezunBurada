@@ -613,7 +613,7 @@
     <value>Bölüm ara...</value>
   </data>
   <data name="NoDepartmentsYetText" xml:space="preserve">
-    <value>Aramanla eşleşen bir bölüm bulunamadı.</value>
+    <value>Henüz bölüm eklenmemiş.</value>
   </data>
   <data name="BackToDepartmentsLabel" xml:space="preserve">
     <value>← Bölümlere Dön</value>
@@ -764,6 +764,30 @@
   </data>
   <data name="TestHistoryMatchLabel" xml:space="preserve">
     <value>Eşleşme</value>
+  </data>
+  <data name="SearchResultsPageTitle" xml:space="preserve">
+    <value>Arama Sonuçları</value>
+  </data>
+  <data name="SearchResultsForFormat" xml:space="preserve">
+    <value>"{0}" için sonuçlar</value>
+  </data>
+  <data name="EnterSearchTermText" xml:space="preserve">
+    <value>Bölüm, alt dal veya kaynak aramak için üstteki kutuya bir şey yaz.</value>
+  </data>
+  <data name="NoSearchResultsTitle" xml:space="preserve">
+    <value>Sonuç Bulunamadı</value>
+  </data>
+  <data name="NoSearchResultsFormat" xml:space="preserve">
+    <value>"{0}" için bir sonuç bulunamadı. Farklı bir terim dene.</value>
+  </data>
+  <data name="SearchResultsDepartmentsHeading" xml:space="preserve">
+    <value>Bölümler</value>
+  </data>
+  <data name="SearchResultsSubFieldsHeading" xml:space="preserve">
+    <value>Alt Dallar</value>
+  </data>
+  <data name="SearchResultsResourcesHeading" xml:space="preserve">
+    <value>Kaynaklar</value>
   </data>
   <data name="AboutPageTitle" xml:space="preserve">
     <value>Hakkımızda</value>

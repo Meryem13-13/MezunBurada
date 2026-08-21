@@ -613,7 +613,7 @@
     <value>ابحث عن قسم...</value>
   </data>
   <data name="NoDepartmentsYetText" xml:space="preserve">
-    <value>لا يوجد قسم يطابق بحثك.</value>
+    <value>لم تتم إضافة أي قسم بعد.</value>
   </data>
   <data name="BackToDepartmentsLabel" xml:space="preserve">
     <value>→ العودة إلى الأقسام</value>
@@ -764,6 +764,30 @@
   </data>
   <data name="TestHistoryMatchLabel" xml:space="preserve">
     <value>نسبة التطابق</value>
+  </data>
+  <data name="SearchResultsPageTitle" xml:space="preserve">
+    <value>نتائج البحث</value>
+  </data>
+  <data name="SearchResultsForFormat" xml:space="preserve">
+    <value>نتائج البحث عن "{0}"</value>
+  </data>
+  <data name="EnterSearchTermText" xml:space="preserve">
+    <value>اكتب شيئًا في المربع أعلاه للبحث عن قسم أو مجال فرعي أو مصدر.</value>
+  </data>
+  <data name="NoSearchResultsTitle" xml:space="preserve">
+    <value>لا توجد نتائج</value>
+  </data>
+  <data name="NoSearchResultsFormat" xml:space="preserve">
+    <value>لم يتم العثور على نتائج لـ "{0}". جرّب كلمة مختلفة.</value>
+  </data>
+  <data name="SearchResultsDepartmentsHeading" xml:space="preserve">
+    <value>الأقسام</value>
+  </data>
+  <data name="SearchResultsSubFieldsHeading" xml:space="preserve">
+    <value>الأقسام الفرعية</value>
+  </data>
+  <data name="SearchResultsResourcesHeading" xml:space="preserve">
+    <value>المصادر</value>
   </data>
   <data name="AboutPageTitle" xml:space="preserve">
     <value>من نحن</value>

@@ -14,21 +14,16 @@ public class IndexModel : PageModel
         _db = db;
     }
 
-    public string? SearchTerm { get; private set; }
     public IList<Department> Departments { get; private set; } = new List<Department>();
     public IList<Review> FeaturedReviews { get; private set; } = new List<Review>();
 
-    public async Task OnGetAsync(string? q)
+    public async Task OnGetAsync()
     {
-        SearchTerm = q;
-
-        var query = _db.Departments.Where(d => d.IsActive).AsQueryable();
-        if (!string.IsNullOrWhiteSpace(q))
-        {
-            query = query.Where(d => d.Name.Contains(q));
-        }
-
-        Departments = await query.OrderBy(d => d.Name).Take(8).ToListAsync();
+        Departments = await _db.Departments
+            .Where(d => d.IsActive)
+            .OrderBy(d => d.Name)
+            .Take(8)
+            .ToListAsync();
 
         FeaturedReviews = await _db.Reviews
             .Include(r => r.Department)

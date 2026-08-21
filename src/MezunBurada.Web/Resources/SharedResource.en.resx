@@ -613,7 +613,7 @@
     <value>Search departments...</value>
   </data>
   <data name="NoDepartmentsYetText" xml:space="preserve">
-    <value>No departments match your search.</value>
+    <value>No departments have been added yet.</value>
   </data>
   <data name="BackToDepartmentsLabel" xml:space="preserve">
     <value>← Back to Departments</value>
@@ -764,6 +764,30 @@
   </data>
   <data name="TestHistoryMatchLabel" xml:space="preserve">
     <value>Match</value>
+  </data>
+  <data name="SearchResultsPageTitle" xml:space="preserve">
+    <value>Search Results</value>
+  </data>
+  <data name="SearchResultsForFormat" xml:space="preserve">
+    <value>Results for "{0}"</value>
+  </data>
+  <data name="EnterSearchTermText" xml:space="preserve">
+    <value>Type something in the box above to search departments, sub-fields, or resources.</value>
+  </data>
+  <data name="NoSearchResultsTitle" xml:space="preserve">
+    <value>No Results Found</value>
+  </data>
+  <data name="NoSearchResultsFormat" xml:space="preserve">
+    <value>No results found for "{0}". Try a different term.</value>
+  </data>
+  <data name="SearchResultsDepartmentsHeading" xml:space="preserve">
+    <value>Departments</value>
+  </data>
+  <data name="SearchResultsSubFieldsHeading" xml:space="preserve">
+    <value>Sub-Fields</value>
+  </data>
+  <data name="SearchResultsResourcesHeading" xml:space="preserve">
+    <value>Resources</value>
   </data>
   <data name="AboutPageTitle" xml:space="preserve">
     <value>About Us</value>
