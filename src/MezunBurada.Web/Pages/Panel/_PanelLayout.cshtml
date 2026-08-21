@@ -37,11 +37,11 @@
             </div>
             <ul class="panel-nav">
                 <li><a href="/panel" class="@(activeTab == "dashboard" ? "active" : "")">🏠 @Localizer["PanelNavDashboard"]</a></li>
-                <li><a href="#" class="@(activeTab == "roadmap" ? "active" : "")">🗺️ @Localizer["PanelNavRoadmap"]</a></li>
+                <li><a href="/yol-haritasi" class="@(activeTab == "roadmap" ? "active" : "")">🗺️ @Localizer["PanelNavRoadmap"]</a></li>
                 <li><a href="#" class="@(activeTab == "completed" ? "active" : "")">✅ @Localizer["PanelNavCompleted"]</a></li>
                 <li><a href="#" class="@(activeTab == "achievements" ? "active" : "")">🏆 @Localizer["PanelNavAchievements"]</a></li>
-                <li><a href="#" class="@(activeTab == "profile" ? "active" : "")">👤 @Localizer["PanelNavProfile"]</a></li>
-                <li><a href="#" class="@(activeTab == "settings" ? "active" : "")">⚙️ @Localizer["PanelNavSettings"]</a></li>
+                <li><a href="/profil" class="@(activeTab == "profile" ? "active" : "")">👤 @Localizer["PanelNavProfile"]</a></li>
+                <li><a href="/profil" class="@(activeTab == "settings" ? "active" : "")">⚙️ @Localizer["PanelNavSettings"]</a></li>
             </ul>
             <form method="post" action="/cikis-yap">
                 <button type="submit" class="panel-logout w-100">↩ @Localizer["PanelLogout"]</button>
@@ -55,9 +55,9 @@
                 </button>
                 <nav class="panel-tabs">
                     <a href="/panel" class="@(activeTab == "dashboard" ? "active" : "")">@Localizer["PanelNavDashboard"]</a>
-                    <a href="#" class="@(activeTab == "roadmap" ? "active" : "")">@Localizer["PanelNavRoadmap"]</a>
+                    <a href="/yol-haritasi" class="@(activeTab == "roadmap" ? "active" : "")">@Localizer["PanelNavRoadmap"]</a>
                     <a href="#" class="@(activeTab == "achievements" ? "active" : "")">@Localizer["PanelNavAchievements"]</a>
-                    <a href="#" class="@(activeTab == "profile" ? "active" : "")">@Localizer["PanelNavProfile"]</a>
+                    <a href="/profil" class="@(activeTab == "profile" ? "active" : "")">@Localizer["PanelNavProfile"]</a>
                 </nav>
                 <div class="panel-topbar-actions">
                     <div class="dropdown">

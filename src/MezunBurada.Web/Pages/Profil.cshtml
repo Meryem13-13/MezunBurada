@@ -1,0 +1,109 @@
+@page "/profil"
+@model MezunBurada.Web.Pages.ProfilModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "/Pages/Panel/_PanelLayout.cshtml";
+    ViewData["Title"] = Localizer["ProfilePageTitle"];
+    ViewData["ActiveTab"] = "profile";
+}
+
+<h1 class="h3 mb-4">@Localizer["ProfilePageTitle"]</h1>
+
+<div class="row g-4">
+    <div class="col-lg-6">
+        <div class="simple-form-card" style="margin: 0;">
+            <h2 class="h5 mb-3">@Localizer["AccountInfoSectionTitle"]</h2>
+
+            @if (Model.AccountSuccessMessage is not null)
+            {
+                <div class="alert alert-success py-2">@Model.AccountSuccessMessage</div>
+            }
+
+            <form method="post" asp-page-handler="UpdateAccount">
+                <div class="form-field">
+                    <label asp-for="AccountInput.FullName">@Localizer["FullNameLabel"]</label>
+                    <input asp-for="AccountInput.FullName" />
+                    <span asp-validation-for="AccountInput.FullName" class="text-danger"></span>
+                </div>
+                <div class="form-field">
+                    <label>@Localizer["EmailLabel"]</label>
+                    <input value="@Model.Email" disabled />
+                </div>
+                <div class="form-hint mb-3">@Localizer["MemberSinceLabel"]: <span class="ltr-nums">@Model.MemberSince.ToString("dd.MM.yyyy")</span></div>
+
+                <button type="submit" class="btn-brand">@Localizer["SaveChangesLabel"]</button>
+            </form>
+        </div>
+
+        <div class="simple-form-card" style="margin: 1.5rem 0 0;">
+            <h2 class="h5 mb-3">@Localizer["ChangePasswordSectionTitle"]</h2>
+
+            @if (Model.PasswordSuccessMessage is not null)
+            {
+                <div class="alert alert-success py-2">@Model.PasswordSuccessMessage</div>
+            }
+            @if (Model.PasswordErrorMessage is not null)
+            {
+                <div class="alert alert-danger py-2">@Model.PasswordErrorMessage</div>
+            }
+
+            <form method="post" asp-page-handler="ChangePassword">
+                <div class="form-field">
+                    <label asp-for="PasswordInput.CurrentPassword">@Localizer["CurrentPasswordLabel"]</label>
+                    <input asp-for="PasswordInput.CurrentPassword" type="password" />
+                </div>
+                <div class="form-field">
+                    <label asp-for="PasswordInput.NewPassword">@Localizer["NewPasswordLabel"]</label>
+                    <input asp-for="PasswordInput.NewPassword" type="password" />
+                    <div class="form-hint">@Localizer["PasswordMinHint"]</div>
+                </div>
+
+                <button type="submit" class="btn-brand">@Localizer["UpdatePasswordLabel"]</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="bg-white border rounded p-4">
+            <h2 class="h5 mb-3">@Localizer["TestHistorySectionTitle"]</h2>
+
+            @if (!Model.TestHistory.Any())
+            {
+                <p class="text-muted mb-0">@Localizer["NoTestHistoryText"]</p>
+            }
+            else
+            {
+                <table class="table table-sm table-bordered align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th>@Localizer["TestHistoryDateLabel"]</th>
+                            <th>@Localizer["TestHistoryDepartmentLabel"]</th>
+                            <th>@Localizer["TestHistorySubFieldLabel"]</th>
+                            <th>@Localizer["TestHistoryLevelLabel"]</th>
+                            <th class="text-end">@Localizer["TestHistoryMatchLabel"]</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var result in Model.TestHistory)
+                        {
+                            var levelKey = result.Level switch
+                            {
+                                MezunBurada.Web.Models.ProficiencyLevel.Intermediate => "LevelIntermediate",
+                                MezunBurada.Web.Models.ProficiencyLevel.Advanced => "LevelAdvanced",
+                                _ => "LevelBeginner",
+                            };
+                            <tr>
+                                <td class="ltr-nums text-nowrap">@result.CompletedAt.ToString("dd.MM.yyyy")</td>
+                                <td>@result.SubField?.Department?.Name</td>
+                                <td>@result.SubField?.Name</td>
+                                <td>@Localizer[levelKey]</td>
+                                <td class="text-end ltr-nums">%@result.CareerMatchPercent</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+</div>

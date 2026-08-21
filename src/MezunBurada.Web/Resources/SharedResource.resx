@@ -726,6 +726,45 @@
   <data name="RoadmapCtaDesc" xml:space="preserve">
     <value>İlerlemeni takip etmek, tamamladığın adımları işaretlemek ve dilediğin zaman kaldığın yerden devam etmek için ücretsiz hesabını oluştur.</value>
   </data>
+  <data name="ProfilePageTitle" xml:space="preserve">
+    <value>Profilim</value>
+  </data>
+  <data name="AccountInfoSectionTitle" xml:space="preserve">
+    <value>Hesap Bilgileri</value>
+  </data>
+  <data name="MemberSinceLabel" xml:space="preserve">
+    <value>Üyelik Tarihi</value>
+  </data>
+  <data name="SaveChangesLabel" xml:space="preserve">
+    <value>Değişiklikleri Kaydet</value>
+  </data>
+  <data name="ChangePasswordSectionTitle" xml:space="preserve">
+    <value>Şifre Değiştir</value>
+  </data>
+  <data name="CurrentPasswordLabel" xml:space="preserve">
+    <value>Mevcut Şifre</value>
+  </data>
+  <data name="TestHistorySectionTitle" xml:space="preserve">
+    <value>Test Geçmişim</value>
+  </data>
+  <data name="NoTestHistoryText" xml:space="preserve">
+    <value>Henüz tamamlanmış bir testin yok.</value>
+  </data>
+  <data name="TestHistoryDateLabel" xml:space="preserve">
+    <value>Tarih</value>
+  </data>
+  <data name="TestHistoryDepartmentLabel" xml:space="preserve">
+    <value>Bölüm</value>
+  </data>
+  <data name="TestHistorySubFieldLabel" xml:space="preserve">
+    <value>Alt Dal</value>
+  </data>
+  <data name="TestHistoryLevelLabel" xml:space="preserve">
+    <value>Seviye</value>
+  </data>
+  <data name="TestHistoryMatchLabel" xml:space="preserve">
+    <value>Eşleşme</value>
+  </data>
   <data name="AboutPageTitle" xml:space="preserve">
     <value>Hakkımızda</value>
   </data>

@@ -726,6 +726,45 @@
   <data name="RoadmapCtaDesc" xml:space="preserve">
     <value>Create your free account to track your progress, check off completed steps, and continue anytime from where you left off.</value>
   </data>
+  <data name="ProfilePageTitle" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+  <data name="AccountInfoSectionTitle" xml:space="preserve">
+    <value>Account Information</value>
+  </data>
+  <data name="MemberSinceLabel" xml:space="preserve">
+    <value>Member Since</value>
+  </data>
+  <data name="SaveChangesLabel" xml:space="preserve">
+    <value>Save Changes</value>
+  </data>
+  <data name="ChangePasswordSectionTitle" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="CurrentPasswordLabel" xml:space="preserve">
+    <value>Current Password</value>
+  </data>
+  <data name="TestHistorySectionTitle" xml:space="preserve">
+    <value>My Test History</value>
+  </data>
+  <data name="NoTestHistoryText" xml:space="preserve">
+    <value>You haven't completed a test yet.</value>
+  </data>
+  <data name="TestHistoryDateLabel" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="TestHistoryDepartmentLabel" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="TestHistorySubFieldLabel" xml:space="preserve">
+    <value>Sub-Field</value>
+  </data>
+  <data name="TestHistoryLevelLabel" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="TestHistoryMatchLabel" xml:space="preserve">
+    <value>Match</value>
+  </data>
   <data name="AboutPageTitle" xml:space="preserve">
     <value>About Us</value>
   </data>

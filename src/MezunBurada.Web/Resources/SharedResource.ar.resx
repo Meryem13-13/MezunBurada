@@ -726,6 +726,45 @@
   <data name="RoadmapCtaDesc" xml:space="preserve">
     <value>أنشئ حسابك المجاني لتتابع تقدمك، وتؤشر الخطوات المكتملة، وتكمل في أي وقت من حيث توقفت.</value>
   </data>
+  <data name="ProfilePageTitle" xml:space="preserve">
+    <value>ملفي الشخصي</value>
+  </data>
+  <data name="AccountInfoSectionTitle" xml:space="preserve">
+    <value>معلومات الحساب</value>
+  </data>
+  <data name="MemberSinceLabel" xml:space="preserve">
+    <value>تاريخ العضوية</value>
+  </data>
+  <data name="SaveChangesLabel" xml:space="preserve">
+    <value>حفظ التغييرات</value>
+  </data>
+  <data name="ChangePasswordSectionTitle" xml:space="preserve">
+    <value>تغيير كلمة المرور</value>
+  </data>
+  <data name="CurrentPasswordLabel" xml:space="preserve">
+    <value>كلمة المرور الحالية</value>
+  </data>
+  <data name="TestHistorySectionTitle" xml:space="preserve">
+    <value>سجل اختباراتي</value>
+  </data>
+  <data name="NoTestHistoryText" xml:space="preserve">
+    <value>لم تكمل أي اختبار بعد.</value>
+  </data>
+  <data name="TestHistoryDateLabel" xml:space="preserve">
+    <value>التاريخ</value>
+  </data>
+  <data name="TestHistoryDepartmentLabel" xml:space="preserve">
+    <value>القسم</value>
+  </data>
+  <data name="TestHistorySubFieldLabel" xml:space="preserve">
+    <value>القسم الفرعي</value>
+  </data>
+  <data name="TestHistoryLevelLabel" xml:space="preserve">
+    <value>المستوى</value>
+  </data>
+  <data name="TestHistoryMatchLabel" xml:space="preserve">
+    <value>نسبة التطابق</value>
+  </data>
   <data name="AboutPageTitle" xml:space="preserve">
     <value>من نحن</value>
   </data>

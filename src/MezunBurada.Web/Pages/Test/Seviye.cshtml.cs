@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using MezunBurada.Web.Data;
 using MezunBurada.Web.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -63,6 +64,7 @@ public class SeviyeModel : PageModel
             // No level question bank yet for this career area — skip straight to the roadmap
             // with a default level rather than dead-ending the test.
             HttpContext.Session.SetInt32(ResultLevelSessionKey, (int)ProficiencyLevel.Beginner);
+            await PersistIfAuthenticatedAsync();
             return RedirectToPage("/Roadmap/Index");
         }
 
@@ -78,6 +80,7 @@ public class SeviyeModel : PageModel
                 : ratio >= 0.4 ? ProficiencyLevel.Intermediate
                 : ProficiencyLevel.Beginner;
             HttpContext.Session.SetInt32(ResultLevelSessionKey, (int)level);
+            await PersistIfAuthenticatedAsync();
             return RedirectToPage("/Roadmap/Index");
         }
 
@@ -109,5 +112,26 @@ public class SeviyeModel : PageModel
         HttpContext.Session.SetInt32(AnsweredCountSessionKey, answered);
 
         return RedirectToPage();
+    }
+
+    // Already-signed-in users (as opposed to the register/login-time path in
+    // SessionTestResultHelper's other two callers) get their result persisted the moment the
+    // test finishes, rather than only by accident on some future login. The session keys are
+    // cleared right after so a later login doesn't re-persist the same test as a duplicate row —
+    // Roadmap's own "no session result, use latest persisted TestResult" fallback picks this same
+    // result straight back up.
+    private async Task PersistIfAuthenticatedAsync()
+    {
+        if (User.Identity?.IsAuthenticated != true)
+        {
+            return;
+        }
+
+        var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+        await SessionTestResultHelper.PersistAsync(_db, HttpContext.Session, userId);
+        HttpContext.Session.Remove(SubFieldSessionKey);
+        HttpContext.Session.Remove(ResultLevelSessionKey);
+        HttpContext.Session.Remove(AnsweredCountSessionKey);
+        HttpContext.Session.Remove(PointsEarnedSessionKey);
     }
 }
